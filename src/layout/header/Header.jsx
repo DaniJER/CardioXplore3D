@@ -8,12 +8,18 @@ const Header = () => {
                 <NavLink to="/" end>
                     inicio
                 </NavLink>
-                <NavLink to="quiz" end>
+                <NavLink to="/quiz" end>
                     Quiz
+                </NavLink>
+                <NavLink to="/enfermedades" end>
+                    Enfermedades
+                </NavLink>
+                <NavLink to="/login" end>
+                    Login
                 </NavLink>
             </nav>
         </header>
-        
+
     );
 };
 

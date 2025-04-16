@@ -8,6 +8,7 @@ import Login from './pages/login/login';
 import NotFound from './pages/not-found/NotFound';
 import Header from './layout/header/Header';
 import Footer from './layout/footer/Footer';
+import ProtectedRoute from './utils/ProtectedRoute';
 
 function App() {
 
@@ -18,7 +19,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/enfermedades" element={<Diseases />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        } />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
