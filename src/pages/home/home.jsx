@@ -13,7 +13,6 @@ const Home = () => {
                 </a>
             </div>
             <h1>CardioXplore3D</h1>
-            <div className="card"></div>
             <p className="read-the-docs">
                 Aqui proximamente tendremos contenido informativo e interactivo sobre el
                 corazón :)

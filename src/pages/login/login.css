@@ -22,7 +22,7 @@
     border-radius: 20px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    color: #1f1f1f;
+    color: var(--text-color);
     cursor: pointer;
     font-family: 'Roboto', arial, sans-serif;
     font-size: 14px;

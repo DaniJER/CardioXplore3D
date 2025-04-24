@@ -1,0 +1,90 @@
+.coverflow-contenedor {
+    text-align: center;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.coverflow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards {
+    position: relative;
+    width: 80%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 200px;
+    height: 320px;
+    transition: all 0.5s ease;
+    transform: scale(0.8);
+    opacity: 0.5;
+    background-color: var(--background-color);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 1rem;
+}
+
+.card h3 {
+    margin: 0.5rem 0;
+}
+
+.card.active {
+    transform: scale(1.1);
+    opacity: 1;
+    z-index: 2;
+}
+
+.card.active:hover {
+    transform: scale(1.15);
+    background-color: var(--background-color);
+    cursor: default;
+}
+
+.card.left {
+    transform: translateX(-120%) scale(0.8);
+    z-index: 1;
+}
+
+.card.left:hover {
+    transform: translateX(-120%) scale(0.85);
+}
+
+.card.right {
+    transform: translateX(120%) scale(0.8);
+    z-index: 1;
+}
+
+.card.right:hover {
+    transform: translateX(120%) scale(0.85);
+}
+
+.saber-mas:hover{
+    color: var(--text-color);
+}
+
+.flecha {
+    z-index: 2;
+    border-radius: 40px;
+    font-size: 2rem;
+    background: none;
+    border: revert;
+}
