@@ -18,15 +18,20 @@ const Login = () => {
         <div className="login-seccion">
           <div className="login-box">
             <div>
-                <h1>Login</h1>
+              <h1>Login</h1>
             </div>
-            <div className="login-box-form"> 
-                <label>Email address</label>
-                <input type="email" placeholder="ingresa tu email" className="login-input" required />
-                <label>Password</label>
-                <input type="password" placeholder="Ingresa tu contraseña" className="login-input" required />
-                <a href="#" className="login-link" style={{marginTop: '1rem'}}>Olvidé mi contraseña</a>
-
+            <div className="login-box-form">
+              <label>Email address</label>
+              <input type="email" placeholder="ingresa tu email" className="login-input" required/>
+              <label>Password</label>
+              <input type="password" placeholder="Ingresa tu contraseña" className="login-input" required/>
+              <a href="#" className="login-link" style={{ marginTop: "1rem" }}>
+                Olvidé mi contraseña
+              </a>
+              <button type="submit" className="login-submit-button">
+                Iniciar sesión
+              </button>
+            </div>
             <button onClick={loginWithPopup} className="gsi-material-button">
               <div className="gsi-material-button-state"></div>
               <div className="gsi-material-button-content-wrapper">
@@ -63,12 +68,8 @@ const Login = () => {
               </div>
             </button>
           </div>
-          </div>
           <div className="login-img-background">
-            <img
-              src="public/img/hands-with-heart-background-login.jpg"
-              alt="Login Background"
-            />
+            <img src="public/img/hands-with-heart-background-login.jpg" alt="Login Background"/>
           </div>
         </div>
       </div>
