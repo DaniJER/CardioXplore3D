@@ -5,11 +5,10 @@
     height: 80vh;
     text-align: center;
     padding: 2rem;
-    background-color: #f0f4fc;
 }
 
 .not-found-content {
-    background: white;
+    background-color: var(--background-color);
     padding: 3rem;
     border-radius: 1.5rem;
     box-shadow: 0 0 20px rgba(100, 149, 237, 0.3);
@@ -20,12 +19,9 @@
 .not-found-title {
     font-size: 6rem;
     margin-bottom: 1rem;
-    color: cornflowerblue;
 }
 
 .not-found-message {
-    font-size: 1.25rem;
-    color: darkslategrey;
     margin-bottom: 2rem;
 }
 
@@ -37,6 +33,5 @@
 }
 
 .not-found-button:hover {
-    background-color: darkblue;
     transform: scale(1.03);
 }

@@ -1,3 +1,14 @@
+:root {
+  --primary-color: #C77294;
+  --secondary-color: #CFAAD0;
+  --background-color: #EFE6E8;
+  --text-color: #2B313B;
+  --H1-H2-font: "Andika";
+  --H3-H4-font: "Encode Sans Expanded";
+  --texto-body-font: "Amiko";
+  --buttons-label-font: "Atkinson Hyperlegible";
+}
+
 html,
 body,
 #root {
@@ -10,30 +21,49 @@ body,
 
 }
 
-h1 {
+h1,
+h2 {
+  font-family: var(--H1-H2-font);
   font-size: xx-large;
-  color: cornflowerblue;
+  color: var(--primary-color);
+
+}
+
+h3,
+h4 {
+  font-family: var(--H3-H4-font);
+  font-size: large;
+  color: var(--text-color);
 
 }
 
 span {
+  font-family: var(--H3-H4-font);
   font-size: large;
-  color: darkblue;
+  color: var(--text-color);
 }
 
 p {
+  font-family: var(--texto-body-font);
   font-size: medium;
-  color: darkslategrey;
+  color: var(--text-color);
 
 }
 
 a {
-  color: rgb(122, 122, 122);
+  font-family: var(--texto-body-font);
+  color: var(--text-color);
   font-size: medium;
   text-decoration: none;
 }
 
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
 li {
+  font-family: var(--texto-body-font);
   list-style-type: none;
 
 }
@@ -44,15 +74,13 @@ button {
   outline: none;
   align-items: center;
   justify-content: center;
-  background-color: cornflowerblue;
+  background-color: var(--primary-color);
   border: none;
   padding: 1rem;
   text-align: center;
-  color: antiquewhite;
   font-size: large;
-
 }
 
 button:hover {
-  background-color: darkblue;
+  background-color: var(--secondary-color);
 }
