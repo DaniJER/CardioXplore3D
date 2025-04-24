@@ -9,7 +9,7 @@ function Header() {
     <header className="custom-header">
       <div className="logo-container">
         <img
-          src="/path-to-your-heart-logo.png"
+          src="../img/logo-cardioxplore3d.jpg"
           alt="Logo de CardioXplore3D"
           className="logo"
         />
