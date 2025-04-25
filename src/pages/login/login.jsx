@@ -22,9 +22,19 @@ const Login = () => {
             </div>
             <div className="login-box-form">
               <label>Email address</label>
-              <input type="email" placeholder="ingresa tu email" className="login-input" required/>
+              <input
+                type="email"
+                placeholder="ingresa tu email"
+                className="login-input"
+                required
+              />
               <label>Password</label>
-              <input type="password" placeholder="Ingresa tu contraseña" className="login-input" required/>
+              <input
+                type="password"
+                placeholder="Ingresa tu contraseña"
+                className="login-input"
+                required
+              />
               <a href="#" className="login-link" style={{ marginTop: "1rem" }}>
                 Olvidé mi contraseña
               </a>
@@ -69,7 +79,10 @@ const Login = () => {
             </button>
           </div>
           <div className="login-img-background">
-            <img src="public/img/hands-with-heart-background-login.jpg" alt="Login Background"/>
+            <img
+              alt="Login Background"
+              src="/img/hands-with-heart-background-login.jpg"
+            ></img>
           </div>
         </div>
       </div>
