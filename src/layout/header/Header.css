@@ -1,42 +1,46 @@
 .custom-header {
-    background-color: #cfaad0; 
-    background-image: url('/path-to-your-hands-image.jpg'); 
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 2rem;
-    height: 90px;
-    color: white;
-    position: relative;
-    width: 97.7%;
-  }
-  
-  .logo-container .logo {
-    height: 60px;
-  }
-  
-  .nav-menu {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-  }
-  
-  .nav-menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  
-  .login-button {
-    background: transparent;
-    border: 2px solid white;
-    border-radius: 8px;
-    padding: 0.4rem 1rem;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
+  background-color: var(--secondary-color);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  color: white;
+  position: relative;
+  width: 100vw;
+}
+
+.transparent-header {
+  background-color: transparent;
+  z-index: 2;
+}
+
+
+.logo-container .logo {
+  height: 60px;
+}
+
+.nav-menu {
+  margin-right: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.login-button {
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 0.4rem 1rem;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
