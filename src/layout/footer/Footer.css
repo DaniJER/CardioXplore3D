@@ -1,0 +1,159 @@
+.Footer-page {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.header {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #cfaad0;
+  padding: 20px;
+
+}
+
+
+.header-button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.heart-img {
+  width: 200px;
+  margin-top: 20px;
+}
+
+.model-img {
+  width: 300px;
+  margin-top: 20px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.contact-form .name-fields {
+  display: flex;
+  gap: 15px;
+}
+
+.contact-form .name-fields input {
+  flex: 1;
+}
+
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #333;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.contact-subtitle {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+
+.emergency {
+  background-color: #e6e6e6;
+  padding: 20px;
+  text-align: center;
+}
+
+.emergency-button {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 30px;
+  font-weight: bold;
+  border: none;
+  font-size: 16px;
+}
+
+.emergency-text {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.back-footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.back-footer button {
+  margin-top: 20px;
+  padding: 10px 20px;
+}
+
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.intro-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+
+
+.intro-text {
+  max-width: 500px;
+  flex: 1;
+}
+
+.left-text {
+  text-align: left;
+}
+
+.right-text {
+  text-align: right;
+}
+
+.intro-image {
+  width: 400px;
+  max-width: 100%;
+  border-radius: 10px;
+}
