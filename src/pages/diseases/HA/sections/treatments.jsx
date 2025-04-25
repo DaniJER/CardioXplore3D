@@ -2,9 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Tablets } from "../models-3d/tablets";
 
-
 const Treatments = () => {
-
   return (
     <>
       <div>
