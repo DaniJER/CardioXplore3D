@@ -3,10 +3,10 @@ import './diseases.css';
 import { Link } from 'react-router-dom';
 
 const datos = [
-    { id: 1, nombre: 'Enfermedad 1', imagen: '/img-diseases/prueba.png' },
-    { id: 2, nombre: 'Enfermedad 2', imagen: '/img-diseases/prueba.png' },
-    { id: 3, nombre: 'Enfermedad 3', imagen: '/img-diseases/prueba.png' },
-    { id: 4, nombre: 'Enfermedad 4', imagen: '/img-diseases/prueba.png' },
+    { id: 1, nombre: 'Hipertension Arterial', descripcion: 'la presión sanguínea se elevada de forma persistente.', imagen: '/img-diseases/Heart-HA.png' },
+    { id: 2, nombre: 'Enfermedad 2', descripcion:'Pequeña descripción' , imagen: '/img-diseases/prueba.png' },
+    { id: 3, nombre: 'Enfermedad 3', descripcion:'Pequeña descripción' , imagen: '/img-diseases/prueba.png' },
+    { id: 4, nombre: 'Enfermedad 4', descripcion:'Pequeña descripción' , imagen: '/img-diseases/prueba.png' },
 ];
 
 const Diseases = () => {
@@ -52,7 +52,7 @@ const Diseases = () => {
                             <button key={item.id} className={clase} onClick={buttonAction}>
                                 <img src={item.imagen} alt={item.nombre} />
                                 <h3>{item.nombre}</h3>
-                                <p>Descripción de la enfermedad.</p>
+                                <p>{item.descripcion}</p>
                                 {/* Enlace a la página de la enfermedad dependiendo de los datos */}
                                 <Link to={`/enfermedades/${item.id}`} className={linkClass}>Saber más</Link>
                             </button>
