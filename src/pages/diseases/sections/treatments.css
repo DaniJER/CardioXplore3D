@@ -1,0 +1,46 @@
+.treatments-container {
+    width: 90%;
+}
+
+.title-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pill-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.description {
+    margin: 1.5rem 0;
+    line-height: 1.6;
+}
+
+.content-section-treatments {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.model-container-treatments {
+    flex: 1;
+    width: 50%;
+    height: 400px;
+}
+
+.treatments-list {
+    flex: 1;
+    width: 30%;
+    margin: 0 0 0 10rem;
+}
+
+.treatments-list li {
+    list-style-type: disc;
+    text-align: justify;
+    width: 65%;
+    margin-bottom: 1rem;
+}

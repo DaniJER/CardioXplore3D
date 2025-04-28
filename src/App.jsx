@@ -9,10 +9,10 @@ import NotFound from './pages/not-found/NotFound';
 import Header from './layout/header/Header';
 import Footer from './layout/footer/Footer';
 import ProtectedRoute from './utils/ProtectedRoute';
-import DiseaseDetail2 from './pages/diseases/Details/DiseaseDetail2';
-import DiseaseDetail3 from './pages/diseases/Details/DiseaseDetail3';
-import DiseaseDetail4 from './pages/diseases/Details/DiseaseDetail4';
 import PageHA from './pages/diseases/HA/PageHA';
+import PageEC from './pages/diseases/EC/PageEC';
+import PageEAC from './pages/diseases/EAC/PageEAC';
+import PageIC from './pages/diseases/IC/PageIC';
 
 function App() {
 
@@ -24,9 +24,9 @@ function App() {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/enfermedades" element={<Diseases />} />
         <Route path='/enfermedades/1' element={<PageHA />} />
-        <Route path='/enfermedades/2' element={<DiseaseDetail2 />} />
-        <Route path='/enfermedades/3' element={<DiseaseDetail3 />} />
-        <Route path='/enfermedades/4' element={<DiseaseDetail4 />} />
+        <Route path="/enfermedades/2" element={<PageEC />} />
+        <Route path="/enfermedades/3" element={<PageEAC />} />
+        <Route path="/enfermedades/4" element={<PageIC />} />
         <Route path="/profile" element={
           <ProtectedRoute>
             <Profile />
