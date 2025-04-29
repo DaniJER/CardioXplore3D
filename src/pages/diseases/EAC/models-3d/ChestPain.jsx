@@ -1,18 +1,18 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-export function Artery(props) {
-  const { nodes, materials } = useGLTF("/models-3d/EAC/obstructed-artery.glb");
+export function ChestPain(props) {
+  const { nodes, materials } = useGLTF("/models-3d/EAC/chest-pain.glb");
   return (
     <group {...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Mesh_0001.geometry}
+        geometry={nodes.ChestPain.geometry}
         material={materials["Material_0.001"]}
       />
     </group>
   );
 }
 
-useGLTF.preload("/obstructed-artery.glb");
+useGLTF.preload("/models-3d/EAC/chest-pain.glb");
