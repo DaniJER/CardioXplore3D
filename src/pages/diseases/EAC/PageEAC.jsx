@@ -1,8 +1,8 @@
 import React from "react";
-import Prevention from "../sections/prevention";
-import Symptoms from "../sections/symptoms";
-import Treatments from "../sections/treatments";
-import WhatIs from "../sections/whatIs";
+import Prevention from "../sections/preventionexample";
+import Symptoms from "../sections/symptomsexample";
+import Treatments from "../sections/treatmentsexample";
+import WhatIs from "../sections/whatIsexample";
 import { Artery } from "./models-3d/Artery";
 import { ChestPain } from "../EAC/models-3d/ChestPain";
 import { Angioplasty } from "../EAC/models-3d/Angioplasty";
