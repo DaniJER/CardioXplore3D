@@ -5,6 +5,7 @@ import Quiz from './pages/quiz/quiz';
 import Diseases from './pages/diseases/diseases';
 import Profile from './pages/profile/profile';
 import Login from './pages/login/login';
+import CreateUser from './pages/create-user/CreateUser';
 import AboutUs from "./pages/aboutUS/aboutUs";
 import NotFound from './pages/not-found/NotFound';
 import Header from './layout/header/Header';
@@ -35,6 +36,7 @@ function App() {
         } />
         <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/create-user" element={<CreateUser />} />
       </Routes>
       <Footer />
     </Router>
