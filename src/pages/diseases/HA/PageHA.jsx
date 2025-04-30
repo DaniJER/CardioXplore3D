@@ -2,9 +2,9 @@ import Prevention from "../sections/preventionexample";
 import Symptoms from "../sections/symptomsexample";
 import Treatments from "../sections/treatmentsexample";
 import WhatIs from "../sections/whatIsexample";
-import { ModelPrevention } from "./models-3d/animation-prevention";
-import { ModelSymptom } from "./models-3d/animation-symptom";
-import { Heart } from "./models-3d/heart";
+import { ModelPrevention } from "./models-3d/animation-preventionexample";
+import { ModelSymptom } from "./models-3d/animation-symptomexample";
+import { Heart } from "./models-3d/heartexample";
 import { Tablets } from "./models-3d/tablets";
 import "./PageHA.css";
 

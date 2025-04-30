@@ -3,7 +3,7 @@ import { OrbitControls } from "@react-three/drei";
 import Sintomas from "../../../assets/Sintomas.svg";
 import Tratamiento from "../../../assets/Tratamiento.svg";
 import Prevencion from "../../../assets/Prevencion.svg";
-import { Heart } from "../HA/models-3d/heart";
+import { Heart } from "../HA/models-3d/heartexample";
 import "./whatIs.css";
 
 const WhatIs = ({
@@ -15,14 +15,12 @@ const WhatIs = ({
   position = [0, 0, 0],
   rotation = [0, 0, 0],
 }) => {
-
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
-
 
   return (
     <div className="whatIs-container">
@@ -44,13 +42,26 @@ const WhatIs = ({
 
         {/* Iconos */}
         <div className="icons-container">
-          <button className="icon-button" onClick={() => scrollToSection('symptoms')}>
+          <button
+            className="icon-button"
+            onClick={() => scrollToSection("symptoms")}
+          >
             <img src={Sintomas} alt="Icono Sintomas" className="icon-img" />
           </button>
-          <button className="icon-button" onClick={() => scrollToSection('treatments')}>
-            <img src={Tratamiento} alt="Icono Tratamiento" className="icon-img" />
+          <button
+            className="icon-button"
+            onClick={() => scrollToSection("treatments")}
+          >
+            <img
+              src={Tratamiento}
+              alt="Icono Tratamiento"
+              className="icon-img"
+            />
           </button>
-          <button className="icon-button" onClick={() => scrollToSection('prevention')}>
+          <button
+            className="icon-button"
+            onClick={() => scrollToSection("prevention")}
+          >
             <img src={Prevencion} alt="Icono Prevencion" className="icon-img" />
           </button>
         </div>
