@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/home/home";
-import Quiz from "./pages/quiz/quiz";
-import Diseases from "./pages/diseases/diseases";
-import Profile from "./pages/profile/profile";
-import Login from "./pages/login/login";
+import Home from "./pages/home/Home";
+import Quiz from "./pages/quiz/Quiz";
+import Diseases from "./pages/diseases/Diseases";
+import Profile from "./pages/profile/Profile";
+import Login from "./pages/login/Login";
 import CreateUser from "./pages/create-user/CreateUser";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import NotFound from "./pages/not-found/NotFound";

@@ -3,7 +3,7 @@ import { OrbitControls } from "@react-three/drei";
 import Sintomas from "../../../assets/Sintomas.svg";
 import Tratamiento from "../../../assets/Tratamiento.svg";
 import Prevencion from "../../../assets/Prevencion.svg";
-import { Heart } from "../HA/models-3d/heartexample";
+import { Heart } from "../HA/models-3d/Heart";
 import "./whatIs.css";
 
 const WhatIs = ({

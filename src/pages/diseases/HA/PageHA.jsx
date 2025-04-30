@@ -1,10 +1,10 @@
-import Prevention from "../sections/preventionexample";
-import Symptoms from "../sections/symptomsexample";
-import Treatments from "../sections/treatmentsexample";
-import WhatIs from "../sections/whatIsexample";
-import { ModelPrevention } from "./models-3d/animation-preventionexample";
-import { ModelSymptom } from "./models-3d/animation-symptomexample";
-import { Heart } from "./models-3d/heartexample";
+import Prevention from "../sections/Prevention";
+import Symptoms from "../sections/Symptoms";
+import Treatments from "../sections/Treatments";
+import WhatIs from "../sections/WhatIs";
+import { ModelPrevention } from "./models-3d/AnimationPrevention";
+import { ModelSymptom } from "./models-3d/AnimationSymptom";
+import { Heart } from "./models-3d/Heart";
 import { Tablets } from "./models-3d/tablets";
 import "./PageHA.css";
 
