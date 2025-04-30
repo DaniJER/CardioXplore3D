@@ -38,6 +38,7 @@ function App() {
         />
         <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/create-user" element={<CreateUser />} />
       </Routes>
       <Footer />
     </Router>
