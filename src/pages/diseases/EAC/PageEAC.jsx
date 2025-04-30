@@ -7,7 +7,7 @@ import { Artery } from "./models-3d/Artery";
 import { ChestPain } from "../EAC/models-3d/ChestPain";
 import { Angioplasty } from "../EAC/models-3d/Angioplasty";
 import { Training } from "../EAC/models-3d/Training";
-import "./pageEAC.css";
+import "../EAC/pageEAC.css";
 
 const PageEAC = () => {
   return (
