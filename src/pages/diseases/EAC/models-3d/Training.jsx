@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Training(props) {
-  const { nodes, materials } = useGLTF("/models-3d/EAC/training.glb");
+  const { nodes, materials } = useGLTF("/models-3d/EAC/human-training.glb");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -15,4 +15,4 @@ export function Training(props) {
   );
 }
 
-useGLTF.preload("/models-3d/EAC/training.glb");
+useGLTF.preload("/models-3d/EAC/human-training.glb");
