@@ -5,7 +5,7 @@ import WhatIs from "../sections/WhatIs";
 import { ModelPrevention } from "./models-3d/AnimationPrevention";
 import { ModelSymptom } from "./models-3d/AnimationSymptom";
 import { Heart } from "./models-3d/Heart";
-import { Tablets } from "./models-3d/tablets";
+import { Tablets } from "./models-3d/Tablets";
 import "./PageHA.css";
 
 const PageHA = () => {
