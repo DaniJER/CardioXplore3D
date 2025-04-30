@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Sintomas from "../../../assets/Sintomas.svg";
-import "./symptomsexample.css";
+import "./symptoms.css";
 
 const Symptoms = ({
   title = "Síntomas",
