@@ -1,5 +1,4 @@
 import React from "react";
-import "./pageEAC.css";
 import Prevention from "../sections/prevention";
 import Symptoms from "../sections/symptoms";
 import Treatments from "../sections/treatments";
@@ -8,6 +7,7 @@ import { Artery } from "../EAC/models-3d/Artery";
 import { ChestPain } from "../EAC/models-3d/ChestPain";
 import { Angioplasty } from "../EAC/models-3d/Angioplasty";
 import { Training } from "../EAC/models-3d/Training";
+import "./pageEAC.css";
 
 const PageEAC = () => {
   return (
