@@ -5,7 +5,7 @@ import Quiz from "./pages/quiz/quiz";
 import Diseases from "./pages/diseases/diseases";
 import Profile from "./pages/profile/profile";
 import Login from "./pages/login/login";
-import AboutUs from "./pages/aboutUS/AboutUs";
+import AboutUs from "./pages/aboutUs/AboutUs";
 import NotFound from "./pages/not-found/NotFound";
 import Header from "./layout/header/Header";
 import Footer from "./layout/footer/Footer";
