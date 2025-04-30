@@ -1,15 +1,14 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import './Header.css';
-
+import { useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./Header.css";
 
 function Header() {
   const navigate = useNavigate();
   const location = useLocation();
-  const isHome = location.pathname === '/';
+  const isHome = location.pathname === "/";
 
   return (
-    <header className={`custom-header ${isHome ? 'transparent-header' : ''}`}>
+    <header className={`custom-header ${isHome ? "transparent-header" : ""}`}>
       <div className="logo-container">
         <Link to="/">
           <img
@@ -21,10 +20,11 @@ function Header() {
       </div>
 
       <nav className="nav-menu">
-        <a onClick={() => navigate('/')}>Inicio</a>
-        <a onClick={() => navigate('/enfermedades')}>Enfermedades</a>
-        <a onClick={() => navigate('/quiz')}>Quiz</a>
-        <button className="login-button" onClick={() => navigate('/login')}>
+        <a onClick={() => navigate("/")}>Inicio</a>
+        <a onClick={() => navigate("/enfermedades")}>Enfermedades</a>
+        <a onClick={() => navigate("/quiz")}>Quiz</a>
+        <a onClick={() => navigate("/nosotros")}>Nosotros</a>
+        <button className="login-button" onClick={() => navigate("/login")}>
           Login
         </button>
       </nav>
@@ -32,4 +32,4 @@ function Header() {
   );
 }
 
-export default Header;  
+export default Header;

@@ -1,0 +1,47 @@
+.prevention-container {
+    width: 90%;
+}
+
+.title-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.prevention-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.description {
+    margin: 1.5rem 0;
+    line-height: 1.6;
+}
+
+.content-section-prevention {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.care-list {
+    flex: 1;
+    width: 30%;
+    margin: 0 0 0 10rem;
+}
+
+.care-list li {
+    margin-bottom: 1rem;
+    list-style-type: disc;
+    text-align: justify;
+    width: 300px;
+    margin-bottom: 1rem;
+}
+
+.model-container {
+    flex: 1;
+    width: 50%;
+    height: 400px;
+}

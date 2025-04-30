@@ -1,0 +1,14 @@
+.aboutUs-block img {
+  display: block; /* La imagen se convierte en bloque */
+  margin: 0 auto;
+  width: 300px; /* ajusta el ancho */
+  height: auto;
+  flex-wrap: wrap;
+}
+
+.aboutUs-text {
+  width: 50%; /* Fija el ancho del texto */
+  margin: 10px auto; /* Centra el texto y le da un espacio arriba y abajo */
+  text-align: justify; /* Justifica el texto para que ocupe todo el ancho disponible */
+  word-wrap: break-word;
+}

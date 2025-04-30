@@ -1,0 +1,59 @@
+.whatIs-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.model-container-whatIs {
+    width: 55%;
+    height: 80vh;
+}
+
+.text-container {
+    width: 55%;
+    max-width: 600px;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.description-whatIs {
+    margin-bottom: 1.5rem;
+}
+
+.icons-container {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2.3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-button {
+    width: 60px;
+    height: 60px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.icon-button:hover {
+    transform: scale(1.2);
+    background: none;
+}
+
+p {
+    text-align: justify;
+    direction: ltr;
+    font-size: 1.1rem;
+}

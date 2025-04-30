@@ -14,7 +14,7 @@ const Home = () => {
           />
           <div className="banner-content">
             <h1>CardioXplore3D</h1>
-            <p>conozca más sobre CardioXplore3D</p>
+            <p>Conozca más sobre CardioXplore3D</p>
             <button className="banner-button">
               Click aquí para conocer más sobre nosotros
             </button>
