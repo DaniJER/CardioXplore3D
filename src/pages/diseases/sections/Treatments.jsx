@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Tratamiento from "../../../assets/Tratamiento.svg";
-import './Treatments.css'; // Recuerda agregar este CSS
+import "./treatmentsExample.css"; // Recuerda agregar este CSS
 
 const Treatments = ({
   title = "Tratamiento",
@@ -14,7 +14,6 @@ const Treatments = ({
 }) => {
   return (
     <section className="treatments-container" id="treatments">
-
       {/* Título + Ícono */}
       <div className="title-icon">
         <h1>{title}</h1>
