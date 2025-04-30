@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Tratamiento from "../../../assets/Tratamiento.svg";
-import "./treatmentsExample.css"; // Recuerda agregar este CSS
+import "./treatments.css"; // Recuerda agregar este CSS
 
 const Treatments = ({
   title = "Tratamiento",
