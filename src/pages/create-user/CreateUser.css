@@ -1,4 +1,4 @@
-.login-container {
+.create-user-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -116,8 +116,8 @@
 
 
 
-/********************  Styles for the login section, including image and box layout ********************/ 
-.login-seccion {
+/********************  Styles for the create-user section, including image and box layout ********************/ 
+.create-user-seccion {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -140,7 +140,7 @@
     object-fit: contain;
 }
 
-.login-box {
+.create-user-box {
     flex: 1;
     padding: 2rem;
     display: flex;
@@ -148,7 +148,7 @@
     align-items: center;
 }
 
-.login-box-form {
+.create-user-box-form {
     display: flex;
     flex-direction: column;
     background-color: #EFE6E8; 
@@ -157,33 +157,32 @@
     width: 60%
 }
 
-.login-box-form input{
+.create-user-box-form input{
     border: none;
     box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     padding: 8px;
 }
 
-.login-box-form label{
+.create-user-box-form label{
     display: flex;
     margin-top: 0.5rem;
 }
 
-.login-submit-button{
+.create-user-submit-button{
     background-color: #CFAAD0;
     color : black;
     border: none;
     box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
+    margin: 1rem 0;
 }
 
-.login-separator {
+.create-user-box-google{
     display: flex;
-    align-items: flex-start;
-    width: -webkit-fill-available;
-    margin: 1rem 0;
-    border-top: 1px solid #ccc;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
 }
 
 .options-register{

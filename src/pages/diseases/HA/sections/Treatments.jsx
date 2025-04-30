@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Tablets } from "../models-3d/tablets";
+import { Tablets } from "../models-3d/Tablets";
 
 const Treatments = () => {
   return (
