@@ -1,7 +1,8 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Tratamiento from "../../../assets/Tratamiento.svg";
-import './Treatments.css'; // Recuerda agregar este CSS
+import "./treatments.css";
+import AnimatedModelWrapper from "./AnimatedModelWrapper ";
 
 const Treatments = ({
   title = "Tratamiento",
@@ -11,10 +12,14 @@ const Treatments = ({
   scale,
   position,
   rotation,
+  rotationSpeed,
+  mostrarPlano,
+  planoPosicion,
+  planoRotacion = [-Math.PI / 2, 0, 0],
+  planoEscala = [30, 30],
 }) => {
   return (
     <section className="treatments-container" id="treatments">
-
       {/* Título + Ícono */}
       <div className="title-icon">
         <h1>{title}</h1>
@@ -28,11 +33,20 @@ const Treatments = ({
       <div className="content-section-treatments">
         {/* Modelo 3D */}
         <div className="model-container-treatments">
-          <Canvas>
+          <Canvas shadows>
+            {/* Plano invisible que recibe la sombra */}
+            <mesh receiveShadow rotation={planoRotacion} position={planoPosicion}>
+              <planeGeometry args={planoEscala} />
+              <shadowMaterial transparent opacity={0.2} />
+              {mostrarPlano ? <meshStandardMaterial color="#e0e0e0" /> : null}
+            </mesh>
+
             <OrbitControls />
             <ambientLight intensity={1.5} />
-            <directionalLight position={[5, 5, 10]} intensity={2} />
-            <Model3D scale={scale} position={position} rotation={rotation} />
+            <directionalLight position={[5, 5, 10]} intensity={2} castShadow />
+            <AnimatedModelWrapper rotationSpeed={rotationSpeed}>
+              <Model3D scale={scale} position={position} rotation={rotation} />
+            </AnimatedModelWrapper>
           </Canvas>
         </div>
 

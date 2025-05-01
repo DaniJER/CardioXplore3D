@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Sintomas from "../../../assets/Sintomas.svg";
 import "./symptoms.css";
+import AnimatedModelWrapper from "./AnimatedModelWrapper ";
 
 const Symptoms = ({
   title = "Síntomas",
@@ -12,6 +13,11 @@ const Symptoms = ({
   scale,
   position,
   rotation,
+  rotationSpeed,
+  mostrarPlano,
+  planoPosicion,
+  planoRotacion = [-Math.PI / 2, 0, 0],
+  planoEscala = [30, 30],
 }) => {
   return (
     <section className="symptoms-container" id="symptoms">
@@ -35,11 +41,20 @@ const Symptoms = ({
 
         {/* Imagen animada o modelo 3D */}
         <div className="model-container-symptoms">
-          <Canvas>
+          <Canvas shadows>
+            {/* Plano invisible que recibe la sombra */}
+            <mesh receiveShadow rotation={planoRotacion} position={planoPosicion}>
+              <planeGeometry args={planoEscala} />
+              <shadowMaterial transparent opacity={0.2} />
+              {mostrarPlano ? <meshStandardMaterial color="#e0e0e0" /> : null}
+            </mesh>
+
             <OrbitControls />
             <ambientLight intensity={1.5} />
-            <directionalLight position={[5, 5, 10]} intensity={2} />
-            <Model3D scale={scale} position={position} rotation={rotation} />
+            <directionalLight position={[5, 5, 10]} intensity={2} castShadow />
+            <AnimatedModelWrapper rotationSpeed={rotationSpeed}>
+              <Model3D scale={scale} position={position} rotation={rotation} />
+            </AnimatedModelWrapper>
           </Canvas>
         </div>
       </div>
