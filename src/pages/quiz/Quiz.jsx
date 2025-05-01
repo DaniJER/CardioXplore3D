@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
 const Quiz = () => {
-    return (
-        <div style={{ textAlign: 'center', padding: '20px' }}>
-            <h1>Quiz Page</h1>
-            <p>Welcome to the quiz page. More content coming soon!</p>
-        </div>
-    );
+  return (
+    <div style={{ textAlign: "center", padding: "20px" }}>
+      <h1>Quiz interactivo</h1>
+      <p>Bienvenido a la pagina de Quiz</p>
+    </div>
+  );
 };
 
 export default Quiz;
