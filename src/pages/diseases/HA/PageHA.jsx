@@ -20,6 +20,10 @@ const PageHA = () => {
         position={[0, 0, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
+        mostrarPlano={false}
+        planoPosicion={[0, -2.8, 0]}
+        planoRotacion={[-Math.PI / 2, 0, 0]}
+        planoEscala={[30, 30]}
       />
       <Symptoms
         title="Síntomas"
@@ -37,6 +41,10 @@ const PageHA = () => {
         position={[0, -2.8, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0}
+        mostrarPlano={false}
+        planoPosicion={[0, -2.99, 0]}
+        planoRotacion={[-Math.PI / 2, 0, 0]}
+        planoEscala={[30, 30]}
       />
       <Treatments
         title="Tratamiento"
@@ -73,6 +81,10 @@ const PageHA = () => {
         position={[0, -1.8, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
+        mostrarPlano={false}
+        planoPosicion={[0, -2.5, 0]}
+        planoRotacion={[-Math.PI / 2, 0, 0]}
+        planoEscala={[30, 30]}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -90,6 +102,10 @@ const PageHA = () => {
         position={[0, -2.6, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
+        mostrarPlano={false}
+        planoPosicion={[0, -2.87, 0]}
+        planoRotacion={[-Math.PI / 2, 0, 0]}
+        planoEscala={[30, 30]}
       />
     </div>
   );

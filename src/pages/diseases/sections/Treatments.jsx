@@ -12,7 +12,11 @@ const Treatments = ({
   scale,
   position,
   rotation,
-  rotationSpeed
+  rotationSpeed,
+  mostrarPlano,
+  planoPosicion,
+  planoRotacion = [-Math.PI / 2, 0, 0],
+  planoEscala = [30, 30],
 }) => {
   return (
     <section className="treatments-container" id="treatments">
@@ -29,10 +33,17 @@ const Treatments = ({
       <div className="content-section-treatments">
         {/* Modelo 3D */}
         <div className="model-container-treatments">
-          <Canvas>
+          <Canvas shadows>
+            {/* Plano invisible que recibe la sombra */}
+            <mesh receiveShadow rotation={planoRotacion} position={planoPosicion}>
+              <planeGeometry args={planoEscala} />
+              <shadowMaterial transparent opacity={0.2} />
+              {mostrarPlano ? <meshStandardMaterial color="#e0e0e0" /> : null}
+            </mesh>
+
             <OrbitControls />
             <ambientLight intensity={1.5} />
-            <directionalLight position={[5, 5, 10]} intensity={2} />
+            <directionalLight position={[5, 5, 10]} intensity={2} castShadow />
             <AnimatedModelWrapper rotationSpeed={rotationSpeed}>
               <Model3D scale={scale} position={position} rotation={rotation} />
             </AnimatedModelWrapper>

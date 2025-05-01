@@ -23,36 +23,48 @@ export function ModelPrevention(props) {
             geometry={nodes.Body.geometry}
             material={materials.BodyMaterial}
             skeleton={nodes.Body.skeleton}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="Bottoms"
             geometry={nodes.Bottoms.geometry}
             material={materials.BottomMaterial}
             skeleton={nodes.Bottoms.skeleton}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="Eyes"
             geometry={nodes.Eyes.geometry}
             material={materials.BodyMaterial}
             skeleton={nodes.Eyes.skeleton}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="Hair"
             geometry={nodes.Hair.geometry}
             material={materials.HairMaterial}
             skeleton={nodes.Hair.skeleton}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="Shoes"
             geometry={nodes.Shoes.geometry}
             material={materials.ShoesMaterial}
             skeleton={nodes.Shoes.skeleton}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="Top"
             geometry={nodes.Top.geometry}
             material={materials.TopMaterial}
             skeleton={nodes.Top.skeleton}
+            castShadow
+            receiveShadow
           />
           <primitive object={nodes.mixamorigHips} />
         </group>
