@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Sintomas from "../../../assets/Sintomas.svg";
 import "./symptoms.css";
+import AnimatedModelWrapper from "./AnimatedModelWrapper ";
 
 const Symptoms = ({
   title = "Síntomas",
@@ -12,6 +13,7 @@ const Symptoms = ({
   scale,
   position,
   rotation,
+  rotationSpeed
 }) => {
   return (
     <section className="symptoms-container" id="symptoms">
@@ -39,7 +41,9 @@ const Symptoms = ({
             <OrbitControls />
             <ambientLight intensity={1.5} />
             <directionalLight position={[5, 5, 10]} intensity={2} />
-            <Model3D scale={scale} position={position} rotation={rotation} />
+            <AnimatedModelWrapper rotationSpeed={rotationSpeed}>
+              <Model3D scale={scale} position={position} rotation={rotation} />
+            </AnimatedModelWrapper>
           </Canvas>
         </div>
       </div>

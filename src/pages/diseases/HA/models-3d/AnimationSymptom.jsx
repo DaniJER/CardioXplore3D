@@ -1,11 +1,20 @@
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function ModelSymptom(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/models-3d/HA/model-animation-symptom.glb')
   const { actions } = useAnimations(animations, group)
+
+  useEffect(() => {
+    // Si hay alguna animación, reproduce la primera disponible
+    if (actions && Object.keys(actions).length > 0) {
+      const firstActionName = Object.keys(actions)[0]
+      actions[firstActionName]?.play()
+    }
+  }, [actions])
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">

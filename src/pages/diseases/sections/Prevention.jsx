@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Prevencion from "../../../assets/Prevencion.svg";
 import "./prevention.css";
+import AnimatedModelWrapper from "./AnimatedModelWrapper ";
 
 const Prevention = ({
   title = "Prevención y cuidados",
@@ -12,6 +13,7 @@ const Prevention = ({
   scale,
   position,
   rotation,
+  rotationSpeed
 }) => {
   return (
     <section className="prevention-container" id="prevention">
@@ -39,7 +41,9 @@ const Prevention = ({
             <OrbitControls />
             <ambientLight intensity={1.5} />
             <directionalLight position={[5, 5, 10]} intensity={2} />
-            <Model3D scale={scale} position={position} rotation={rotation} />
+            <AnimatedModelWrapper rotationSpeed={rotationSpeed}>
+              <Model3D scale={scale} position={position} rotation={rotation} />
+            </AnimatedModelWrapper>
           </Canvas>
         </div>
       </div>

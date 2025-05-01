@@ -1,7 +1,8 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Tratamiento from "../../../assets/Tratamiento.svg";
-import "./treatments.css"; // Recuerda agregar este CSS
+import "./treatments.css";
+import AnimatedModelWrapper from "./AnimatedModelWrapper ";
 
 const Treatments = ({
   title = "Tratamiento",
@@ -11,6 +12,7 @@ const Treatments = ({
   scale,
   position,
   rotation,
+  rotationSpeed
 }) => {
   return (
     <section className="treatments-container" id="treatments">
@@ -31,7 +33,9 @@ const Treatments = ({
             <OrbitControls />
             <ambientLight intensity={1.5} />
             <directionalLight position={[5, 5, 10]} intensity={2} />
-            <Model3D scale={scale} position={position} rotation={rotation} />
+            <AnimatedModelWrapper rotationSpeed={rotationSpeed}>
+              <Model3D scale={scale} position={position} rotation={rotation} />
+            </AnimatedModelWrapper>
           </Canvas>
         </div>
 

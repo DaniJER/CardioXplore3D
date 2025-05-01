@@ -3,8 +3,8 @@ import { OrbitControls } from "@react-three/drei";
 import Sintomas from "../../../assets/Sintomas.svg";
 import Tratamiento from "../../../assets/Tratamiento.svg";
 import Prevencion from "../../../assets/Prevencion.svg";
-import { Heart } from "../HA/models-3d/Heart";
 import "./whatIs.css";
+import AnimatedModelWrapper from "./AnimatedModelWrapper ";
 
 const WhatIs = ({
   title,
@@ -14,6 +14,7 @@ const WhatIs = ({
   scale = 1,
   position = [0, 0, 0],
   rotation = [0, 0, 0],
+  rotationSpeed
 }) => {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -27,10 +28,12 @@ const WhatIs = ({
       {/* Sección del Modelo 3D */}
       <div className="model-container-whatIs">
         <Canvas>
+          <OrbitControls />
           <ambientLight intensity={1.5} />
           <directionalLight position={[5, 5, 10]} intensity={2} />
-          <OrbitControls enableZoom={false} />
-          <Model3D scale={scale} position={position} rotation={rotation} />
+          <AnimatedModelWrapper rotationSpeed={rotationSpeed}>
+            <Model3D scale={scale} position={position} rotation={rotation} />
+          </AnimatedModelWrapper>
         </Canvas>
       </div>
 
