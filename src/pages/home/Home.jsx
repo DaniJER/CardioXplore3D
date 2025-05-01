@@ -12,13 +12,14 @@ const Home = () => {
             alt="Banner de presentación"
             className="banner-image"
           />
-          <div className="banner-content">
-            <h1>CardioXplore3D</h1>
-            <p>Conozca más sobre CardioXplore3D</p>
-            <button className="banner-button">
-              Click aquí para conocer más sobre nosotros
-            </button>
-          </div>
+          <div className="banner-content" id="inicio">
+          <h1>CardioXplore3D</h1>
+          <p>Conozca más sobre CardioXplore3D</p>
+          <button className="banner-button">
+            Click aquí para conocer más sobre nosotros
+          </button>
+        </div>
+
         </div>
         <div className="intro-block">
           <div className="intro-text left-text">
@@ -59,22 +60,21 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Formulario de contacto */}
-      <section className="section contact">
-        <h2 className="contact-title">Contact me</h2>
-        <p className="contact-subtitle">
-          Este contacto es para una consulta más personalizada
-        </p>
-        <form className="contact-form">
-          <div className="name-fields">
-            <input type="text" placeholder="First name" />
-            <input type="text" placeholder="Last name" />
-          </div>
-          <input type="email" placeholder="Email address" />
-          <textarea placeholder="Your message" rows="4"></textarea>
-          <button type="submit">Enviar</button>
-        </form>
-      </section>
+      <button
+      className="scroll"
+      onClick={() => {
+        const section = document.getElementById("inicio");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+              }
+        }}
+      >
+        ↑
+        </button>
+
+
+
+    
 
       
     </>
