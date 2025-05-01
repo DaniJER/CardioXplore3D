@@ -20,6 +20,7 @@ const PageEAC = () => {
         scale={2.45}
         position={[0, 0, 0]}
         rotation={[2.45, 2.45, 2.45]}
+        rotationSpeed={0.01}
       />
       <Symptoms
         title="Síntomas"
@@ -41,6 +42,7 @@ const PageEAC = () => {
         scale={4.45}
         position={[0, -2.55, 0]}
         rotation={[0, 0, 0]}
+        rotationSpeed={0.01}
       />
       <Treatments
         title="Tratamiento"
@@ -74,6 +76,7 @@ const PageEAC = () => {
         scale={3.45}
         position={[0, 0, 0]}
         rotation={[0, 1, 1]}
+        rotationSpeed={0.01}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -92,6 +95,7 @@ const PageEAC = () => {
         scale={3.45}
         position={[0, 0, 0]}
         rotation={[0, 0, 0]}
+        rotationSpeed={0.01}
       />
     </div>
   );
