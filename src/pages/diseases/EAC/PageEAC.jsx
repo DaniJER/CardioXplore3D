@@ -20,7 +20,7 @@ const PageEAC = () => {
         scale={2.45}
         position={[0, 0, 0]}
         rotation={[2.45, 2.45, 2.45]}
-        rotationSpeed={0.01}
+        rotationSpeed={1}
       />
       <Symptoms
         title="Síntomas"
