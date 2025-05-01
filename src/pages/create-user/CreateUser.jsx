@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useAuthStore from "../../stores/use-auth-store.js";
-import "./login.css";
+import "./CreateUser.css";
 
-const Login = () => {
+const CreateUser = () => {
   const { loginWithPopup, userLogged } = useAuthStore();
   const navigate = useNavigate();
 
@@ -14,34 +14,55 @@ const Login = () => {
   }, [userLogged, navigate]);
   return (
     <>
-      <div className="login-container">
-        <div className="login-seccion">
-          <div className="login-box">
+      <div className="create-user-container">
+        <div className="create-user-seccion">
+          <div className="create-user-box">
             <div>
-              <h1>Login</h1>
+              <h1>Regístrate</h1>
             </div>
-            <div className="login-box-form">
-              <label>Email address</label>
+            <div className="create-user-box-form">
+            <label>Nombre</label>
+              <input
+                type="text"
+                placeholder="Ingresa tu nombre"
+                className="create-user-input"
+                required
+              />
+              <label>Apellido</label>
+              <input
+                type="text"
+                placeholder="Ingresa tu apellido"
+                className="create-user-input"
+                required
+              />
+
+              <label>Correo</label>
               <input
                 type="email"
                 placeholder="ingresa tu email"
-                className="login-input"
+                className="create-user-input"
                 required
               />
-              <label>Password</label>
+              <label>Contraseña</label>
               <input
                 type="password"
                 placeholder="Ingresa tu contraseña"
-                className="login-input"
+                className="create-user-input"
                 required
               />
-              <a href="#" className="login-link" style={{ marginTop: "1rem" }}>
-                Olvidé mi contraseña
-              </a>
-              <button type="submit" className="login-submit-button">
-                Iniciar sesión
+              <label>Repetir contraseña</label>
+              <input
+                type="password"
+                placeholder="Repite tu contraseña"
+                className="create-user-input"
+                required
+              />
+              <button type="submit" className="create-user-submit-button">
+                Crear cuenta
               </button>
+              <a onClick={() => navigate("/login")} style={{cursor:"pointer"}}>¿Ya tienes una cuenta? Inicia sesión</a>
             </div>
+            <div className="create-user-box-google">
             <button onClick={loginWithPopup} className="gsi-material-button">
               <div className="gsi-material-button-state"></div>
               <div className="gsi-material-button-content-wrapper">
@@ -73,10 +94,11 @@ const Login = () => {
                   </svg>
                 </div>
                 <span className="gsi-material-button-contents">
-                  Iniciar sesión con Google
+                 Crear cuenta con Google
                 </span>
               </div>
             </button>
+          </div>
           </div>
           <div className="login-img-background">
             <img
@@ -90,4 +112,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default CreateUser;

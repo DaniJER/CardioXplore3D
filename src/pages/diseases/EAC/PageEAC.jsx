@@ -1,13 +1,13 @@
 import React from "react";
-import "./pageEAC.css";
-import Prevention from "../sections/prevention";
-import Symptoms from "../sections/symptoms";
-import Treatments from "../sections/treatments";
-import WhatIs from "../sections/whatIs";
-import { Artery } from "../EAC/models-3d/Artery";
+import Prevention from "../sections/Prevention";
+import Symptoms from "../sections/Symptoms";
+import Treatments from "../sections/Treatments";
+import WhatIs from "../sections/WhatIs";
+import { Artery } from "./models-3d/Artery";
 import { ChestPain } from "../EAC/models-3d/ChestPain";
 import { Angioplasty } from "../EAC/models-3d/Angioplasty";
 import { Training } from "../EAC/models-3d/Training";
+import "./pageEAC.css/";
 
 const PageEAC = () => {
   return (

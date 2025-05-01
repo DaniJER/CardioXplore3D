@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/home/home";
-import Quiz from "./pages/quiz/quiz";
-import Diseases from "./pages/diseases/diseases";
-import Profile from "./pages/profile/profile";
-import Login from "./pages/login/login";
-import AboutUs from "./pages/aboutUS/AboutUs";
+import Home from "./pages/home/Home";
+import Quiz from "./pages/quiz/Quiz";
+import Diseases from "./pages/diseases/Diseases";
+import Profile from "./pages/profile/Profile";
+import Login from "./pages/login/Login";
+import CreateUser from "./pages/create-user/CreateUser";
+import AboutUs from "./pages/aboutUs/AboutUs";
 import NotFound from "./pages/not-found/NotFound";
 import Header from "./layout/header/Header";
 import Footer from "./layout/footer/Footer";
@@ -38,6 +39,7 @@ function App() {
         />
         <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/create-user" element={<CreateUser />} />
       </Routes>
       <Footer />
     </Router>

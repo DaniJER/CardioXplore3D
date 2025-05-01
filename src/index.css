@@ -50,6 +50,12 @@ p {
 
 }
 
+label {
+  font-family: var(--texto-body-font);
+  font-size: small;
+  color: var(--text-color);
+}
+
 a {
   font-family: var(--texto-body-font);
   color: var(--text-color);

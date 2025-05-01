@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Prevencion from "../../../assets/Prevencion.svg";
-import './Prevention.css';
+import "./prevention.css";
 
 const Prevention = ({
   title = "Prevención y cuidados",
@@ -15,7 +15,6 @@ const Prevention = ({
 }) => {
   return (
     <section className="prevention-container" id="prevention">
-
       {/* Título + Icono */}
       <div className="title-icon">
         <h1>{title}</h1>
