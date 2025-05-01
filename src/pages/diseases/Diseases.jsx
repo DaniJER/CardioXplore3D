@@ -20,7 +20,7 @@ const datos = [
     nombre: "Enfermedad Arterial Coronaria",
     descripcion:
       "Acumulación de placa en las arterias que suministran sangre al corazón",
-    imagen: "/img-diseases/artery.png",
+    imagen: "/img-diseases/obstructed-artery.png",
   },
   {
     id: 4,
