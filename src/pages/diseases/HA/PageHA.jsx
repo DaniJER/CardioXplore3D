@@ -19,6 +19,11 @@ const PageHA = () => {
         scale={5.45}
         position={[0, 0, 0]}
         rotation={[0, 0, 0]}
+        rotationSpeed={0.01}
+        mostrarPlano={false}
+        planoPosicion={[0, -2.8, 0]}
+        planoRotacion={[-Math.PI / 2, 0, 0]}
+        planoEscala={[30, 30]}
       />
       <Symptoms
         title="Síntomas"
@@ -35,6 +40,11 @@ const PageHA = () => {
         scale={0.028}
         position={[0, -2.8, 0]}
         rotation={[0, 0, 0]}
+        rotationSpeed={0}
+        mostrarPlano={false}
+        planoPosicion={[0, -2.99, 0]}
+        planoRotacion={[-Math.PI / 2, 0, 0]}
+        planoEscala={[30, 30]}
       />
       <Treatments
         title="Tratamiento"
@@ -70,6 +80,11 @@ const PageHA = () => {
         scale={0.78}
         position={[0, -1.8, 0]}
         rotation={[0, 0, 0]}
+        rotationSpeed={0.01}
+        mostrarPlano={false}
+        planoPosicion={[0, -2.5, 0]}
+        planoRotacion={[-Math.PI / 2, 0, 0]}
+        planoEscala={[30, 30]}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -83,9 +98,14 @@ const PageHA = () => {
           "Controlar el estrés",
         ]}
         Model3D={ModelPrevention}
-        scale={0.03}
-        position={[0, -3, 0]}
+        scale={0.027}
+        position={[0, -2.6, 0]}
         rotation={[0, 0, 0]}
+        rotationSpeed={0.01}
+        mostrarPlano={false}
+        planoPosicion={[0, -2.87, 0]}
+        planoRotacion={[-Math.PI / 2, 0, 0]}
+        planoEscala={[30, 30]}
       />
     </div>
   );

@@ -76,15 +76,7 @@ const Home = () => {
         </form>
       </section>
 
-      {/* Botón de emergencia */}
-      <section className="section emergency">
-        <button className="emergency-button">
-          BOTÓN PARA LLAMADA DE EMERGENCIA
-        </button>
-        <p className="emergency-text">
-          Solo pulsa este botón si necesitas información urgente.
-        </p>
-      </section>
+      
     </>
   );
 };

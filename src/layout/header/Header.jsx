@@ -10,6 +10,11 @@ function Header() {
   return (
     <header className={`custom-header ${isHome ? "transparent-header" : ""}`}>
       <div className="logo-container">
+        {!isHome && (
+          <button className="back-button" onClick={() => navigate(-1)}>
+            ←
+          </button>
+        )}
         <Link to="/">
           <img
             src="/img/Logo.png"
@@ -33,3 +38,4 @@ function Header() {
 }
 
 export default Header;
+
