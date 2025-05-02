@@ -8,18 +8,26 @@ const AboutUs = () => {
       <section>
         <div className="aboutUs-block">
           <img
-            src="public\img\univalle-logo.jpg"
+            src="public/img/univalle.jpg"
             alt="sobre nosotros"
             className="aboutUs-image"
           />
+          <br></br>
           <p className="aboutUs-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga animi
-            aut vel! Nemo voluptates nostrum fugit repellendus mollitia quod ab
-            corrupti perferendis ipsa sit debitis, corporis molestiae eos?
-            Reiciendis, porro? Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Aliquid in libero consectetur esse ex quis nobis,
-            possimus quia, et laboriosam minus odit laudantium magni quibusdam
-            fugiat cupiditate aspernatur doloribus nihil?
+            Somos un grupo de estudiantes de sexto semestre del programa de
+            Tecnología en Desarrollo de Software de la Universidad del Valle,
+            comprometidos con la innovación, el aprendizaje práctico y el uso de
+            la tecnología para resolver desafíos del mundo real. Este proyecto
+            nace como parte de la asignatura Proyecto Integrador I, en la que
+            buscamos aplicar los conocimientos adquiridos durante nuestra
+            formación académica en el diseño, desarrollo e implementación de una
+            aplicación interactiva con tecnología 3D. Nuestro objetivo principal
+            es ofrecer una experiencia digital envolvente y educativa, que
+            demuestre no solo nuestro dominio técnico en áreas como
+            programación, diseño de interfaces, bases de datos y modelado 3D,
+            sino también nuestra capacidad de trabajo en equipo, investigación y
+            solución de problemas reales mediante software. creatividad y
+            dedicación.
           </p>
         </div>
       </section>

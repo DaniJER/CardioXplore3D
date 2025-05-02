@@ -1,27 +1,38 @@
 import React from "react";
+import { useRef } from "react";
 import "./home.css";
 
 const Home = () => {
+  const refContent = useRef(null);
+
+  const manejarScroll = () => {
+    if (refContent.current) {
+      refContent.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       {/* Bienvenida y presentación */}
-      <section className="section intro-section">
+      <section className="section intro-section" id="inicio">
         <div className="banner-block">
           <img
             src="./img/Banner.png"
             alt="Banner de presentación"
             className="banner-image"
           />
-          <div className="banner-content" id="inicio">
-          <h1>CardioXplore3D</h1>
-          <p>Conozca más sobre CardioXplore3D</p>
-          <button className="banner-button">
-            Click aquí para conocer más sobre nosotros
-          </button>
+          <div className="banner-content">
+            <h1>CardioXplore3D</h1>
+            <p>
+              Aprende sobre las enfermedades del corazón con visualizaciones
+              interactivas en 3D
+            </p>
+            <button onClick={manejarScroll} className="banner-button">
+              ¡Empecemos!
+            </button>
+          </div>
         </div>
-
-        </div>
-        <div className="intro-block">
+        <div className="intro-block" ref={refContent}>
           <div className="intro-text left-text">
             <h2>Bienvenido a CardioXplore3D</h2>
             <h4>
@@ -52,31 +63,43 @@ const Home = () => {
           />
           <div className="intro-text right-text">
             <p>
-              Este es un modelo 3D del corazón humano. Aquí puedes observar cómo
-              funciona y explorarlo desde cualquier ángulo. Si tienes alguna
-              duda, puedes consultar las descripciones en nuestra página.
+              A lo largo de la pagina podrás conocer distintas enfermedades
+              relacionadas con el corazón, cuales son sus sintomas, tratamientos
+              y prevenciones. Podras ver y manipular modelos en 3D los cuales
+              harán una experiencia más educativa e interactiva.
             </p>
           </div>
         </div>
       </section>
 
+      {/* Formulario de contacto */}
+      <section className="section contact">
+        <h2 className="contact-title">¿Tiene preguntas?</h2>
+        <p className="contact-subtitle">
+          Dejenos saber si tiene dudas u opiniones a cerca de nuestro sitio web.
+        </p>
+        <form className="contact-form">
+          <div className="name-fields">
+            <input type="text" placeholder="nombres" />
+            <input type="text" placeholder="apellidos" />
+          </div>
+          <input type="email" placeholder="ejemplo@gmail.com" />
+          <textarea placeholder="Ingrese un mensaje" rows="4"></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+
       <button
-      className="scroll"
-      onClick={() => {
-        const section = document.getElementById("inicio");
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-              }
+        className="scroll"
+        onClick={() => {
+          const section = document.getElementById("inicio");
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+          }
         }}
       >
         ↑
-        </button>
-
-
-
-    
-
-      
+      </button>
     </>
   );
 };
