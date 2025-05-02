@@ -14,14 +14,14 @@ const Home = () => {
   return (
     <>
       {/* Bienvenida y presentación */}
-      <section className="section intro-section">
+      <section className="section intro-section" id="inicio">
         <div className="banner-block">
           <img
             src="./img/Banner.png"
             alt="Banner de presentación"
             className="banner-image"
           />
-          <div className="banner-content" id="inicio">
+          <div className="banner-content">
             <h1>CardioXplore3D</h1>
             <p>
               Aprende sobre las enfermedades del corazón con visualizaciones
@@ -63,7 +63,7 @@ const Home = () => {
           />
           <div className="intro-text right-text">
             <p>
-              A lo largo de la pagina podras conocer distintas enfermedades
+              A lo largo de la pagina podrás conocer distintas enfermedades
               relacionadas con el corazón, cuales son sus sintomas, tratamientos
               y prevenciones. Podras ver y manipular modelos en 3D los cuales
               harán una experiencia más educativa e interactiva.
@@ -88,6 +88,7 @@ const Home = () => {
           <button type="submit">Enviar</button>
         </form>
       </section>
+
       <button
         className="scroll"
         onClick={() => {
@@ -97,7 +98,6 @@ const Home = () => {
           }
         }}
       >
-        {" "}
         ↑
       </button>
     </>
