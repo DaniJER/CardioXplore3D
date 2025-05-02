@@ -5,7 +5,7 @@ import Treatments from "../sections/Treatments";
 import { Consequence } from "./models-3d/Consequence";
 import { Pills } from "./models-3d/Pills";
 import { Exercice } from "./models-3d/Exercice";
-import "./page.css";
+import "./pageIC.css";
 
 const PageIC = () => {
   return (
