@@ -1,20 +1,43 @@
-import { useNavigate } from 'react-router-dom';
 import './Footer.css';
 
-
 function FooterPage() {
-  const navigate = useNavigate();
-
   return (
-    <div className="footer-page">
-      {/* Botón de regreso */}
-      <footer className="back-footer">
-        <button onClick={() => navigate('/')}>
-          Volver al Inicio
-        </button>
-      </footer>
-    </div>
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-column brand">
+          <h3>CardioXplore3D</h3>
+        </div>
+
+        <div className="footer-column">
+          <h4>Secciones</h4>
+          <ul>
+            <li>Inicio</li>
+            <li>Enfermedades</li>
+            <li>Quiz</li>
+          </ul>
+        </div>
+
+        <div className="footer-column">
+          <h4>Soporte</h4>
+          <ul>
+            <li>Contacto</li>
+            <li>Ayuda</li>
+            <li>Términos</li>
+          </ul>
+        </div>
+
+        <div className="footer-column">
+          <h4>Redes</h4>
+          <ul>
+            <li>Instagram</li>
+            <li>YouTube</li>
+            <li>Facebook</li>
+          </ul>
+        </div>
+      </div>
+
+    </footer>
   );
 }
 
-export default FooterPage; 
+export default FooterPage;
