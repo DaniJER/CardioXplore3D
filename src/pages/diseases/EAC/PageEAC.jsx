@@ -21,7 +21,7 @@ const PageEAC = () => {
         position={[0, 0, 0]}
         rotation={[0, 5, 0]}
         rotationSpeed={0.01}
-        mostrarPlano={true}
+        mostrarPlano={false}
         planoPosicion={[0, -2.2, 0]}
       />
       <Symptoms
@@ -45,7 +45,7 @@ const PageEAC = () => {
         position={[0, -0.05, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
-        mostrarPlano={true}
+        mostrarPlano={false}
         planoPosicion={[0, -2.8, 0]}
       />
       <Treatments
@@ -81,7 +81,7 @@ const PageEAC = () => {
         position={[0, -0.05, 0]}
         rotation={[0, 1, 0]}
         rotationSpeed={0.01}
-        mostrarPlano={true}
+        mostrarPlano={false}
         planoPosicion={[0, -2.8, 0]}
       />
       <Prevention
@@ -102,7 +102,7 @@ const PageEAC = () => {
         position={[0, -0.01, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
-        mostrarPlano={true}
+        mostrarPlano={false}
         planoPosicion={[0, -2.8, 0]}
       />
     </div>
