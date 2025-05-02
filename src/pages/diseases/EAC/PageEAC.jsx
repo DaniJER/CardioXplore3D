@@ -21,6 +21,8 @@ const PageEAC = () => {
         position={[0, 0, 0]}
         rotation={[0, 5, 0]}
         rotationSpeed={0.01}
+        mostrarPlano={true}
+        planoPosicion={[0, -2.2, 0]}
       />
       <Symptoms
         title="Síntomas"
@@ -39,10 +41,12 @@ const PageEAC = () => {
           "Falta de aire",
         ]}
         Model3D={ChestPain}
-        scale={4.45}
-        position={[0, -2.55, 0]}
+        scale={2.8}
+        position={[0, -0.05, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
+        mostrarPlano={true}
+        planoPosicion={[0, -2.8, 0]}
       />
       <Treatments
         title="Tratamiento"
@@ -73,10 +77,12 @@ const PageEAC = () => {
           },
         ]}
         Model3D={Angioplasty}
-        scale={3.45}
-        position={[0, 0, 0]}
-        rotation={[0, 1, 1]}
+        scale={2.45}
+        position={[0, -0.05, 0]}
+        rotation={[0, 1, 0]}
         rotationSpeed={0.01}
+        mostrarPlano={true}
+        planoPosicion={[0, -2.8, 0]}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -92,10 +98,12 @@ const PageEAC = () => {
           "Cambiar rutinas y habitos perjudiciales.",
         ]}
         Model3D={Training}
-        scale={3.45}
-        position={[0, 0, 0]}
+        scale={2.8}
+        position={[0, -0.01, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
+        mostrarPlano={true}
+        planoPosicion={[0, -2.8, 0]}
       />
     </div>
   );
