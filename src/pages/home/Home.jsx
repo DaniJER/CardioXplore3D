@@ -31,6 +31,13 @@ const Home = () => {
               ¡Empecemos!
             </button>
           </div>
+          <div className="banner-content" id="inicio">
+          <h1>CardioXplore3D</h1>
+          <p>Conozca más sobre CardioXplore3D</p>
+          <button className="banner-button">
+            Click aquí para conocer más sobre nosotros
+          </button>
+        </div>
         </div>
         <div className="intro-block" ref={refContent}>
           <div className="intro-text left-text">
@@ -71,7 +78,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Formulario de contacto */}
       <section className="section contact">
         <h2 className="contact-title">¿Tiene preguntas?</h2>
@@ -88,6 +94,17 @@ const Home = () => {
           <button type="submit">Enviar</button>
         </form>
       </section>
+      <button
+      className="scroll"
+      onClick={() => {
+        const section = document.getElementById("inicio");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+              }
+        }}
+      >
+        ↑
+        </button>
     </>
   );
 };

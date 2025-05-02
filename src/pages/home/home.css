@@ -169,3 +169,37 @@
   max-width: 100%;
   border-radius: 10px;
 }
+
+.scroll {
+  position: fixed;
+  right: 24px;
+  bottom: 32px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, purple, #ccc);
+  color: #fff8dc;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll:hover,
+.scroll:focus-visible {
+  background: linear-gradient(135deg, purple, white);
+  transform: translateY(-4px) scale(1.1);
+  outline: none;
+}
+
+.scroll:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
