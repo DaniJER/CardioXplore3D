@@ -21,7 +21,7 @@ const Home = () => {
             alt="Banner de presentación"
             className="banner-image"
           />
-          <div className="banner-content">
+          <div className="banner-content" id="inicio">
             <h1>CardioXplore3D</h1>
             <p>
               Aprende sobre las enfermedades del corazón con visualizaciones
@@ -88,6 +88,18 @@ const Home = () => {
           <button type="submit">Enviar</button>
         </form>
       </section>
+      <button
+        className="scroll"
+        onClick={() => {
+          const section = document.getElementById("inicio");
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+          }
+        }}
+      >
+        {" "}
+        ↑
+      </button>
     </>
   );
 };
