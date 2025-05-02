@@ -19,9 +19,23 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
   color: white;
+  text-align: center;
   z-index: 2;
+}
+
+.banner-button {
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: auto;
 }
 
 .banner-content h1,
@@ -33,17 +47,7 @@
   font-size: 48px;
   font-weight: bold;
   margin-bottom: 20px;
-}
-
-.banner-button {
-  background-color: #000;
-  color: #fff;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  margin: auto;
 }
 
 .banner-button:hover {
