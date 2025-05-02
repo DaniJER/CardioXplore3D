@@ -2,13 +2,15 @@ import React from 'react';
 import Prevention from "../sections/Prevention";
 import Symptoms from "../sections/Symptoms";
 import Treatments from "../sections/Treatments";
-import { Consequence } from "../IC/models-3d/consequence";
-import { Pills } from "../IC/models-3d/Pills";
-import { Exercice } from "../IC/models-3d/Exercice";
+import { Consequence } from './models-3d/Consequence';
+import { Pills } from './models-3d/Pills';
+import { Exercice } from './models-3d/Exercice';
 import "./pageIC.css";
+
 
 const PageIC = () => {
   return (
+
     <div className="page-container">
       <Symptoms
         title="Síntomas"
@@ -21,8 +23,8 @@ const PageIC = () => {
           "latidos irregulares y rapidos",
         ]}
         Model3D={Consequence}
-        scale={0.028}
-        position={[0, -2.8, 0]}
+        scale={3.5}
+        position={[0, -0.5, 0]}
         rotation={[0, 0, 0]}
       />
       <Treatments
@@ -56,7 +58,7 @@ const PageIC = () => {
           },
         ]}
         Model3D={Pills}
-        scale={0.78}
+        scale={0.3}
         position={[0, -1.8, 0]}
         rotation={[0, 0, 0]}
       />
@@ -72,7 +74,7 @@ const PageIC = () => {
           "Evitar alcohol y tabaco",
         ]}
         Model3D={Exercice}
-        scale={0.03}
+        scale={3}
         position={[0, -3, 0]}
         rotation={[0, 0, 0]}
       />
