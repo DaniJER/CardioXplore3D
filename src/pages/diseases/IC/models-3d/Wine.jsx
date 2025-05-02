@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Wine(props) {
-  const { nodes, materials } = useGLTF('models-3d/IC/WineRenderr.glb')
+  const { nodes, materials } = useGLTF('/models-3d/IC/WineRenderr.glb')
   return (
     <group {...props} dispose={null}>
       <group position={[-0.068, 0.113, -0.334]} scale={1.08}>

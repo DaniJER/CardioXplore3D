@@ -24,6 +24,9 @@ const PageIC = () => {
         scale={3.5}
         position={[0, -0.5, 0]}
         rotation={[0, 0, 0]}
+        rotationSpeed={0}
+        mostrarPlano={false}
+        planoPosicion={[0, -0.45, 0]}
       />
       <Treatments
         title="Tratamiento"
@@ -57,8 +60,12 @@ const PageIC = () => {
         ]}
         Model3D={Pills}
         scale={0.3}
-        position={[0, -1.8, 0]}
-        rotation={[0, 0, 0]}
+        position={[0, 0, 0]}
+        rotation={[0.53, 0, 0]}
+        rotationSpeed={0.01}
+        mostrarPlano={false}
+        planoPosicion={[0, -2, 0]}
+        planoRotacion={[-Math.PI/2, 0, 0]}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -75,6 +82,9 @@ const PageIC = () => {
         scale={3}
         position={[0, -3, 0]}
         rotation={[0, 0, 0]}
+        rotationSpeed={0}
+        mostrarPlano={false}
+        planoPosicion={[0, -2.99, 0]}
       />
     </div>
   );

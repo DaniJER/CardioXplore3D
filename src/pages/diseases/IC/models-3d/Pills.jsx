@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Pills(props) {
-  const { nodes, materials } = useGLTF('models-3d/IC/PillsTreatment.glb')
+  const { nodes, materials } = useGLTF('/models-3d/IC/PillsTreatment.glb')
   return (
     <group {...props} dispose={null}>
       <group position={[-2.3, 0.915, -7.157]} rotation={[0, -1.571, 0]} scale={1.125}>
