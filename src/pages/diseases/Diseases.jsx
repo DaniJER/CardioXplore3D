@@ -20,13 +20,13 @@ const datos = [
     nombre: "Enfermedad Arterial Coronaria",
     descripcion:
       "Acumulación de placa en las arterias que suministran sangre al corazón",
-    imagen: "/img-diseases/artery.png",
+    imagen: "/img-diseases/obstructed-artery.png",
   },
   {
     id: 4,
-    nombre: "Enfermedad 4",
-    descripcion: "Pequeña descripción",
-    imagen: "/img-diseases/prueba.png",
+    nombre: "Insuficiencia Cardíaca",
+    descripcion: " el corazón causa dificultad para respirar e hinchazón.",
+    imagen: "/img-diseases/Heart-IC.png",
   },
 ];
 

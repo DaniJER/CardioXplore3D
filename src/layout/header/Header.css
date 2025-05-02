@@ -23,7 +23,6 @@
 .logo-container .logo {
   height: 80px;
   margin-left: 50px;
-  
 }
 
 .nav-menu {
@@ -38,6 +37,9 @@
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
+}
+.nav-menu a:hover {
+  color: #c06a8d;
 }
 
 .login-button {
@@ -64,4 +66,3 @@
   margin-right: 10px;
   color: white;
 }
-

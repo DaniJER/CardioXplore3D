@@ -18,31 +18,33 @@ import PageIC from "./pages/diseases/IC/PageIC";
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/quiz" element={<Quiz />} />
-        <Route path="/enfermedades" element={<Diseases />} />
-        <Route path="/nosotros" element={<AboutUs />} />
-        <Route path="/enfermedades/1" element={<PageHA />} />
-        <Route path="/enfermedades/2" element={<PageEC />} />
-        <Route path="/enfermedades/3" element={<PageEAC />} />
-        <Route path="/enfermedades/4" element={<PageIC />} />
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/create-user" element={<CreateUser />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/enfermedades" element={<Diseases />} />
+          <Route path="/nosotros" element={<AboutUs />} />
+          <Route path="/enfermedades/1" element={<PageHA />} />
+          <Route path="/enfermedades/2" element={<PageEC />} />
+          <Route path="/enfermedades/3" element={<PageEAC />} />
+          <Route path="/enfermedades/4" element={<PageIC />} />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/create-user" element={<CreateUser />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </>
   );
 }
 
