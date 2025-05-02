@@ -30,7 +30,7 @@ function Header() {
         <a onClick={() => navigate("/quiz")}>Quiz</a>
         <a onClick={() => navigate("/nosotros")}>Nosotros</a>
         <button className="login-button" onClick={() => navigate("/login")}>
-          Login
+          <img style={{ height: '2.5rem' }} src="/img/Icon-profile.png" alt="Icono de perfil" />
         </button>
       </nav>
     </header>

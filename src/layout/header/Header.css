@@ -13,6 +13,11 @@
 .transparent-header {
   background-color: transparent;
   z-index: 2;
+  /* position: sticky;
+  top: 0;
+  background: var(--secondary-color);
+  filter: brightness(0.85);
+  z-index: 1000; */
 }
 
 .logo-container .logo {
@@ -37,12 +42,18 @@
 
 .login-button {
   background: transparent;
-  border: 2px solid white;
-  border-radius: 8px;
-  padding: 0.4rem 1rem;
-  color: white;
+  /* border: 2px solid white;
+  /* border-radius: 8px; */
+  padding: 0;
+  /* color: white; */ 
   cursor: pointer;
-  font-weight: bold;
+  /* font-weight: bold; */
+  transition: transform 0.4s ease;
+}
+
+.login-button:hover {
+  transform: scale(1.1);
+  background-color: transparent;
 }
 
 .back-button {
