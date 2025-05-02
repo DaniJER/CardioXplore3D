@@ -17,10 +17,12 @@ const PageEAC = () => {
         subtitle="El tipo más común de enfermedad cardiaca"
         description="La EAC ocurre cuando las arterias que suministran la sangre al músculo cardíaco se endurecen y se estrechan. Esto se debe a la acumulación de colesterol y otros materiales llamados placa en la capa interna de las paredes de la arteria. Esta acumulación se llama arterioesclerosis. A medida que esta avanza, fluye menos sangre a través de las arterias. Como consecuencia, el músculo cardíaco no puede recibir la sangre o el oxígeno que necesita. Eso puede conducir a dolor en el pecho (angina) o a un infarto. La mayoría de los infartos ocurren cuando un coágulo súbitamente interrumpe el suministro de sangre al corazón, causando un daño cardíaco permanente."
         Model3D={Artery}
-        scale={2.45}
+        scale={2.15}
         position={[0, 0, 0]}
-        rotation={[2.45, 2.45, 2.45]}
-        rotationSpeed={1}
+        rotation={[0, 5, 0]}
+        rotationSpeed={0.01}
+        mostrarPlano={true}
+        planoPosicion={[0, -2.2, 0]}
       />
       <Symptoms
         title="Síntomas"
@@ -39,10 +41,12 @@ const PageEAC = () => {
           "Falta de aire",
         ]}
         Model3D={ChestPain}
-        scale={4.45}
-        position={[0, -2.55, 0]}
+        scale={2.8}
+        position={[0, -0.05, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
+        mostrarPlano={true}
+        planoPosicion={[0, -2.8, 0]}
       />
       <Treatments
         title="Tratamiento"
@@ -73,10 +77,12 @@ const PageEAC = () => {
           },
         ]}
         Model3D={Angioplasty}
-        scale={3.45}
-        position={[0, 0, 0]}
-        rotation={[0, 1, 1]}
+        scale={2.45}
+        position={[0, -0.05, 0]}
+        rotation={[0, 1, 0]}
         rotationSpeed={0.01}
+        mostrarPlano={true}
+        planoPosicion={[0, -2.8, 0]}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -92,10 +98,12 @@ const PageEAC = () => {
           "Cambiar rutinas y habitos perjudiciales.",
         ]}
         Model3D={Training}
-        scale={3.45}
-        position={[0, 0, 0]}
+        scale={2.8}
+        position={[0, -0.01, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
+        mostrarPlano={true}
+        planoPosicion={[0, -2.8, 0]}
       />
     </div>
   );

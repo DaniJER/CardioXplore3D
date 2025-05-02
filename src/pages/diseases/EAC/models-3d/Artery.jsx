@@ -8,11 +8,11 @@ export function Artery(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Mesh_0001.geometry}
-        material={materials["Material_0.001"]}
+        geometry={nodes.Mesh_0.geometry}
+        material={materials.Material_0}
       />
     </group>
   );
 }
 
-useGLTF.preload("/obstructed-artery.glb");
+useGLTF.preload("/models-3d/EAC/obstructed-artery.glb");

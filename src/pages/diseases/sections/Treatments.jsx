@@ -35,7 +35,11 @@ const Treatments = ({
         <div className="model-container-treatments">
           <Canvas shadows>
             {/* Plano invisible que recibe la sombra */}
-            <mesh receiveShadow rotation={planoRotacion} position={planoPosicion}>
+            <mesh
+              receiveShadow
+              rotation={planoRotacion}
+              position={planoPosicion}
+            >
               <planeGeometry args={planoEscala} />
               <shadowMaterial transparent opacity={0.2} />
               {mostrarPlano ? <meshStandardMaterial color="#e0e0e0" /> : null}
@@ -62,5 +66,4 @@ const Treatments = ({
     </section>
   );
 };
-
 export default Treatments;
