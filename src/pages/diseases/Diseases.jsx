@@ -11,9 +11,9 @@ const datos = [
   },
   {
     id: 2,
-    nombre: "Enfermedad 2",
-    descripcion: "Pequeña descripción",
-    imagen: "/img-diseases/prueba.png",
+    nombre: "Comunicación interventricular",
+    descripcion: "Orificio en el corazón que afecta el flujo sanguíneo.",
+    imagen: "/img-diseases/CIV.png",
   },
   {
     id: 3,
