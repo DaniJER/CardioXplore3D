@@ -40,7 +40,8 @@
     margin-bottom: 1rem;
 }
 
-.model-container {
+.model-container-prevention {
+    position: relative;
     flex: 1;
     width: 50%;
     height: 400px;

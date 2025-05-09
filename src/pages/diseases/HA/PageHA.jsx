@@ -15,15 +15,33 @@ const PageHA = () => {
         title="Hipertensión arterial"
         subtitle="Una enfermedad silenciosa"
         description="La hipertensión arterial (HTA) es una enfermedad crónica caracterizada por un aumento persistente de la presión arterial en las arterias. Es conocida como la 'enfermedad silenciosa' porque a menudo no presenta síntomas evidentes, pero puede tener graves consecuencias para la salud si no se controla adecuadamente."
+        //Modelo 3D
         Model3D={Heart}
         scale={5.45}
         position={[0, 0, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
+        //Plano
         mostrarPlano={false}
         planoPosicion={[0, -2.8, 0]}
         planoRotacion={[-Math.PI / 2, 0, 0]}
         planoEscala={[30, 30]}
+        //Luces Directas
+        ambientIntensity={1.5}
+        enableDirectionalLight={true}
+        directionalIntensity={2}
+        directionalPosition={[5, 5, 10]}
+        //Luces Spot
+        enableSpotLight={false}
+        spotIntensity={1}
+        spotPosition={[10, 15, 10]}
+        //Luces Punto
+        enablePointLight={false}
+        pointIntensity={0.5}
+        pointPosition={[0, 5, 0]}
+        //Eventos
+        onTurn={true}
+        onAnimation={false}
       />
       <Symptoms
         title="Síntomas"
@@ -36,15 +54,33 @@ const PageHA = () => {
           "Visión borrosa",
           "Dificultad para respirar",
         ]}
+        //Modelo 3D
         Model3D={ModelSymptom}
         scale={0.028}
         position={[0, -2.8, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0}
+        //Plano
         mostrarPlano={false}
         planoPosicion={[0, -2.99, 0]}
         planoRotacion={[-Math.PI / 2, 0, 0]}
         planoEscala={[30, 30]}
+        //Luces Directas
+        ambientIntensity={1.5}
+        enableDirectionalLight={true}
+        directionalIntensity={2}
+        directionalPosition={[5, 5, 10]}
+        //Luces Spot
+        enableSpotLight={false}
+        spotIntensity={1}
+        spotPosition={[10, 15, 10]}
+        //Luces Punto
+        enablePointLight={false}
+        pointIntensity={0.5}
+        pointPosition={[0, 5, 0]}
+        //Eventos
+        onTurn={false}
+        onAnimation={true}
       />
       <Treatments
         title="Tratamiento"
@@ -76,15 +112,33 @@ const PageHA = () => {
               "Uso de suplementos como potasio o magnesio, siempre con supervisión médica.",
           },
         ]}
+        //Modelo 3D
         Model3D={Tablets}
         scale={0.78}
         position={[0, -1.8, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
+        //Plano
         mostrarPlano={false}
         planoPosicion={[0, -2.5, 0]}
         planoRotacion={[-Math.PI / 2, 0, 0]}
         planoEscala={[30, 30]}
+        //Luces Directas
+        ambientIntensity={1.5}
+        enableDirectionalLight={true}
+        directionalIntensity={2}
+        directionalPosition={[5, 5, 10]}
+        //Luces Spot
+        enableSpotLight={false}
+        spotIntensity={1}
+        spotPosition={[10, 15, 10]}
+        //Luces Punto
+        enablePointLight={false}
+        pointIntensity={0.5}
+        pointPosition={[0, 5, 0]}
+        //Eventos
+        onTurn={true}
+        onAnimation={false}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -97,15 +151,33 @@ const PageHA = () => {
           "Limitar el consumo de alcohol y tabaco",
           "Controlar el estrés",
         ]}
+        //Modelo 3D
         Model3D={ModelPrevention}
         scale={0.027}
         position={[0, -2.6, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
+        //Plano
         mostrarPlano={false}
         planoPosicion={[0, -2.87, 0]}
         planoRotacion={[-Math.PI / 2, 0, 0]}
         planoEscala={[30, 30]}
+        //Luces Directas
+        ambientIntensity={1.5}
+        enableDirectionalLight={true}
+        directionalIntensity={2}
+        directionalPosition={[5, 5, 10]}
+        //Luces Spot
+        enableSpotLight={false}
+        spotIntensity={1}
+        spotPosition={[10, 15, 10]}
+        //Luces Punto
+        enablePointLight={false}
+        pointIntensity={0.5}
+        pointPosition={[0, 5, 0]}
+        //Eventos
+        onTurn={true}
+        onAnimation={true}
       />
     </div>
   );
