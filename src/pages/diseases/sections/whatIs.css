@@ -5,6 +5,7 @@
 }
 
 .model-container-whatIs {
+    position: relative;
     width: 55%;
     height: 80vh;
 }

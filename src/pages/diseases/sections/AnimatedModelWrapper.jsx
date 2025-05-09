@@ -1,16 +1,16 @@
-import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 
-const AnimatedModelWrapper = ({ children, rotationSpeed }) => {
-  const ref = useRef();
+const AnimatedModelWrapper = ({ children, rotationSpeed, isRotating = true }) => {
+  const groupRef = useRef();
 
   useFrame(() => {
-    if (ref.current) {
-      ref.current.rotation.y += rotationSpeed;
+    if (isRotating && groupRef.current) {
+      groupRef.current.rotation.y += rotationSpeed;
     }
   });
 
-  return <group ref={ref}>{children}</group>;
+  return <group ref={groupRef}>{children}</group>;
 };
 
 export default AnimatedModelWrapper;

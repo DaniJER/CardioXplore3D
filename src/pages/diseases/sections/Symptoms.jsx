@@ -1,9 +1,12 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Sintomas from "../../../assets/Sintomas.svg";
-import "./symptoms.css";
 import AnimatedModelWrapper from "./AnimatedModelWrapper";
 import SceneLights from "../Lights/SceneLights";
+import PAnimation from "../PointEvent/P-animation";
+import SpaceTurn from "../PointEvent/Space-turn";
+import { useRef, useState } from "react";
+import "./symptoms.css";
 
 const Symptoms = ({
   title = "Síntomas",
@@ -33,7 +36,13 @@ const Symptoms = ({
   enablePointLight,
   enableSpotLight,
   enableOrbit = true,
+  // Eventos
+  onTurn = true,
+  onAnimation = false,
 }) => {
+  const modelRef = useRef();
+  const [isRotating, setIsRotating] = useState(true);
+
   return (
     <section className="symptoms-container" id="symptoms">
       {/* Título e Icono */}
@@ -56,6 +65,13 @@ const Symptoms = ({
 
         {/* Modelo 3D */}
         <div className="model-container-symptoms">
+
+          {/* Botónes de control */}
+          <div className="model-controls">
+            {onAnimation && <PAnimation modelRef={modelRef} />}
+            {onTurn && <SpaceTurn onToggle={setIsRotating} />}
+          </div>
+
           <Canvas shadows>
             {/* Plano invisible para sombra */}
             <mesh receiveShadow rotation={planoRotacion} position={planoPosicion}>
@@ -88,8 +104,8 @@ const Symptoms = ({
 
             {/* Modelo 3D animado */}
             <OrbitControls />
-            <AnimatedModelWrapper rotationSpeed={rotationSpeed}>
-              <Model3D scale={scale} position={position} rotation={rotation} />
+            <AnimatedModelWrapper rotationSpeed={rotationSpeed} isRotating={isRotating}>
+              <Model3D ref={modelRef} scale={scale} position={position} rotation={rotation} />
             </AnimatedModelWrapper>
           </Canvas>
         </div>

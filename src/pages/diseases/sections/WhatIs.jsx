@@ -3,9 +3,12 @@ import { OrbitControls } from "@react-three/drei";
 import Sintomas from "../../../assets/Sintomas.svg";
 import Tratamiento from "../../../assets/Tratamiento.svg";
 import Prevencion from "../../../assets/Prevencion.svg";
-import "./whatIs.css";
 import AnimatedModelWrapper from "./AnimatedModelWrapper";
 import SceneLights from "../Lights/SceneLights";
+import SpaceTurn from "../PointEvent/Space-turn";
+import PAnimation from "../PointEvent/P-animation";
+import { useRef, useState } from "react";
+import "./whatIs.css";
 
 const WhatIs = ({
   title,
@@ -33,7 +36,14 @@ const WhatIs = ({
   enableDirectionalLight = true,
   enablePointLight,
   enableSpotLight,
+  //Eventos
+  onTurn = true,
+  onAnimation = false,
 }) => {
+  const modelRef = useRef();
+  const [isRotating, setIsRotating] = useState(true);
+
+  // Función para hacer scroll suave a la sección deseada
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -45,6 +55,13 @@ const WhatIs = ({
     <div className="whatIs-container">
       {/* Sección del Modelo 3D */}
       <div className="model-container-whatIs">
+
+        {/* Botónes de control */}
+        <div className="model-controls">
+          {onAnimation && <PAnimation modelRef={modelRef} />}
+          {onTurn && <SpaceTurn onToggle={setIsRotating} />}
+        </div>
+
         <Canvas shadows>
           {/* Plano invisible que recibe la sombra */}
           <mesh receiveShadow rotation={planoRotacion} position={planoPosicion}>
@@ -76,8 +93,8 @@ const WhatIs = ({
 
           {/* Modelo 3D animado */}
           <OrbitControls />
-          <AnimatedModelWrapper rotationSpeed={rotationSpeed}>
-            <Model3D scale={scale} position={position} rotation={rotation} />
+          <AnimatedModelWrapper rotationSpeed={rotationSpeed} isRotating={isRotating}>
+            <Model3D ref={modelRef} scale={scale} position={position} rotation={rotation} />
           </AnimatedModelWrapper>
         </Canvas>
       </div>

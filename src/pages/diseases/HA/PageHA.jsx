@@ -28,7 +28,7 @@ const PageHA = () => {
         planoEscala={[30, 30]}
         //Luces Directas
         ambientIntensity={1.5}
-        enableDirectionalLight = {true}
+        enableDirectionalLight={true}
         directionalIntensity={2}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
@@ -39,6 +39,9 @@ const PageHA = () => {
         enablePointLight={false}
         pointIntensity={0.5}
         pointPosition={[0, 5, 0]}
+        //Eventos
+        onTurn={true}
+        onAnimation={false}
       />
       <Symptoms
         title="Síntomas"
@@ -64,7 +67,7 @@ const PageHA = () => {
         planoEscala={[30, 30]}
         //Luces Directas
         ambientIntensity={1.5}
-        enableDirectionalLight = {true}
+        enableDirectionalLight={true}
         directionalIntensity={2}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
@@ -75,6 +78,9 @@ const PageHA = () => {
         enablePointLight={false}
         pointIntensity={0.5}
         pointPosition={[0, 5, 0]}
+        //Eventos
+        onTurn={false}
+        onAnimation={true}
       />
       <Treatments
         title="Tratamiento"
@@ -119,7 +125,7 @@ const PageHA = () => {
         planoEscala={[30, 30]}
         //Luces Directas
         ambientIntensity={1.5}
-        enableDirectionalLight = {true}
+        enableDirectionalLight={true}
         directionalIntensity={2}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
@@ -130,6 +136,9 @@ const PageHA = () => {
         enablePointLight={false}
         pointIntensity={0.5}
         pointPosition={[0, 5, 0]}
+        //Eventos
+        onTurn={true}
+        onAnimation={false}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -155,7 +164,7 @@ const PageHA = () => {
         planoEscala={[30, 30]}
         //Luces Directas
         ambientIntensity={1.5}
-        enableDirectionalLight = {true}
+        enableDirectionalLight={true}
         directionalIntensity={2}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
@@ -166,6 +175,9 @@ const PageHA = () => {
         enablePointLight={false}
         pointIntensity={0.5}
         pointPosition={[0, 5, 0]}
+        //Eventos
+        onTurn={true}
+        onAnimation={true}
       />
     </div>
   );

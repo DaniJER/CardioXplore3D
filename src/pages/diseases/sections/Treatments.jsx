@@ -1,9 +1,12 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Tratamiento from "../../../assets/Tratamiento.svg";
-import "./treatments.css";
 import AnimatedModelWrapper from "./AnimatedModelWrapper";
 import SceneLights from "../Lights/SceneLights";
+import PAnimation from "../PointEvent/P-animation";
+import SpaceTurn from "../PointEvent/Space-turn";
+import { useRef, useState } from "react";
+import "./treatments.css";
 
 const Treatments = ({
   title = "Tratamiento",
@@ -31,7 +34,13 @@ const Treatments = ({
   enableDirectionalLight = true,
   enablePointLight,
   enableSpotLight,
+  // Eventos
+  onTurn = true,
+  onAnimation = false,
 }) => {
+  const modelRef = useRef();
+  const [isRotating, setIsRotating] = useState(true);
+
   return (
     <section className="treatments-container" id="treatments">
       {/* Título + Ícono */}
@@ -47,6 +56,13 @@ const Treatments = ({
       <div className="content-section-treatments">
         {/* Modelo 3D */}
         <div className="model-container-treatments">
+          {/* Botones de control */}
+          <div className="model-controls">
+
+            {onAnimation && <PAnimation modelRef={modelRef} />}
+            {onTurn && <SpaceTurn onToggle={setIsRotating} />}
+          </div>
+          {/* Canvas de Three.js */}
           <Canvas shadows>
             {/* Plano invisible que recibe la sombra */}
             <mesh
@@ -85,8 +101,8 @@ const Treatments = ({
 
             {/* Modelo 3D animado */}
             <OrbitControls />
-            <AnimatedModelWrapper rotationSpeed={rotationSpeed}>
-              <Model3D scale={scale} position={position} rotation={rotation} />
+            <AnimatedModelWrapper rotationSpeed={rotationSpeed} isRotating={isRotating}>
+              <Model3D ref={modelRef} scale={scale} position={position} rotation={rotation} />
             </AnimatedModelWrapper>
           </Canvas>
         </div>

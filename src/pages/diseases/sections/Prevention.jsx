@@ -1,9 +1,12 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Prevencion from "../../../assets/Prevencion.svg";
-import "./prevention.css";
 import AnimatedModelWrapper from "./AnimatedModelWrapper";
 import SceneLights from "../Lights/SceneLights";
+import { useRef, useState } from "react";
+import "./prevention.css";
+import PAnimation from "../PointEvent/P-animation";
+import SpaceTurn from "../PointEvent/Space-turn";
 
 const Prevention = ({
   title = "Prevención y cuidados",
@@ -32,7 +35,13 @@ const Prevention = ({
   enableDirectionalLight = true,
   enablePointLight,
   enableSpotLight,
+  //Eventos
+  onTurn = true,
+  onAnimation = false,
 }) => {
+  const modelRef = useRef();
+  const [isRotating, setIsRotating] = useState(true);
+
   return (
     <section className="prevention-container" id="prevention">
       {/* Título + Icono */}
@@ -54,7 +63,13 @@ const Prevention = ({
         </ul>
 
         {/* Modelo 3D */}
-        <div className="model-container">
+        <div className="model-container-prevention">
+          {/* Botones de control */}
+          <div className="model-controls">
+          {onAnimation && <PAnimation modelRef={modelRef} />}
+          {onTurn && <SpaceTurn onToggle={setIsRotating} />}
+          </div>
+
           <Canvas shadows>
             {/* Plano invisible para sombras */}
             <mesh
@@ -93,8 +108,8 @@ const Prevention = ({
 
             {/* Modelo 3D animado */}
             <OrbitControls />
-            <AnimatedModelWrapper rotationSpeed={rotationSpeed}>
-              <Model3D scale={scale} position={position} rotation={rotation} />
+            <AnimatedModelWrapper rotationSpeed={rotationSpeed} isRotating={isRotating}>
+              <Model3D ref={modelRef} scale={scale} position={position} rotation={rotation} />
             </AnimatedModelWrapper>
           </Canvas>
         </div>
