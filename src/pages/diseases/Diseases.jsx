@@ -11,9 +11,9 @@ const datos = [
   },
   {
     id: 2,
-    nombre: "Enfermedad 2",
-    descripcion: "Pequeña descripción",
-    imagen: "/img-diseases/prueba.png",
+    nombre: "Comunicación interventricular",
+    descripcion: "Orificio en el corazón que afecta el flujo sanguíneo.",
+    imagen: "/img-diseases/CIV.png",
   },
   {
     id: 3,
@@ -24,9 +24,9 @@ const datos = [
   },
   {
     id: 4,
-    nombre: "Enfermedad 4",
-    descripcion: "Pequeña descripción",
-    imagen: "/img-diseases/prueba.png",
+    nombre: "Insuficiencia Cardíaca",
+    descripcion: " el corazón causa dificultad para respirar e hinchazón.",
+    imagen: "/img-diseases/Heart-IC.png",
   },
 ];
 

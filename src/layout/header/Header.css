@@ -13,12 +13,16 @@
 .transparent-header {
   background-color: transparent;
   z-index: 2;
+  /* position: sticky;
+  top: 0;
+  background: var(--secondary-color);
+  filter: brightness(0.85);
+  z-index: 1000; */
 }
 
 .logo-container .logo {
   height: 80px;
   margin-left: 50px;
-  
 }
 
 .nav-menu {
@@ -34,15 +38,24 @@
   font-weight: 500;
   cursor: pointer;
 }
+.nav-menu a:hover {
+  color: #c06a8d;
+}
 
 .login-button {
   background: transparent;
-  border: 2px solid white;
-  border-radius: 8px;
-  padding: 0.4rem 1rem;
-  color: white;
+  /* border: 2px solid white;
+  /* border-radius: 8px; */
+  padding: 0;
+  /* color: white; */ 
   cursor: pointer;
-  font-weight: bold;
+  /* font-weight: bold; */
+  transition: transform 0.4s ease;
+}
+
+.login-button:hover {
+  transform: scale(1.1);
+  background-color: transparent;
 }
 
 .back-button {
@@ -53,4 +66,3 @@
   margin-right: 10px;
   color: white;
 }
-

@@ -1,7 +1,7 @@
 .aboutUs-block img {
   display: block; /* La imagen se convierte en bloque */
   margin: 0 auto;
-  width: 300px; /* ajusta el ancho */
+  width: 650px; /* ajusta el ancho */
   height: auto;
   flex-wrap: wrap;
 }
