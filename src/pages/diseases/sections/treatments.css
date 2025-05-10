@@ -27,6 +27,7 @@
 }
 
 .model-container-treatments {
+    position: relative;
     flex: 1;
     width: 50%;
     height: 400px;

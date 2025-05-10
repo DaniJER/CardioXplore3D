@@ -6,6 +6,18 @@
   font-size: 14px;
 }
 
+.home {
+  font-family: var(--H3-H4-font);
+  color: var(--H3-H4-color);
+  font-size: xx-large;
+  text-decoration: none;
+  transition: filter 0.3s ease;
+}
+
+.home:hover {
+  filter: drop-shadow(1em 1em 2em #0044ff); 
+}
+
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -39,18 +51,18 @@
   color: #c06a8d;
 }
 
+.footer-column a {
+  margin: 6px 0;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-column a:hover {
+  color: #c06a8d;
+}
+
 .brand h3 {
   font-size: 20px;
   color: #c06a8d;
   margin: 50px;
-<<<<<<< HEAD
 }
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> release
-=======
-}
->>>>>>> 0d50eb04428f9a07958784c102b602fab2fbcd31

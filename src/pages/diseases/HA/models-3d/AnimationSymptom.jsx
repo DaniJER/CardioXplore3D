@@ -1,19 +1,32 @@
+import React, { useEffect, useImperativeHandle, useRef, forwardRef } from 'react';
+import { useGLTF, useAnimations } from '@react-three/drei';
 
-import React, { useEffect, useRef } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+export const ModelSymptom = forwardRef((props, ref) => {
+  const group = useRef();
+  const { nodes, materials, animations } = useGLTF('/models-3d/HA/model-animation-symptom.glb');
+  const { actions } = useAnimations(animations, group);
+  const firstAction = useRef(null);
 
-export function ModelSymptom(props) {
-  const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/models-3d/HA/model-animation-symptom.glb')
-  const { actions } = useAnimations(animations, group)
-
+  // Configuración inicial de la animación
   useEffect(() => {
-    // Si hay alguna animación, reproduce la primera disponible
     if (actions && Object.keys(actions).length > 0) {
-      const firstActionName = Object.keys(actions)[0]
-      actions[firstActionName]?.play()
+      const name = Object.keys(actions)[0];
+      firstAction.current = actions[name];
+      firstAction.current.play(); // Reproduce la animación inicial
     }
-  }, [actions])
+  }, [actions]);
+
+  // Métodos expuestos al componente padre
+  useImperativeHandle(ref, () => ({
+    play: () => firstAction.current?.play(),
+    pause: () => {
+      if (firstAction.current) firstAction.current.paused = true;
+    },
+    resume: () => {
+      if (firstAction.current) firstAction.current.paused = false;
+    },
+    isPaused: () => firstAction.current?.paused ?? false,
+  }));
 
   return (
     <group ref={group} {...props} dispose={null}>
@@ -71,7 +84,7 @@ export function ModelSymptom(props) {
         </group>
       </group>
     </group>
-  )
-}
+  );
+});
 
-useGLTF.preload('/models-3d/HA/model-animation-symptom.glb')
+useGLTF.preload('/models-3d/HA/model-animation-symptom.glb');
