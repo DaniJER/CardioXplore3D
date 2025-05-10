@@ -20,13 +20,31 @@ const PageIC = () => {
           "Hinchazón en piernas y tobillos",
           "latidos irregulares y rapidos",
         ]}
+        //Modelo 3D
         Model3D={Consequence}
         scale={3.5}
         position={[0, -0.5, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0}
+        //Plano
         mostrarPlano={false}
         planoPosicion={[0, -0.45, 0]}
+        //Luces Directas
+        ambientIntensity={1.5}
+        enableDirectionalLight={true}
+        directionalIntensity={2}
+        directionalPosition={[5, 5, 10]}
+        //Luces Spot
+        enableSpotLight={false}
+        spotIntensity={1}
+        spotPosition={[10, 15, 10]}
+        //Luces Punto
+        enablePointLight={false}
+        pointIntensity={0.5}
+        pointPosition={[0, 5, 0]}
+        //Eventos
+        onTurn={false}
+        onAnimation={true}
       />
       <Treatments
         title="Tratamiento"
@@ -58,14 +76,32 @@ const PageIC = () => {
               "Incorporación de suplementos como potasio o magnesio bajo la supervisión de un médico, para garantizar el equilibrio adecuado de electrolitos.",
           },
         ]}
+        //Modelo 3D
         Model3D={Pills}
         scale={0.3}
         position={[0, 0, 0]}
         rotation={[0.53, 0, 0]}
         rotationSpeed={0.01}
+        //Plano
         mostrarPlano={false}
         planoPosicion={[0, -2, 0]}
         planoRotacion={[-Math.PI/2, 0, 0]}
+        //Luces Direct
+        ambientIntensity={1.5}
+        enableDirectionalLight={true}
+        directionalIntensity={2}
+        directionalPosition={[5, 5, 10]}
+        //Luces Spot
+        enableSpotLight={false}
+        spotIntensity={1}
+        spotPosition={[10, 15, 10]}
+        //Luces Punto
+        enablePointLight={false}
+        pointIntensity={0.5}
+        pointPosition={[0, 5, 0]}
+        //Eventos
+        onTurn={true}
+        onAnimation={false}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -78,13 +114,31 @@ const PageIC = () => {
           "Monitoreo constante",
           "Evitar alcohol y tabaco",
         ]}
+        //Modelo 3D
         Model3D={Exercice}
         scale={3}
         position={[0, -3, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0}
+        //Plano
         mostrarPlano={false}
         planoPosicion={[0, -2.99, 0]}
+        //Luces Direct
+        ambientIntensity={1.5}
+        enableDirectionalLight={true}
+        directionalIntensity={2}
+        directionalPosition={[5, 5, 10]}
+        //Luces Spot
+        enableSpotLight={false}
+        spotIntensity={1}
+        spotPosition={[10, 15, 10]}
+        //Luces Punto
+        enablePointLight={false}
+        pointIntensity={0.5}
+        pointPosition={[0, 5, 0]}
+        //Eventos
+        onTurn={false}
+        onAnimation={true}
       />
     </div>
   );
