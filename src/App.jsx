@@ -15,6 +15,9 @@ import PageHA from "./pages/diseases/HA/PageHA";
 import PageEC from "./pages/diseases/EC/PageEC";
 import PageEAC from "./pages/diseases/EAC/PageEAC";
 import PageIC from "./pages/diseases/IC/PageIC";
+import Contact from "./pages/contact/Contact";
+import Help from "./pages/help/Help";
+import Terms from "./pages/terms/Terms";
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/enfermedades" element={<Diseases />} />
           <Route path="/nosotros" element={<AboutUs />} />
+          <Route path="/contacto" element={<Contact />} />
+          <Route path="/ayuda" element={<Help />} />
+          <Route path="/terminos" element={<Terms />} />
           <Route path="/enfermedades/1" element={<PageHA />} />
           <Route path="/enfermedades/2" element={<PageEC />} />
           <Route path="/enfermedades/3" element={<PageEAC />} />

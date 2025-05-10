@@ -1,0 +1,31 @@
+.help-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: inherit;
+}
+
+.help-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.help-section {
+  margin-bottom: 2rem;
+}
+
+.help-subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.help-list {
+  padding-left: 1.5rem;
+  text-align: left;
+  margin: 0;
+}
+
+.help-list li {
+  margin-bottom: 0.9rem;
+}

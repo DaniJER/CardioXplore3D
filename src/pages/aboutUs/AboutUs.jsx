@@ -8,7 +8,7 @@ const AboutUs = () => {
       <section>
         <div className="aboutUs-block">
           <img
-            src="public/img/univalle.jpg"
+            src="/img/univalle.jpg"
             alt="sobre nosotros"
             className="aboutUs-image"
           />
