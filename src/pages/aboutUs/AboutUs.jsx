@@ -13,13 +13,17 @@ const AboutUs = () => {
             className="aboutUs-image"
           />
           <p className="aboutUs-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga animi
-            aut vel! Nemo voluptates nostrum fugit repellendus mollitia quod ab
-            corrupti perferendis ipsa sit debitis, corporis molestiae eos?
-            Reiciendis, porro? Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Aliquid in libero consectetur esse ex quis nobis,
-            possimus quia, et laboriosam minus odit laudantium magni quibusdam
-            fugiat cupiditate aspernatur doloribus nihil?
+            Somos un grupo de estudiantes de sexto semestre de la Tecnología en
+            Desarrollo de Software de la Universidad del Valle. Este sitio web
+            es el resultado de nuestro proyecto final para la asignatura
+            Proyecto Integrador, en el cual combinamos los conocimientos
+            adquiridos a lo largo de la carrera. Nuestro objetivo con este
+            trabajo es brindar una herramienta educativa e interactiva sobre
+            enfermedades cardíacas, utilizando modelos en 3D para facilitar la
+            comprensión visual de las afecciones más comunes del corazón. A
+            través de esta plataforma, buscamos aportar valor tanto a
+            estudiantes como a profesionales de la salud, integrando tecnología,
+            diseño y funcionalidad con propósito.
           </p>
         </div>
       </section>
