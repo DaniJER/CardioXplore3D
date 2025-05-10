@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./question1.css";
+import { useNavigate } from "react-router-dom";
 
 const Question1 = () => {
+  const navigate = useNavigate();
   const questions = [
     {
       id: 1,
@@ -28,7 +30,7 @@ const Question1 = () => {
       id: 4,
       text: "¿Cuál es la enfermedad?",
       image: "/img-diseases/CIV.png",
-      options: ["Pericarditis", "Taquicardia", "Comunicación interventricular" ],
+      options: ["Pericarditis", "Taquicardia", "Comunicación interventricular"],
       correctAnswer: "Comunicación interventricular",
     },
   ];
@@ -41,7 +43,7 @@ const Question1 = () => {
     localStorage.setItem("quizAnswers", JSON.stringify(answers));
   }, [answers]);
 
-  // Funcion para manejar la seleccion de opciones
+  // Función para manejar la selección de opciones
   const handleOptionClick = (option) => {
     const currentQuestion = questions[currentQuestionIndex];
     const isCorrect = option === currentQuestion.correctAnswer;
@@ -57,28 +59,29 @@ const Question1 = () => {
     setAnswers(updatedAnswers);
   };
 
-  // Funcion para manejar el botón de retroceso
+  // Función para manejar el botón de retroceso
   const handleBack = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
     }
   };
 
-  // Funcion para manejar el botón de siguiente
+  // Función para manejar el botón de siguiente
   const handleNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
 
-  // Funcion para manejar el botón de terminar
+  // Función para manejar el botón de terminar
   const handleFinish = () => {
     localStorage.setItem("quizAnswers", JSON.stringify(answers));
-    window.location.href = "/quiz/resultados";
+    navigate("/quiz/resultados");
   };
 
+  // Función para manejar el botón de salir
   const handleExit = () => {
-    window.location.href = "/quiz";
+    navigate("/quiz");
   };
 
   const isLastQuestion = currentQuestionIndex === questions.length - 1;

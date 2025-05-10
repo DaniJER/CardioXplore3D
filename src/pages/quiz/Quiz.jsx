@@ -54,7 +54,7 @@ const Quiz = () => {
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <h2>No haz iniciado sesión</h2>
+            <h2>No has iniciado sesión</h2>
             <p>Debes iniciar sesión para guardar tus resultados, de lo contrario no se guardará tu progreso.</p>
             <div className="modal-buttons">
               <button className="login-button" onClick={handleLoginRedirect}>
