@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/home/Home";
 import Quiz from "./pages/quiz/Quiz";
+import Question1 from "./pages/quiz/questions/question1";
+import Results from "./pages/quiz/results/results";
 import Diseases from "./pages/diseases/Diseases";
 import Profile from "./pages/profile/Profile";
 import Login from "./pages/login/Login";
@@ -27,6 +29,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/quiz/start" element={<Question1 />} />
+          <Route path="/quiz/resultados" element={<Results />} />
           <Route path="/enfermedades" element={<Diseases />} />
           <Route path="/nosotros" element={<AboutUs />} />
           <Route path="/contacto" element={<Contact />} />
