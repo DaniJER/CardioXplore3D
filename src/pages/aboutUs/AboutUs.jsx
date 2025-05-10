@@ -8,11 +8,7 @@ const AboutUs = () => {
       <section>
         <div className="aboutUs-block">
           <img
-<<<<<<< HEAD
-            src="../public/img/univalle-logo.jpg"
-=======
             src="/img/univalle.jpg"
->>>>>>> release
             alt="sobre nosotros"
             className="aboutUs-image"
           />
