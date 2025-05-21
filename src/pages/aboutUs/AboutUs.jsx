@@ -27,6 +27,25 @@ const AboutUs = () => {
           </p>
         </div>
       </section>
+      <br /><br />
+
+      <hr />
+       {/* Formulario de contacto */}
+      <section className="section contact">
+        <h2 className="contact-title">¿Tiene preguntas?</h2>
+        <p className="contact-subtitle">
+          Dejenos saber si tiene dudas u opiniones a cerca de nuestro sitio web.
+        </p>
+        <form className="contact-form">
+          <div className="name-fields">
+            <input type="text" placeholder="nombres" />
+            <input type="text" placeholder="apellidos" />
+          </div>
+          <input type="email" placeholder="ejemplo@gmail.com" />
+          <textarea placeholder="Ingrese un mensaje" rows="4"></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
     </>
   );
 };
