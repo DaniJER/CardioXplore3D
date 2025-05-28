@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Quiz.css";
+import "./quiz.css";
 import useAuthStore from "../../stores/use-auth-store";
 import { useNavigate } from "react-router-dom";
 
@@ -55,12 +55,18 @@ const Quiz = () => {
         <div className="modal-overlay">
           <div className="modal-content">
             <h2>No has iniciado sesión</h2>
-            <p>Debes iniciar sesión para guardar tus resultados, de lo contrario no se guardará tu progreso.</p>
+            <p>
+              Debes iniciar sesión para guardar tus resultados, de lo contrario
+              no se guardará tu progreso.
+            </p>
             <div className="modal-buttons">
               <button className="login-button" onClick={handleLoginRedirect}>
                 Iniciar sesión
               </button>
-              <button className="continue-button" onClick={continueWithoutSaving}>
+              <button
+                className="continue-button"
+                onClick={continueWithoutSaving}
+              >
                 Continuar sin guardar
               </button>
             </div>
