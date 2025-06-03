@@ -6,6 +6,8 @@ import SceneLights from "../Lights/SceneLights";
 import PAnimation from "../PointEvent/P-animation";
 import SpaceTurn from "../PointEvent/Space-turn";
 import { useRef, useState } from "react";
+import InfoButton from "../PointEvent/InfoButton";
+import "../Elements3D/buttons.css";
 import "./symptoms.css";
 
 const Symptoms = ({
@@ -70,9 +72,13 @@ const Symptoms = ({
           <div className="model-controls">
             {onAnimation && <PAnimation modelRef={modelRef} />}
             {onTurn && <SpaceTurn onToggle={setIsRotating} />}
+            <InfoButton />
           </div>
 
           <Canvas shadows>
+            {/* <Texts texts={title} />
+            <Buttons3D text={"Botón 3D"} /> */}
+
             {/* Plano invisible para sombra */}
             <mesh receiveShadow rotation={planoRotacion} position={planoPosicion}>
               <planeGeometry args={planoEscala} />

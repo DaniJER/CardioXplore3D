@@ -6,6 +6,8 @@ import SceneLights from "../Lights/SceneLights";
 import PAnimation from "../PointEvent/P-animation";
 import SpaceTurn from "../PointEvent/Space-turn";
 import { useRef, useState } from "react";
+import InfoButton from "../PointEvent/InfoButton";
+import "../Elements3D/buttons.css";
 import "./treatments.css";
 
 const Treatments = ({
@@ -58,12 +60,15 @@ const Treatments = ({
         <div className="model-container-treatments">
           {/* Botones de control */}
           <div className="model-controls">
-
             {onAnimation && <PAnimation modelRef={modelRef} />}
             {onTurn && <SpaceTurn onToggle={setIsRotating} />}
+            <InfoButton />
           </div>
           {/* Canvas de Three.js */}
           <Canvas shadows>
+            {/* <Texts texts={title} />
+            <Buttons3D text={"Botón 3D"} /> */}
+
             {/* Plano invisible que recibe la sombra */}
             <mesh
               receiveShadow

@@ -7,6 +7,8 @@ import { useRef, useState } from "react";
 import "./prevention.css";
 import PAnimation from "../PointEvent/P-animation";
 import SpaceTurn from "../PointEvent/Space-turn";
+import InfoButton from "../PointEvent/InfoButton";
+import "../Elements3D/buttons.css";
 
 const Prevention = ({
   title = "Prevención y cuidados",
@@ -64,13 +66,18 @@ const Prevention = ({
 
         {/* Modelo 3D */}
         <div className="model-container-prevention">
+
           {/* Botones de control */}
           <div className="model-controls">
-          {onAnimation && <PAnimation modelRef={modelRef} />}
-          {onTurn && <SpaceTurn onToggle={setIsRotating} />}
+            {onAnimation && <PAnimation modelRef={modelRef} />}
+            {onTurn && <SpaceTurn onToggle={setIsRotating} />}
+            <InfoButton />
           </div>
 
           <Canvas shadows>
+            {/* <Texts texts={title} />
+            <Buttons3D text={"Botón 3D"} /> */}
+
             {/* Plano invisible para sombras */}
             <mesh
               receiveShadow

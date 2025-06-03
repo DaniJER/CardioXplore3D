@@ -8,6 +8,9 @@
     position: relative;
     width: 55%;
     height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .text-container {
