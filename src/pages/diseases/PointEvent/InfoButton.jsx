@@ -28,10 +28,10 @@ const InfoButton = () => {
                     <div className="modal-content-info" onClick={(e) => e.stopPropagation()}>
                         <h2>Información de los modelos</h2>
                         <ul>
-                            <li>Con la letra "P" puedes pausar o reanudar la animacion del modelo 3D.</li>
+                            <li>Con la letra "P" puedes pausar o reanudar la animación del modelo 3D.</li>
                             <li>Con la tecla "Espacio" puedes girar o detener el modelo 3D.</li>
-                            {/* <li>Con Doble-click puedes cambiar el estilo de luz</li> */}
-                            {/* <lu>Con Click-derecho puedes cambiar el color de la luz</lu> */}
+                            <li>Con doble clic puedes cambiar el estilo de luz.</li>
+                            <li>Con clic derecho puedes cambiar el color de la luz.</li>
                         </ul>
                         <button className="close-button" onClick={() => setShowModal(false)} aria-label="Cerrar">
                             &times;

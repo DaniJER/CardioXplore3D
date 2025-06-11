@@ -11,6 +11,8 @@ import { useRef, useState } from "react";
 import InfoButton from "../PointEvent/InfoButton";
 import "../Elements3D/buttons.css";
 import "./whatIs.css";
+import DoubleClickLightToggle from "../PointEvent/DoubleClick";
+import RightClickColorToggle from "../PointEvent/RightClick";
 
 const WhatIs = ({
   title,
@@ -31,9 +33,9 @@ const WhatIs = ({
   ambientIntensity = 1.5,
   directionalIntensity = 2,
   directionalPosition = [5, 5, 10],
-  spotIntensity = 1,
+  spotIntensity = 2,
   spotPosition = [10, 15, 10],
-  pointIntensity = 0.5,
+  pointIntensity = 2,
   pointPosition = [0, 5, 0],
   enableDirectionalLight = true,
   enablePointLight,
@@ -44,6 +46,9 @@ const WhatIs = ({
 }) => {
   const modelRef = useRef();
   const [isRotating, setIsRotating] = useState(true);
+
+  const { lightType, handleDoubleClick } = DoubleClickLightToggle();
+  const { lightColor, handleRightClick } = RightClickColorToggle();
 
   // Función para hacer scroll suave a la sección deseada
   const scrollToSection = (id) => {
@@ -65,7 +70,11 @@ const WhatIs = ({
           <InfoButton />
         </div>
 
-        <Canvas shadows>
+        <Canvas
+          onDoubleClick={handleDoubleClick}
+          onContextMenu={handleRightClick}
+          shadows>
+
           {/* <Texts texts={title} />
             <Buttons3D text={"Botón 3D"} /> */}
 
@@ -95,6 +104,8 @@ const WhatIs = ({
             enableDirectionalLight={enableDirectionalLight}
             enablePointLight={enablePointLight}
             enableSpotLight={enableSpotLight}
+            lightColor={lightColor}
+            lightType={lightType}
           />
 
           {/* Modelo 3D animado */}

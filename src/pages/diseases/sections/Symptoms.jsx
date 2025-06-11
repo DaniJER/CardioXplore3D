@@ -9,6 +9,8 @@ import { useRef, useState } from "react";
 import InfoButton from "../PointEvent/InfoButton";
 import "../Elements3D/buttons.css";
 import "./symptoms.css";
+import DoubleClickLightToggle from "../PointEvent/DoubleClick";
+import RightClickColorToggle from "../PointEvent/RightClick";
 
 const Symptoms = ({
   title = "Síntomas",
@@ -30,9 +32,9 @@ const Symptoms = ({
   ambientIntensity = 1.5,
   directionalIntensity = 2,
   directionalPosition = [5, 5, 10],
-  spotIntensity = 1,
+  spotIntensity = 2,
   spotPosition = [10, 15, 10],
-  pointIntensity = 0.5,
+  pointIntensity = 2,
   pointPosition = [0, 5, 0],
   enableDirectionalLight = true,
   enablePointLight,
@@ -44,6 +46,9 @@ const Symptoms = ({
 }) => {
   const modelRef = useRef();
   const [isRotating, setIsRotating] = useState(true);
+
+  const { lightType, handleDoubleClick } = DoubleClickLightToggle();
+  const { lightColor, handleRightClick } = RightClickColorToggle();
 
   return (
     <section className="symptoms-container" id="symptoms">
@@ -75,7 +80,11 @@ const Symptoms = ({
             <InfoButton />
           </div>
 
-          <Canvas shadows>
+          <Canvas
+            onDoubleClick={handleDoubleClick}
+            onContextMenu={handleRightClick}
+            shadows>
+
             {/* <Texts texts={title} />
             <Buttons3D text={"Botón 3D"} /> */}
 
@@ -106,6 +115,8 @@ const Symptoms = ({
               enablePointLight={enablePointLight}
               enableSpotLight={enableSpotLight}
               enableOrbit={enableOrbit}
+              lightColor={lightColor}
+              lightType={lightType}
             />
 
             {/* Modelo 3D animado */}
