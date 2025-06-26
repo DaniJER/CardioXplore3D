@@ -41,7 +41,7 @@
 
 .treatments-list li {
     list-style-type: disc;
-    text-align: justify;
+    text-align: left;
     width: 65%;
     margin-bottom: 1rem;
 }

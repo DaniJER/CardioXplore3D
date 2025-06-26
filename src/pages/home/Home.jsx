@@ -23,7 +23,7 @@ const Home = () => {
           />
           <div className="banner-content">
             <h1>CardioXplore3D</h1>
-            <p>
+            <p style={{width: "500px", textAlign: "center"}}>
               Aprende sobre las enfermedades del corazón con visualizaciones
               interactivas en 3D
             </p>
@@ -70,23 +70,6 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </section>
-
-      {/* Formulario de contacto */}
-      <section className="section contact">
-        <h2 className="contact-title">¿Tiene preguntas?</h2>
-        <p className="contact-subtitle">
-          Dejenos saber si tiene dudas u opiniones a cerca de nuestro sitio web.
-        </p>
-        <form className="contact-form">
-          <div className="name-fields">
-            <input type="text" placeholder="nombres" />
-            <input type="text" placeholder="apellidos" />
-          </div>
-          <input type="email" placeholder="ejemplo@gmail.com" />
-          <textarea placeholder="Ingrese un mensaje" rows="4"></textarea>
-          <button type="submit">Enviar</button>
-        </form>
       </section>
 
       <button
