@@ -5,12 +5,12 @@ import AnimatedModelWrapper from "./AnimatedModelWrapper";
 import SceneLights from "../Lights/SceneLights";
 import { useRef, useState } from "react";
 import "./prevention.css";
-import PAnimation from "../PointEvent/P-animation";
-import SpaceTurn from "../PointEvent/Space-turn";
 import InfoButton from "../PointEvent/InfoButton";
 import "../Elements3D/buttons.css";
 import DoubleClickLightToggle from "../PointEvent/DoubleClick";
 import RightClickColorToggle from "../PointEvent/RightClick";
+import PauseAnimation from "../PointEvent/PauseAnimation";
+import SpaceTurn from "../PointEvent/SpaceTurn";
 
 const Prevention = ({
   title = "Prevención y cuidados",
@@ -77,6 +77,8 @@ const Prevention = ({
             {onAnimation && <PAnimation modelRef={modelRef} />}
             {onTurn && <SpaceTurn onToggle={setIsRotating} />}
             <InfoButton />
+            {onAnimation && <PauseAnimation modelRef={modelRef} />}
+            {onTurn && <SpaceTurn onToggle={setIsRotating} />}
           </div>
 
           <Canvas
@@ -99,10 +101,7 @@ const Prevention = ({
 
             {/* Plano visible */}
             {mostrarPlano && (
-              <mesh
-                rotation={planoRotacion}
-                position={planoPosicion}
-              >
+              <mesh rotation={planoRotacion} position={planoPosicion}>
                 <planeGeometry args={planoEscala} />
                 <meshStandardMaterial color="#e0e0e0" />
               </mesh>
@@ -126,8 +125,16 @@ const Prevention = ({
 
             {/* Modelo 3D animado */}
             <OrbitControls />
-            <AnimatedModelWrapper rotationSpeed={rotationSpeed} isRotating={isRotating}>
-              <Model3D ref={modelRef} scale={scale} position={position} rotation={rotation} />
+            <AnimatedModelWrapper
+              rotationSpeed={rotationSpeed}
+              isRotating={isRotating}
+            >
+              <Model3D
+                ref={modelRef}
+                scale={scale}
+                position={position}
+                rotation={rotation}
+              />
             </AnimatedModelWrapper>
           </Canvas>
         </div>

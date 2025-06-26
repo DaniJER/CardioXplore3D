@@ -5,8 +5,8 @@ import Tratamiento from "../../../assets/Tratamiento.svg";
 import Prevencion from "../../../assets/Prevencion.svg";
 import AnimatedModelWrapper from "./AnimatedModelWrapper";
 import SceneLights from "../Lights/SceneLights";
-import SpaceTurn from "../PointEvent/Space-turn";
-import PAnimation from "../PointEvent/P-animation";
+import SpaceTurn from "../PointEvent/SpaceTurn";
+import PauseAnimation from "../PointEvent/PauseAnimation";
 import { useRef, useState } from "react";
 import InfoButton from "../PointEvent/InfoButton";
 import "../Elements3D/buttons.css";
@@ -62,10 +62,9 @@ const WhatIs = ({
     <div className="whatIs-container">
       {/* Sección del Modelo 3D */}
       <div className="model-container-whatIs">
-
         {/* Botónes de control */}
         <div className="model-controls">
-          {onAnimation && <PAnimation modelRef={modelRef} />}
+          {onAnimation && <PauseAnimation modelRef={modelRef} />}
           {onTurn && <SpaceTurn onToggle={setIsRotating} />}
           <InfoButton />
         </div>
@@ -110,8 +109,16 @@ const WhatIs = ({
 
           {/* Modelo 3D animado */}
           <OrbitControls />
-          <AnimatedModelWrapper rotationSpeed={rotationSpeed} isRotating={isRotating}>
-            <Model3D ref={modelRef} scale={scale} position={position} rotation={rotation} />
+          <AnimatedModelWrapper
+            rotationSpeed={rotationSpeed}
+            isRotating={isRotating}
+          >
+            <Model3D
+              ref={modelRef}
+              scale={scale}
+              position={position}
+              rotation={rotation}
+            />
           </AnimatedModelWrapper>
         </Canvas>
       </div>
@@ -124,13 +131,26 @@ const WhatIs = ({
 
         {/* Iconos */}
         <div className="icons-container">
-          <button className="icon-button" onClick={() => scrollToSection("symptoms")}>
+          <button
+            className="icon-button"
+            onClick={() => scrollToSection("symptoms")}
+          >
             <img src={Sintomas} alt="Icono Sintomas" className="icon-img" />
           </button>
-          <button className="icon-button" onClick={() => scrollToSection("treatments")}>
-            <img src={Tratamiento} alt="Icono Tratamiento" className="icon-img" />
+          <button
+            className="icon-button"
+            onClick={() => scrollToSection("treatments")}
+          >
+            <img
+              src={Tratamiento}
+              alt="Icono Tratamiento"
+              className="icon-img"
+            />
           </button>
-          <button className="icon-button" onClick={() => scrollToSection("prevention")}>
+          <button
+            className="icon-button"
+            onClick={() => scrollToSection("prevention")}
+          >
             <img src={Prevencion} alt="Icono Prevencion" className="icon-img" />
           </button>
         </div>
