@@ -11,11 +11,13 @@
   color: var(--H3-H4-color);
   font-size: xx-large;
   text-decoration: none;
-  transition: filter 0.3s ease;
+  background: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: scale 0.4s ease;
 }
-
 .home:hover {
-  filter: drop-shadow(1em 1em 2em #0044ff); 
+  scale: 1.06;
 }
 
 .footer-container {
@@ -43,22 +45,25 @@
 
 .footer-column li {
   margin: 6px 0;
+}
+
+/* Estilo común para botones y enlaces */
+.footer-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
   cursor: pointer;
   transition: color 0.3s;
+  text-decoration: none;
+  text-align: left;
+  display: inline-block;
+  transition: scale 0.3s ease;
 }
 
-.footer-column li:hover {
+.footer-link:hover {
   color: #c06a8d;
-}
-
-.footer-column a {
-  margin: 6px 0;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.footer-column a:hover {
-  color: #c06a8d;
+  scale: 1.03;
 }
 
 .brand h3 {
