@@ -1,4 +1,6 @@
 // AnimationController.jsx
+import Pause from "../../../assets/pause.svg";
+import Reaundar from "../../../assets/Reanudar.svg";
 import { useEffect, useState } from "react";
 
 const PAnimation = ({ modelRef }) => {
@@ -27,7 +29,10 @@ const PAnimation = ({ modelRef }) => {
 
   return (
     <button className="model-button" onClick={toggleAnimation}>
-      {isPaused ? "▶️ Reanudar" : "⏸️ Pausar"}
+      {isPaused ?
+        <img src={Reaundar} className="icon-controls" />
+        :
+        <img src={Pause} className="icon-controls" />}
     </button>
   );
 };

@@ -20,8 +20,10 @@ const SceneLights = ({
     enablePointLight,
     enableSpotLight,
     enableOrbit = true,
+    lightType = "directional",
+    lightColor = "white",
 }) => {
-        const directionalRef = useRef();
+    const directionalRef = useRef();
     const pointRef = useRef();
     const spotRef = useRef();
 
@@ -38,9 +40,10 @@ const SceneLights = ({
             )}
 
             {/* Luz direccional */}
-            {enableDirectionalLight && (
+            {lightType === "directional" && (
                 <directionalLight
                     // ref={directionalRef}
+                    color={lightColor}
                     position={directionalPosition}
                     intensity={directionalIntensity}
                     castShadow
@@ -48,9 +51,10 @@ const SceneLights = ({
             )}
 
             {/* Luz puntual */}
-            {enablePointLight && (
+            {lightType === "point" && (
                 <pointLight
                     // ref={pointRef}
+                    color={lightColor}
                     position={pointPosition}
                     intensity={pointIntensity}
                     decay={2}
@@ -60,9 +64,10 @@ const SceneLights = ({
             )}
 
             {/* Luz tipo foco */}
-            {enableSpotLight && (
+            {lightType === "spot" && (
                 <spotLight
                     // ref={spotRef}
+                    color={lightColor}
                     position={spotPosition}
                     intensity={spotIntensity}
                     angle={0.3}

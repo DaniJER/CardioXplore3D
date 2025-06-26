@@ -6,7 +6,11 @@ import SceneLights from "../Lights/SceneLights";
 import PauseAnimation from "../PointEvent/PauseAnimation";
 import SpaceTurn from "../PointEvent/SpaceTurn";
 import { useRef, useState } from "react";
+import InfoButton from "../PointEvent/InfoButton";
+import "../Elements3D/buttons.css";
 import "./treatments.css";
+import DoubleClickLightToggle from "../PointEvent/DoubleClick";
+import RightClickColorToggle from "../PointEvent/RightClick";
 
 const Treatments = ({
   title = "Tratamiento",
@@ -27,9 +31,9 @@ const Treatments = ({
   ambientIntensity = 1.5,
   directionalIntensity = 2,
   directionalPosition = [5, 5, 10],
-  spotIntensity = 1,
+  spotIntensity = 2,
   spotPosition = [10, 15, 10],
-  pointIntensity = 0.5,
+  pointIntensity = 2,
   pointPosition = [0, 5, 0],
   enableDirectionalLight = true,
   enablePointLight,
@@ -40,6 +44,9 @@ const Treatments = ({
 }) => {
   const modelRef = useRef();
   const [isRotating, setIsRotating] = useState(true);
+
+  const { lightType, handleDoubleClick } = DoubleClickLightToggle();
+  const { lightColor, handleRightClick } = RightClickColorToggle();
 
   return (
     <section className="treatments-container" id="treatments">
@@ -58,11 +65,20 @@ const Treatments = ({
         <div className="model-container-treatments">
           {/* Botones de control */}
           <div className="model-controls">
+
             {onAnimation && <PauseAnimation modelRef={modelRef} />}
             {onTurn && <SpaceTurn onToggle={setIsRotating} />}
+            <InfoButton />
           </div>
           {/* Canvas de Three.js */}
-          <Canvas shadows>
+          <Canvas
+            onDoubleClick={handleDoubleClick}
+            onContextMenu={handleRightClick}
+            shadows>
+
+            {/* <Texts texts={title} />
+            <Buttons3D text={"Botón 3D"} /> */}
+
             {/* Plano invisible que recibe la sombra */}
             <mesh
               receiveShadow
@@ -93,6 +109,8 @@ const Treatments = ({
               enableDirectionalLight={enableDirectionalLight}
               enablePointLight={enablePointLight}
               enableSpotLight={enableSpotLight}
+              lightColor={lightColor}
+              lightType={lightType}
             />
 
             {/* Modelo 3D animado */}
