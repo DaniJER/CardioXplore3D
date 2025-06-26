@@ -1,6 +1,6 @@
 // AnimationController.jsx
 import Pause from "../../../assets/pause.svg";
-import Reaundar from "../../../assets/reanudar.svg";
+import Reaundar from "../../../assets/Reanudar.svg";
 import { useEffect, useState } from "react";
 
 const PAnimation = ({ modelRef }) => {
