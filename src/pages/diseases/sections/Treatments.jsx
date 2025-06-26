@@ -3,8 +3,8 @@ import { OrbitControls } from "@react-three/drei";
 import Tratamiento from "../../../assets/Tratamiento.svg";
 import AnimatedModelWrapper from "./AnimatedModelWrapper";
 import SceneLights from "../Lights/SceneLights";
-import PAnimation from "../PointEvent/P-animation";
-import SpaceTurn from "../PointEvent/Space-turn";
+import PauseAnimation from "../PointEvent/PauseAnimation";
+import SpaceTurn from "../PointEvent/SpaceTurn";
 import { useRef, useState } from "react";
 import "./treatments.css";
 
@@ -58,8 +58,7 @@ const Treatments = ({
         <div className="model-container-treatments">
           {/* Botones de control */}
           <div className="model-controls">
-
-            {onAnimation && <PAnimation modelRef={modelRef} />}
+            {onAnimation && <PauseAnimation modelRef={modelRef} />}
             {onTurn && <SpaceTurn onToggle={setIsRotating} />}
           </div>
           {/* Canvas de Three.js */}
@@ -76,10 +75,7 @@ const Treatments = ({
 
             {/* Plano visible si se indica */}
             {mostrarPlano && (
-              <mesh
-                rotation={planoRotacion}
-                position={planoPosicion}
-              >
+              <mesh rotation={planoRotacion} position={planoPosicion}>
                 <planeGeometry args={planoEscala} />
                 <meshStandardMaterial color="#e0e0e0" />
               </mesh>
@@ -101,8 +97,16 @@ const Treatments = ({
 
             {/* Modelo 3D animado */}
             <OrbitControls />
-            <AnimatedModelWrapper rotationSpeed={rotationSpeed} isRotating={isRotating}>
-              <Model3D ref={modelRef} scale={scale} position={position} rotation={rotation} />
+            <AnimatedModelWrapper
+              rotationSpeed={rotationSpeed}
+              isRotating={isRotating}
+            >
+              <Model3D
+                ref={modelRef}
+                scale={scale}
+                position={position}
+                rotation={rotation}
+              />
             </AnimatedModelWrapper>
           </Canvas>
         </div>
