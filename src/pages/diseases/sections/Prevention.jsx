@@ -5,8 +5,8 @@ import AnimatedModelWrapper from "./AnimatedModelWrapper";
 import SceneLights from "../Lights/SceneLights";
 import { useRef, useState } from "react";
 import "./prevention.css";
-import PAnimation from "../PointEvent/P-animation";
-import SpaceTurn from "../PointEvent/Space-turn";
+import PauseAnimation from "../PointEvent/PauseAnimation";
+import SpaceTurn from "../PointEvent/SpaceTurn";
 
 const Prevention = ({
   title = "Prevención y cuidados",
@@ -66,8 +66,8 @@ const Prevention = ({
         <div className="model-container-prevention">
           {/* Botones de control */}
           <div className="model-controls">
-          {onAnimation && <PAnimation modelRef={modelRef} />}
-          {onTurn && <SpaceTurn onToggle={setIsRotating} />}
+            {onAnimation && <PauseAnimation modelRef={modelRef} />}
+            {onTurn && <SpaceTurn onToggle={setIsRotating} />}
           </div>
 
           <Canvas shadows>
@@ -83,10 +83,7 @@ const Prevention = ({
 
             {/* Plano visible */}
             {mostrarPlano && (
-              <mesh
-                rotation={planoRotacion}
-                position={planoPosicion}
-              >
+              <mesh rotation={planoRotacion} position={planoPosicion}>
                 <planeGeometry args={planoEscala} />
                 <meshStandardMaterial color="#e0e0e0" />
               </mesh>
@@ -108,8 +105,16 @@ const Prevention = ({
 
             {/* Modelo 3D animado */}
             <OrbitControls />
-            <AnimatedModelWrapper rotationSpeed={rotationSpeed} isRotating={isRotating}>
-              <Model3D ref={modelRef} scale={scale} position={position} rotation={rotation} />
+            <AnimatedModelWrapper
+              rotationSpeed={rotationSpeed}
+              isRotating={isRotating}
+            >
+              <Model3D
+                ref={modelRef}
+                scale={scale}
+                position={position}
+                rotation={rotation}
+              />
             </AnimatedModelWrapper>
           </Canvas>
         </div>
