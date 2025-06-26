@@ -3,8 +3,8 @@ import { OrbitControls } from "@react-three/drei";
 import Sintomas from "../../../assets/Sintomas.svg";
 import AnimatedModelWrapper from "./AnimatedModelWrapper";
 import SceneLights from "../Lights/SceneLights";
-import PAnimation from "../PointEvent/P-animation";
-import SpaceTurn from "../PointEvent/Space-turn";
+import PauseAnimation from "../PointEvent/PauseAnimation";
+import SpaceTurn from "../PointEvent/SpaceTurn";
 import { useRef, useState } from "react";
 import "./symptoms.css";
 
@@ -65,16 +65,19 @@ const Symptoms = ({
 
         {/* Modelo 3D */}
         <div className="model-container-symptoms">
-
           {/* Botónes de control */}
           <div className="model-controls">
-            {onAnimation && <PAnimation modelRef={modelRef} />}
+            {onAnimation && <PauseAnimation modelRef={modelRef} />}
             {onTurn && <SpaceTurn onToggle={setIsRotating} />}
           </div>
 
           <Canvas shadows>
             {/* Plano invisible para sombra */}
-            <mesh receiveShadow rotation={planoRotacion} position={planoPosicion}>
+            <mesh
+              receiveShadow
+              rotation={planoRotacion}
+              position={planoPosicion}
+            >
               <planeGeometry args={planoEscala} />
               <shadowMaterial transparent opacity={0.2} />
             </mesh>
@@ -104,15 +107,25 @@ const Symptoms = ({
 
             {/* Modelo 3D animado */}
             <OrbitControls />
-            <AnimatedModelWrapper rotationSpeed={rotationSpeed} isRotating={isRotating}>
-              <Model3D ref={modelRef} scale={scale} position={position} rotation={rotation} />
+            <AnimatedModelWrapper
+              rotationSpeed={rotationSpeed}
+              isRotating={isRotating}
+            >
+              <Model3D
+                ref={modelRef}
+                scale={scale}
+                position={position}
+                rotation={rotation}
+              />
             </AnimatedModelWrapper>
           </Canvas>
         </div>
       </div>
 
       {/* Último párrafo */}
-      {lastDescription && <p className="last-description-symptoms">{lastDescription}</p>}
+      {lastDescription && (
+        <p className="last-description-symptoms">{lastDescription}</p>
+      )}
     </section>
   );
 };
