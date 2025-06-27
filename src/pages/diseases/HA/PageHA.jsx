@@ -42,6 +42,12 @@ const PageHA = () => {
         //Eventos
         onTurn={true}
         onAnimation={false}
+        //Entorno
+        enableGym={false}
+        enableHospital={true}
+        heightEnvironment={60}
+        radiusEnvironment={100}
+        scaleEnvironment={60}
       />
       <Symptoms
         title="Síntomas"
@@ -81,6 +87,12 @@ const PageHA = () => {
         //Eventos
         onTurn={false}
         onAnimation={true}
+        //Entorno
+        enableGym={true}
+        enableHospital={false}
+        heightEnvironment={14}
+        radiusEnvironment={50}
+        scaleEnvironment={50}
       />
       <Treatments
         title="Tratamiento"
@@ -139,6 +151,12 @@ const PageHA = () => {
         //Eventos
         onTurn={true}
         onAnimation={false}
+        //Entorno
+        enableGym={false}
+        enableHospital={true}
+        heightEnvironment={800}
+        radiusEnvironment={1000}
+        scaleEnvironment={400}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -178,6 +196,12 @@ const PageHA = () => {
         //Eventos
         onTurn={true}
         onAnimation={true}
+        //Entorno
+        enableGym={true}
+        enableHospital={false}
+        heightEnvironment={14}
+        radiusEnvironment={50}
+        scaleEnvironment={50}
       />
     </div>
   );

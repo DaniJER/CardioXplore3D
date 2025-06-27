@@ -11,6 +11,7 @@ import DoubleClickLightToggle from "../PointEvent/DoubleClick";
 import RightClickColorToggle from "../PointEvent/RightClick";
 import PauseAnimation from "../PointEvent/PauseAnimation";
 import SpaceTurn from "../PointEvent/SpaceTurn";
+import Staging from "../environment/environment";
 
 const Prevention = ({
   title = "Prevención y cuidados",
@@ -42,6 +43,12 @@ const Prevention = ({
   //Eventos
   onTurn = true,
   onAnimation = false,
+  //Entorno
+  enableGym,
+  enableHospital,
+  heightEnvironment = 60,
+  radiusEnvironment = 100,
+  scaleEnvironment = 60,
 }) => {
   const modelRef = useRef();
   const [isRotating, setIsRotating] = useState(true);
@@ -74,18 +81,16 @@ const Prevention = ({
 
           {/* Botones de control */}
           <div className="model-controls">
-            {onAnimation && <PAnimation modelRef={modelRef} />}
-            {onTurn && <SpaceTurn onToggle={setIsRotating} />}
-            <InfoButton />
             {onAnimation && <PauseAnimation modelRef={modelRef} />}
             {onTurn && <SpaceTurn onToggle={setIsRotating} />}
+            <InfoButton />
           </div>
 
           <Canvas
             onDoubleClick={handleDoubleClick}
             onContextMenu={handleRightClick}
             shadows>
-              
+
             {/* <Texts texts={title} />
             <Buttons3D text={"Botón 3D"} /> */}
 
@@ -121,6 +126,15 @@ const Prevention = ({
               enableSpotLight={enableSpotLight}
               lightColor={lightColor}
               lightType={lightType}
+            />
+
+            {/* Entorno */}
+            <Staging
+              enableGym={enableGym}
+              enableHospital={enableHospital}
+              height={heightEnvironment}
+              radius={radiusEnvironment}
+              scale={scaleEnvironment}
             />
 
             {/* Modelo 3D animado */}

@@ -8,14 +8,7 @@ function Header() {
   const isHome = location.pathname === "/";
 
   return (
-    <header  style={{
-        position: 'sticky',
-        top: 0,
-        backgroundColor: 'rgb(176, 144, 177)',
-        zIndex: 1000,
-        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-      }}
-      className={`custom-header ${isHome ? "transparent-header" : ""}`}>
+    <header className={`custom-header ${isHome ? "transparent-header" : ""}`}>
       <div className="logo-container">
         {!isHome && (
           <button className="back-button" onClick={() => navigate(-1)}>
@@ -45,4 +38,3 @@ function Header() {
 }
 
 export default Header;
-

@@ -1,6 +1,35 @@
+import React, { useState } from 'react';
 import "./aboutUs.css";
 
 const AboutUs = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Datos del formulario:', formData);
+    // Logica para enviar los datos del formulario
+    alert('Formulario enviado con éxito');
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      message: ''
+    });
+  };
+
   return (
     <>
       <title>Sobre nosotros</title>
@@ -30,23 +59,54 @@ const AboutUs = () => {
       <br /><br />
 
       <hr />
-       {/* Formulario de contacto */}
       <section className="section contact">
         <h2 className="contact-title">¿Tiene preguntas?</h2>
         <p className="contact-subtitle">
-          Dejenos saber si tiene dudas u opiniones a cerca de nuestro sitio web.
+          Déjenos saber si tiene dudas u opiniones acerca de nuestro sitio web.
         </p>
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <div className="name-fields">
-            <input type="text" placeholder="nombres" />
-            <input type="text" placeholder="apellidos" />
+            <input
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              placeholder="Nombres"
+              required
+              autoComplete="given-name"
+            />
+            <input
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              placeholder="Apellidos"
+              required
+              autoComplete="family-name"
+            />
           </div>
-          <input type="email" placeholder="ejemplo@gmail.com" />
-          <textarea placeholder="Ingrese un mensaje" rows="4"></textarea>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="ejemplo@gmail.com"
+            required
+            autoComplete="email"
+          />
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Ingrese un mensaje"
+            rows="4"
+            required
+          />
           <button type="submit">Enviar</button>
         </form>
       </section>
     </>
   );
 };
+
 export default AboutUs;
