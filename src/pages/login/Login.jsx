@@ -45,7 +45,7 @@ const Login = () => {
             <a onClick={() => navigate("/create-user")} style={{ marginTop: "1rem", cursor:"pointer"}}>
                 ¿No tienes cuenta? Regístrate aquí
               </a>
-              <button type="submit" className="login-submit-button">
+              <button onClick={() => navigate("/create-user")} type="submit" className="login-submit-button">
                 Registrate aquí
               </button>
               <div className="login-separator">
