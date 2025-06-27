@@ -11,6 +11,7 @@ import "../Elements3D/buttons.css";
 import "./treatments.css";
 import DoubleClickLightToggle from "../PointEvent/DoubleClick";
 import RightClickColorToggle from "../PointEvent/RightClick";
+import Staging from "../environment/environment";
 
 const Treatments = ({
   title = "Tratamiento",
@@ -41,6 +42,12 @@ const Treatments = ({
   // Eventos
   onTurn = true,
   onAnimation = false,
+  // Entorno
+  enableGym,
+  enableHospital,
+  heightEnvironment = 60,
+  radiusEnvironment = 100,
+  scaleEnvironment = 60,
 }) => {
   const modelRef = useRef();
   const [isRotating, setIsRotating] = useState(true);
@@ -111,6 +118,15 @@ const Treatments = ({
               enableSpotLight={enableSpotLight}
               lightColor={lightColor}
               lightType={lightType}
+            />
+
+            {/* Entorno */}
+            <Staging
+              enableGym={enableGym}
+              enableHospital={enableHospital}
+              height={heightEnvironment}
+              radius={radiusEnvironment}
+              scale={scaleEnvironment}
             />
 
             {/* Modelo 3D animado */}

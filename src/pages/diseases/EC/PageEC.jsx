@@ -24,6 +24,11 @@ const PageEC = () => {
             planoPosicion={[0, -2.8, 0]}
             planoRotacion={[-Math.PI / 2, 0, 0]}
             planoEscala={[30, 30]}
+            enableGym={false}
+            enableHospital={true}
+            heightEnvironment={60}
+            radiusEnvironment={100}
+            scaleEnvironment={60}
         />
       
       </div>

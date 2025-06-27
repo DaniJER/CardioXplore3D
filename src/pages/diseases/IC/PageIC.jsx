@@ -45,6 +45,12 @@ const PageIC = () => {
         //Eventos
         onTurn={false}
         onAnimation={true}
+        //Entorno
+        enableGym={true}
+        enableHospital={false}
+        heightEnvironment={14}
+        radiusEnvironment={50}
+        scaleEnvironment={50}
       />
       <Treatments
         title="Tratamiento"
@@ -102,6 +108,12 @@ const PageIC = () => {
         //Eventos
         onTurn={true}
         onAnimation={false}
+        //Entorno
+        enableGym={false}
+        enableHospital={true}
+        heightEnvironment={800}
+        radiusEnvironment={1000}
+        scaleEnvironment={400}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -139,6 +151,12 @@ const PageIC = () => {
         //Eventos
         onTurn={false}
         onAnimation={true}
+        //Entorno
+        enableGym={true}
+        enableHospital={false}
+        heightEnvironment={14}
+        radiusEnvironment={50}
+        scaleEnvironment={50}
       />
     </div>
   );
