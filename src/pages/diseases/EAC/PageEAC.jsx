@@ -7,7 +7,7 @@ import { Artery } from "./models-3d/Artery";
 import { ChestPain } from "../EAC/models-3d/ChestPain";
 import { Angioplasty } from "../EAC/models-3d/Angioplasty";
 import { Training } from "../EAC/models-3d/Training";
-import "./pageEAC.css/";
+import "./pageEAC.css";
 
 const PageEAC = () => {
   return (
@@ -23,6 +23,11 @@ const PageEAC = () => {
         rotationSpeed={0.01}
         mostrarPlano={false}
         planoPosicion={[0, -2.2, 0]}
+        enableGym={false}
+        enableHospital={true}
+        heightEnvironment={60}
+        radiusEnvironment={100}
+        scaleEnvironment={60}
       />
       <Symptoms
         title="Síntomas"
@@ -47,6 +52,11 @@ const PageEAC = () => {
         rotationSpeed={0.01}
         mostrarPlano={false}
         planoPosicion={[0, -2.8, 0]}
+        enableGym={true}
+        enableHospital={false}
+        heightEnvironment={14}
+        radiusEnvironment={50}
+        scaleEnvironment={50}
       />
       <Treatments
         title="Tratamiento"
@@ -83,6 +93,11 @@ const PageEAC = () => {
         rotationSpeed={0.01}
         mostrarPlano={false}
         planoPosicion={[0, -2.8, 0]}
+        enableGym={false}
+        enableHospital={true}
+        heightEnvironment={60}
+        radiusEnvironment={100}
+        scaleEnvironment={60}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -104,6 +119,11 @@ const PageEAC = () => {
         rotationSpeed={0.01}
         mostrarPlano={false}
         planoPosicion={[0, -2.8, 0]}
+        enableGym={true}
+        enableHospital={false}
+        heightEnvironment={14}
+        radiusEnvironment={50}
+        scaleEnvironment={50}
       />
     </div>
   );
