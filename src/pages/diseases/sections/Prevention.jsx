@@ -72,7 +72,20 @@ const Prevention = ({
         {/* Lista de cuidados */}
         <ul className="care-list">
           {items.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index}>
+              {typeof item === 'string' ? (
+                // Si es string, renderizar como texto normal
+                item
+              ) : (
+                // Si es objeto, renderizar título en negrilla y descripción
+                <>
+                  <strong>{item.title}</strong>
+                  {item.description && (
+                    <>: {item.description}</>
+                  )}
+                </>
+              )}
+            </li>
           ))}
         </ul>
 
