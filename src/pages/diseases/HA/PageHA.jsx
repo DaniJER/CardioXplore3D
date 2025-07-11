@@ -29,15 +29,15 @@ const PageHA = () => {
         //Luces Directas
         ambientIntensity={1.5}
         enableDirectionalLight={true}
-        directionalIntensity={2}
+        directionalIntensity={10}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
         enableSpotLight={false}
-        spotIntensity={1}
+        spotIntensity={10}
         spotPosition={[10, 15, 10]}
         //Luces Punto
         enablePointLight={false}
-        pointIntensity={0.5}
+        pointIntensity={10}
         pointPosition={[0, 5, 0]}
         //Eventos
         onTurn={true}
@@ -54,11 +54,26 @@ const PageHA = () => {
         description="La hipertensión arterial, conocida como el 'asesino silencioso', es una condición que puede permanecer oculta durante años sin manifestar síntomas claros. A pesar de esta aparente ausencia de señales, el daño a los órganos vitales como el corazón, los riñones y el cerebro puede ser progresivo y severo. Detectarla a tiempo es fundamental para prevenir complicaciones graves. Aunque la mayoría de las personas no sienten molestias específicas, en algunos casos se pueden presentar síntomas como:"
         lastDescription="Es importante destacar que la aparición de estos síntomas suele indicar que la presión arterial ya ha alcanzado niveles peligrosamente altos. Sin embargo, estos signos no son exclusivos de la hipertensión y pueden deberse a otras condiciones médicas. Por ello, es fundamental realizar chequeos médicos periódicos, incluso en ausencia de síntomas, para garantizar un diagnóstico temprano y un tratamiento adecuado."
         items={[
-          "Dolores de cabeza",
-          "Mareos",
-          "Fatiga",
-          "Visión borrosa",
-          "Dificultad para respirar",
+          {
+            title: "Dolores de cabeza",
+            description: "Especialmente al despertar, relacionados con presión elevada.",
+          },
+          {
+            title: "Mareos",
+            description: "Sensación de inestabilidad o desvanecimiento.",
+          },
+          {
+            title: "Fatiga",
+            description: "Cansancio persistente, incluso sin esfuerzo físico intenso.",
+          },
+          {
+            title: "Visión borrosa",
+            description: "Dificultad para enfocar o ver con claridad.",
+          },
+          {
+            title: "Dificultad para respirar",
+            description: "Sensación de ahogo, sobre todo al realizar esfuerzo o al estar acostado.",
+          },
         ]}
         //Modelo 3D
         Model3D={ModelSymptom}
@@ -74,15 +89,15 @@ const PageHA = () => {
         //Luces Directas
         ambientIntensity={1.5}
         enableDirectionalLight={true}
-        directionalIntensity={2}
+        directionalIntensity={10}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
         enableSpotLight={false}
-        spotIntensity={1}
+        spotIntensity={10}
         spotPosition={[10, 15, 10]}
         //Luces Punto
         enablePointLight={false}
-        pointIntensity={0.5}
+        pointIntensity={10}
         pointPosition={[0, 5, 0]}
         //Eventos
         onTurn={false}
@@ -138,15 +153,15 @@ const PageHA = () => {
         //Luces Directas
         ambientIntensity={1.5}
         enableDirectionalLight={true}
-        directionalIntensity={2}
+        directionalIntensity={10}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
         enableSpotLight={false}
-        spotIntensity={1}
+        spotIntensity={10}
         spotPosition={[10, 15, 10]}
         //Luces Punto
         enablePointLight={false}
-        pointIntensity={0.5}
+        pointIntensity={10}
         pointPosition={[0, 5, 0]}
         //Eventos
         onTurn={true}
@@ -163,11 +178,26 @@ const PageHA = () => {
         description="Prevenir la hipertensión arterial es posible mediante la adopción de hábitos de vida saludables y el monitoreo regular de la presión arterial. Una detección temprana y una intervención adecuada pueden marcar una gran diferencia en la salud a largo plazo. A continuación, te compartimos algunas recomendaciones esenciales:"
         lastDescription="Recuerda que incorporar pequeños cambios en tu rutina diaria puede tener un gran impacto en tu salud cardiovascular. La prevención no solo mejora tu calidad de vida, sino que también te protege de complicaciones futuras. ¡Tu corazón te lo agradecerá!"
         items={[
-          "Mantener un peso saludable",
-          "Seguir una dieta equilibrada",
-          "Realizar actividad física regularmente",
-          "Limitar el consumo de alcohol y tabaco",
-          "Controlar el estrés",
+          {
+            title: "Mantener un peso saludable",
+            description: "Ayuda a reducir la presión arterial y el riesgo de enfermedades cardíacas."
+          },
+          {
+            title: "Seguir una dieta equilibrada",
+            description: "Incluye frutas, verduras, granos integrales y menos sal en tus comidas."
+          },
+          {
+            title: "Realizar actividad física regularmente",
+            description: "Caminar, nadar o montar bici ayuda a mantener el corazón fuerte."
+          },
+          {
+            title: "Limitar el consumo de alcohol y tabaco",
+            description: "Evita dañar los vasos sanguíneos y aumentar la presión arterial."
+          },
+          {
+            title: "Controlar el estrés",
+            description: "Practica técnicas de relajación como respiración profunda o meditación."
+          }
         ]}
         //Modelo 3D
         Model3D={ModelPrevention}
@@ -183,15 +213,15 @@ const PageHA = () => {
         //Luces Directas
         ambientIntensity={1.5}
         enableDirectionalLight={true}
-        directionalIntensity={2}
+        directionalIntensity={10}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
         enableSpotLight={false}
-        spotIntensity={1}
+        spotIntensity={10}
         spotPosition={[10, 15, 10]}
         //Luces Punto
         enablePointLight={false}
-        pointIntensity={0.5}
+        pointIntensity={10}
         pointPosition={[0, 5, 0]}
         //Eventos
         onTurn={true}

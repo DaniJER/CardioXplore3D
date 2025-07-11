@@ -14,7 +14,7 @@
 }
 
 .description {
-    margin: 1.5rem 0;
+    /* margin: 1.5rem 0; */
     line-height: 1.6;
 }
 
@@ -28,7 +28,6 @@
 
 .model-container-treatments {
     position: relative;
-    flex: 1;
     width: 50%;
     height: 400px;
     display: flex;
@@ -39,7 +38,7 @@
 .treatments-list {
     flex: 1;
     width: 30%;
-    margin: 0 0 0 10rem;
+    margin: 0 0 0 2rem;
 }
 
 .treatments-list li {

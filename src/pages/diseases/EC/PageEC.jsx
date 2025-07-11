@@ -38,15 +38,26 @@ const PageEC = () => {
         description="La CIV puede presentarse de forma aislada o como parte de otras malformaciones cardíacas más complejas. Suele detectarse mediante ecocardiografía (ultrasonido del corazón), especialmente si el médico escucha un soplo cardíaco en el examen físico."
         lastDescription={"Los síntomas pueden variar según el tamaño del defecto y la cantidad de sangre que fluye a través de él. En algunos casos, los bebés pueden no presentar síntomas evidentes, mientras que en otros pueden experimentar dificultad para respirar, fatiga, retraso en el crecimiento y otros problemas relacionados con la circulación sanguínea."}
         items={[
-          "Dificultad para respirar.",
-
-          "Fatiga o sudoración al alimentarse (en bebés).",
-
-          "Infecciones respiratorias frecuentes.",
-
-          "Crecimiento deficiente.",
-
-          "Soplo cardíaco audible con estetoscopio."
+          {
+            title: "Dificultad para respirar",
+            description: "Puede notarse durante el llanto, la alimentación o el sueño."
+          },
+          {
+            title: "Fatiga o sudoración al alimentarse (en bebés)",
+            description: "Señal de que el corazón trabaja más de lo normal."
+          },
+          {
+            title: "Infecciones respiratorias frecuentes",
+            description: "Mayor riesgo de resfriados, bronquitis o neumonía."
+          },
+          {
+            title: "Crecimiento deficiente",
+            description: "Aumento de peso lento o talla por debajo del promedio."
+          },
+          {
+            title: "Soplo cardíaco audible con estetoscopio",
+            description: "Ruido anormal que sugiere un flujo sanguíneo irregular en el corazón."
+          }
         ]}
         // Modelo 3D
         Model3D={Surgeon}
