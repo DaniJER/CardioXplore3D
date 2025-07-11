@@ -7,7 +7,7 @@
 
 .home {
   font-family: var(--H3-H4-font);
-  color: var(--H3-H4-color);
+  color: #d9437f;
   font-size: xx-large;
   text-decoration: none;
   background: none;
@@ -32,6 +32,7 @@
 }
 
 .footer-column h4 {
+  color: #d9437f;
   margin-bottom: 10px;
   font-weight: bold;
 }
@@ -53,16 +54,16 @@
   padding: 0;
   color: inherit;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: color 0.4s;
   text-decoration: none;
   text-align: left;
   display: inline-block;
-  transition: scale 0.3s ease;
+  transition: scale 0.4s ease;
 }
 
 .footer-link:hover {
-  color: #c06a8d;
-  scale: 1.03;
+  color: white;
+  scale: 1.04;
 }
 
 .brand h3 {

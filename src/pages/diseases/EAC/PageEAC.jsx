@@ -37,13 +37,34 @@ const PageEAC = () => {
                 Falta de aire. Puedes sentir que no puedes respirar.
                 Fatiga. Si el corazón no puede bombear suficiente sangre para satisfacer las necesidades del cuerpo, puedes sentirte inusualmente cansado."
         items={[
-          "Dolor en el pecho que puede sentirse como presión, opresión, constricción o dolor.",
-          "Dolor o molestia que se disemina a los hombros, brazos, espalda, cuello, mandíbula, dientes",
-          "Sudor frío",
-          "Fatiga",
-          "Acidez estomacal",
-          "Aturdimiento o mareos repentinos",
-          "Falta de aire",
+          {
+            title: "Dolor en el pecho",
+            description: "Sensación de presión o peso en el centro o lado izquierdo del pecho."
+          },
+          {
+            title: "Dolor en otras zonas",
+            description: "Puede extenderse a brazos, espalda, cuello, mandíbula o dientes."
+          },
+          {
+            title: "Sudor frío",
+            description: "Sudoración repentina sin causa aparente, usualmente con malestar."
+          },
+          {
+            title: "Fatiga",
+            description: "Cansancio extremo incluso sin gran esfuerzo físico."
+          },
+          {
+            title: "Malestar estomacal",
+            description: "Ardor o acidez que puede confundirse con indigestión."
+          },
+          {
+            title: "Mareos o aturdimiento",
+            description: "Sensación de inestabilidad o desmayo repentino."
+          },
+          {
+            title: "Falta de aire",
+            description: "Dificultad para respirar al hacer esfuerzo o en reposo."
+          }
         ]}
         Model3D={ChestPain}
         scale={2.8}
@@ -104,13 +125,34 @@ const PageEAC = () => {
         description="Puedes ayudar a prevenir las enfermedades cardíacas siguiendo un estilo de vida saludable para el corazón. Aquí te mostramos algunas estrategias que te ayudarán a prevenir este tipo de enfermedades y así tener un corazón sano:"
         lastDescription="Recuerda preservar la disciplina al momento de realizar estas actividades. La clave pare tener un corazón sano es hacer cada actividad conscientemente."
         items={[
-          "Limitar el consumo de alcohol y tabaco.",
-          "Hacer ejercicio y/o deporte.",
-          "Comer menos alimentos no saludables o con mucha grasa.",
-          "Mantener un peso adecuado.",
-          "Evitar el estrés.",
-          "Meditación activa y pasiva.",
-          "Cambiar rutinas y habitos perjudiciales.",
+          {
+            title: "Evitar alcohol y tabaco",
+            description: "Reducen el riesgo de daño al corazón y los vasos sanguíneos."
+          },
+          {
+            title: "Ejercicio regular",
+            description: "Ayuda a fortalecer el corazón y mejorar la circulación."
+          },
+          {
+            title: "Comer saludable",
+            description: "Prefiere alimentos bajos en grasa, sal y azúcares procesados."
+          },
+          {
+            title: "Peso adecuado",
+            description: "Mantener un peso saludable reduce la carga sobre el corazón."
+          },
+          {
+            title: "Reducir el estrés",
+            description: "El estrés crónico afecta la salud cardíaca y general."
+          },
+          {
+            title: "Practicar meditación",
+            description: "Ayuda a relajar la mente y estabilizar la presión arterial."
+          },
+          {
+            title: "Cambiar malos hábitos",
+            description: "Adopta rutinas que beneficien tu salud física y emocional."
+          }
         ]}
         Model3D={Training}
         scale={2.8}
