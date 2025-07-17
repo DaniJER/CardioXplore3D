@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import infoIcon from "../../../assets/information.svg";
 import './InfoButton.css';
 
-const InfoButton = () => {
+const InfoButton = ({ showModal, setShowModal }) => {
     const [showTooltip, setShowTooltip] = useState(false);
-    const [showModal, setShowModal] = useState(false);
 
     return (
         <div className="info-button-container">

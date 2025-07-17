@@ -36,7 +36,7 @@ const PageIC = () => {
         Model3D={Consequence}
         scale={3.5}
         position={[0, -0.5, 0]}
-        rotation={[0, 0, 0]}
+        rotation={[0, 1.55, 0]}
         rotationSpeed={0}
         //Plano
         mostrarPlano={false}
@@ -63,6 +63,11 @@ const PageIC = () => {
         heightEnvironment={14}
         radiusEnvironment={50}
         scaleEnvironment={50}
+        //Texto3D
+        texts="Insuficiencia Cardíaca"
+        textsPosition={[0, 3, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
       />
       <Treatments
         title="Tratamiento"
@@ -96,9 +101,9 @@ const PageIC = () => {
         ]}
         //Modelo 3D
         Model3D={Pills}
-        scale={0.3}
+        scale={0.25}
         position={[0, 0, 0]}
-        rotation={[0.53, 0, 0]}
+        rotation={[0.8, 0, 0]}
         rotationSpeed={0.01}
         //Plano
         mostrarPlano={false}
@@ -126,6 +131,11 @@ const PageIC = () => {
         heightEnvironment={800}
         radiusEnvironment={1000}
         scaleEnvironment={400}
+        //Texto3D
+        texts="Tratamiento"
+        textsPosition={[0, 2.8, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -157,7 +167,7 @@ const PageIC = () => {
         Model3D={Exercice}
         scale={3}
         position={[0, -3, 0]}
-        rotation={[0, 0, 0]}
+        rotation={[0.1, 0, 0]}
         rotationSpeed={0}
         //Plano
         mostrarPlano={false}
@@ -184,6 +194,11 @@ const PageIC = () => {
         heightEnvironment={14}
         radiusEnvironment={50}
         scaleEnvironment={50}
+        //Texto3D
+        texts="Prevención"
+        textsPosition={[0, 3.15, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
       />
     </div>
   );

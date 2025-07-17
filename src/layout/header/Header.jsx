@@ -11,7 +11,7 @@ function Header() {
     <header className={`custom-header ${isHome ? "transparent-header" : ""}`}>
       <div className="logo-container">
         {!isHome && (
-          <button className="back-button" onClick={() => navigate(-1)}>
+          <button className="back-button-header" onClick={() => navigate(-1)}>
             ←
           </button>
         )}
