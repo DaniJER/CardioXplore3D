@@ -56,6 +56,8 @@ const Symptoms = ({
   textsPosition = [0, 0, 0],
   textsRotation = [0, 0, 0],
   textsScale = [1, 1, 1],
+  // Texto2D
+  miniText
 }) => {
   const modelRef = useRef();
   const [isRotating, setIsRotating] = useState(true);
@@ -99,6 +101,11 @@ const Symptoms = ({
 
         {/* Modelo 3D */}
         <div className="model-container-symptoms">
+          
+          <div className="model-title">
+            <h3>{miniText}</h3>
+          </div>
+          
           {/* Botónes de control */}
           <div className="model-controls">
             {onAnimation && <PauseAnimation modelRef={modelRef} />}

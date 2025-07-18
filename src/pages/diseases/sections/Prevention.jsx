@@ -55,6 +55,8 @@ const Prevention = ({
   textsPosition = [0, 0, 0],
   textsRotation = [0, 0, 0],
   textsScale = [1, 1, 1],
+  //Texto2D
+  miniText
 }) => {
   const modelRef = useRef();
   const [isRotating, setIsRotating] = useState(true);
@@ -98,6 +100,10 @@ const Prevention = ({
 
         {/* Modelo 3D */}
         <div className="model-container-prevention">
+
+          <div className="model-title">
+            <h3>{miniText}</h3>
+          </div>
 
           {/* Botones de control */}
           <div className="model-controls">
