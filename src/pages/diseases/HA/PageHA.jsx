@@ -53,6 +53,8 @@ const PageHA = () => {
         textsPosition={[0, 2.8, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[1.5 , 1.5, 1.5]}
+        //MiniTexto2D
+        miniText="Ambiente de quirofano"
       />
       <Symptoms
         title="Síntomas"
@@ -115,9 +117,11 @@ const PageHA = () => {
         scaleEnvironment={50}
         //Texto3D
         texts="Síntomas"
-        textsPosition={[0, 3.5 , 0]}
+        textsPosition={[0, 2.8 , 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
+        //MiniTexto2D
+        miniText="Ambiente de cancha gimnasia"
       />
       <Treatments
         title="Tratamiento"
@@ -184,9 +188,11 @@ const PageHA = () => {
         scaleEnvironment={400}
         //Texto3D
         texts="Tratamiento"
-        textsPosition={[0, 2.8, 0]}
+        textsPosition={[0, 3, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
+        //MiniTexto2D
+        miniText="Ambiente de quirofano"
       />
       <Prevention
         title="Prevención y cuidados"
@@ -249,9 +255,11 @@ const PageHA = () => {
         scaleEnvironment={50}
         //Texto3D
         texts="Prevención"
-        textsPosition={[0, 3.3, 0]}
+        textsPosition={[0, 2.5, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
+        //MiniTexto2D
+        miniText="Ambiente de cancha gimnasia"
       />
     </div>
   );

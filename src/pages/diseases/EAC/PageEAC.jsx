@@ -33,6 +33,8 @@ const PageEAC = () => {
         textsPosition={[0, 2.6, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[1.5, 1.5, 1.5]}
+        // Texto2D
+        miniText="Ambiente de quirofano"
       />
       <Symptoms
         title="Síntomas"
@@ -72,7 +74,7 @@ const PageEAC = () => {
           }
         ]}
         Model3D={ChestPain}
-        scale={2.8}
+        scale={2.4}
         position={[0, -0.05, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
@@ -84,9 +86,11 @@ const PageEAC = () => {
         radiusEnvironment={50}
         scaleEnvironment={50}
         texts="Síntomas"
-        textsPosition={[0, 3.76, 0]}
+        textsPosition={[0, 3, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[1.8, 1.8, 1.8]}
+        // Texto2D
+        miniText="Ambiente de cancha gimnasia"
       />
       <Treatments
         title="Tratamiento"
@@ -132,6 +136,8 @@ const PageEAC = () => {
         textsPosition={[0, 2.9, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
+        // Texto2D
+        miniText="Ambiente de quirofano"
       />
       <Prevention
         title="Prevención y cuidados"
@@ -168,7 +174,7 @@ const PageEAC = () => {
           }
         ]}
         Model3D={Training}
-        scale={2.8}
+        scale={2.6}
         position={[0, -0.01, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
@@ -180,9 +186,11 @@ const PageEAC = () => {
         radiusEnvironment={50}
         scaleEnvironment={50}
         texts="Prevención y cuidados"
-        textsPosition={[0, 3, 0]}
+        textsPosition={[0, 3.3, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
+        // Texto2D
+        miniText="Ambiente de cancha gimnasia"
       />
     </div>
   );

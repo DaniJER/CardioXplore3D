@@ -13,6 +13,7 @@ import PauseAnimation from "../PointEvent/PauseAnimation";
 import SpaceTurn from "../PointEvent/SpaceTurn";
 import Staging from "../environment/environment";
 import Texts from "../Elements3D/Texts";
+import EnvironmentSky from "../environment/environmentSky";
 
 const Prevention = ({
   title = "Prevención y cuidados",
@@ -55,6 +56,8 @@ const Prevention = ({
   textsPosition = [0, 0, 0],
   textsRotation = [0, 0, 0],
   textsScale = [1, 1, 1],
+  //Texto2D
+  miniText
 }) => {
   const modelRef = useRef();
   const [isRotating, setIsRotating] = useState(true);
@@ -99,6 +102,10 @@ const Prevention = ({
         {/* Modelo 3D */}
         <div className="model-container-prevention">
 
+          <div className="model-title">
+            <h3>{miniText}</h3>
+          </div>
+
           {/* Botones de control */}
           <div className="model-controls">
             {onAnimation && <PauseAnimation modelRef={modelRef} />}
@@ -122,6 +129,9 @@ const Prevention = ({
               visible={!showInfoModal}
             />
             {/* <Buttons3D text={"Botón 3D"} position={textsPosition} rotation={textsRotation} scale={textsScale} /> */}
+
+            {/* Environment de partículas */}
+            <EnvironmentSky count={180} radius={40} />
 
             {/* Plano invisible para sombras */}
             <mesh

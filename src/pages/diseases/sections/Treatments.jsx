@@ -13,6 +13,7 @@ import DoubleClickLightToggle from "../PointEvent/DoubleClick";
 import RightClickColorToggle from "../PointEvent/RightClick";
 import Staging from "../environment/environment";
 import Texts from "../Elements3D/Texts";
+import EnvironmentSky from "../environment/environmentSky";
 
 const Treatments = ({
   title = "Tratamiento",
@@ -54,6 +55,8 @@ const Treatments = ({
   textsPosition = [0, 0, 0],
   textsRotation = [0, 0, 0],
   textsScale = [1, 1, 1],
+  // Texto2D
+  miniText
 }) => {
   const modelRef = useRef();
   const [isRotating, setIsRotating] = useState(true);
@@ -77,6 +80,11 @@ const Treatments = ({
       <div className="content-section-treatments">
         {/* Modelo 3D */}
         <div className="model-container-treatments">
+
+          <div className="model-title">
+            <h3>{miniText}</h3>
+          </div>
+
           {/* Botones de control */}
           <div className="model-controls">
 
@@ -101,6 +109,9 @@ const Treatments = ({
               visible={!showInfoModal}
             />
             {/* <Buttons3D text={"Botón 3D"} /> */}
+
+            {/* Environment de partículas */}
+            <EnvironmentSky count={180} radius={40} />
 
             {/* Plano invisible que recibe la sombra */}
             <mesh
