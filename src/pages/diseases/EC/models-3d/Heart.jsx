@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei'
 export function Heart(props) {
 
   const { nodes, materials } = useGLTF('/models-3d/EC/modelado-de-corazon.glb')
-    console.log(materials)
+    // console.log(materials)
   return (
      <group {...props} dispose={null}>
       <mesh
