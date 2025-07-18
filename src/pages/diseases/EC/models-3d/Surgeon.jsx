@@ -5,14 +5,17 @@ export function Surgeon(props) {
   const { nodes, materials } = useGLTF('/models-3d/EC//surgeon.glb');
   // console.log(materials);
   return (
-    <group {...props} dispose={null}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes['15775_NoveltyBust_Surgeon_v1'].geometry}
-        material={nodes['15775_NoveltyBust_Surgeon_v1'].material}
-        scale={0.1}
-      />
+      <group {...props} dispose={null}>
+      <group name="Scene">
+        <mesh
+          name="Surgeon"
+          castShadow
+          receiveShadow
+          geometry={nodes.Surgeon.geometry}
+          material={materials.surgeonMaterial}
+          scale={0.1}
+        />
+      </group>
     </group>
   )
 }
