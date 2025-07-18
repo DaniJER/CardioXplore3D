@@ -74,7 +74,7 @@ const PageEAC = () => {
           }
         ]}
         Model3D={ChestPain}
-        scale={2.8}
+        scale={2.4}
         position={[0, -0.05, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
@@ -86,7 +86,7 @@ const PageEAC = () => {
         radiusEnvironment={50}
         scaleEnvironment={50}
         texts="Síntomas"
-        textsPosition={[0, 3.76, 0]}
+        textsPosition={[0, 3, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[1.8, 1.8, 1.8]}
         // Texto2D
@@ -174,7 +174,7 @@ const PageEAC = () => {
           }
         ]}
         Model3D={Training}
-        scale={2.8}
+        scale={2.6}
         position={[0, -0.01, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
@@ -186,7 +186,7 @@ const PageEAC = () => {
         radiusEnvironment={50}
         scaleEnvironment={50}
         texts="Prevención y cuidados"
-        textsPosition={[0, 3, 0]}
+        textsPosition={[0, 3.3, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
         // Texto2D

@@ -13,6 +13,7 @@ import PauseAnimation from "../PointEvent/PauseAnimation";
 import SpaceTurn from "../PointEvent/SpaceTurn";
 import Staging from "../environment/environment";
 import Texts from "../Elements3D/Texts";
+import EnvironmentSky from "../environment/environmentSky";
 
 const Prevention = ({
   title = "Prevención y cuidados",
@@ -128,6 +129,9 @@ const Prevention = ({
               visible={!showInfoModal}
             />
             {/* <Buttons3D text={"Botón 3D"} position={textsPosition} rotation={textsRotation} scale={textsScale} /> */}
+
+            {/* Environment de partículas */}
+            <EnvironmentSky count={180} radius={40} />
 
             {/* Plano invisible para sombras */}
             <mesh

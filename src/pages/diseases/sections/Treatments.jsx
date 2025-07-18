@@ -13,6 +13,7 @@ import DoubleClickLightToggle from "../PointEvent/DoubleClick";
 import RightClickColorToggle from "../PointEvent/RightClick";
 import Staging from "../environment/environment";
 import Texts from "../Elements3D/Texts";
+import EnvironmentSky from "../environment/environmentSky";
 
 const Treatments = ({
   title = "Tratamiento",
@@ -108,6 +109,9 @@ const Treatments = ({
               visible={!showInfoModal}
             />
             {/* <Buttons3D text={"Botón 3D"} /> */}
+
+            {/* Environment de partículas */}
+            <EnvironmentSky count={180} radius={40} />
 
             {/* Plano invisible que recibe la sombra */}
             <mesh

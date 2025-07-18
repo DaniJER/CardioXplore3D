@@ -117,7 +117,7 @@ const PageHA = () => {
         scaleEnvironment={50}
         //Texto3D
         texts="Síntomas"
-        textsPosition={[0, 3.5 , 0]}
+        textsPosition={[0, 2.8 , 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
         //MiniTexto2D
@@ -188,7 +188,7 @@ const PageHA = () => {
         scaleEnvironment={400}
         //Texto3D
         texts="Tratamiento"
-        textsPosition={[0, 2.8, 0]}
+        textsPosition={[0, 3, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
         //MiniTexto2D
@@ -255,7 +255,7 @@ const PageHA = () => {
         scaleEnvironment={50}
         //Texto3D
         texts="Prevención"
-        textsPosition={[0, 3.3, 0]}
+        textsPosition={[0, 2.5, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
         //MiniTexto2D

@@ -13,6 +13,7 @@ import DoubleClickLightToggle from "../PointEvent/DoubleClick";
 import RightClickColorToggle from "../PointEvent/RightClick";
 import Staging from "../environment/environment";
 import Texts from "../Elements3D/Texts";
+import EnvironmentSky from "../environment/environmentSky";
 
 const Symptoms = ({
   title = "Síntomas",
@@ -101,11 +102,11 @@ const Symptoms = ({
 
         {/* Modelo 3D */}
         <div className="model-container-symptoms">
-          
+
           <div className="model-title">
             <h3>{miniText}</h3>
           </div>
-          
+
           {/* Botónes de control */}
           <div className="model-controls">
             {onAnimation && <PauseAnimation modelRef={modelRef} />}
@@ -129,6 +130,9 @@ const Symptoms = ({
               visible={!showInfoModal}
             />
             {/* <Buttons3D text={"Botón 3D"} /> */}
+
+            {/* Environment de partículas */}
+            <EnvironmentSky count={180} radius={40} />
 
             {/* Plano invisible para sombra */}
             <mesh
