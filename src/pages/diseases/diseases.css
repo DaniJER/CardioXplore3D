@@ -1,5 +1,5 @@
 .coverflow-contenedor {
-    height: 70vh;
+    height: 72vh;
     text-align: center;
     font-family: 'Atkinson Hyperlegible', sans-serif;
     padding: 2.5rem;
@@ -60,7 +60,6 @@
 .card.active:hover {
     transform: scale(1.15);
     background-color: var(--background-color);
-    cursor: default;
 }
 
 .card.left {

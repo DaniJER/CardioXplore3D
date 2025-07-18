@@ -43,10 +43,12 @@
 }
 
 .close-button {
+    height: 50px;
+    width: 50px;
+    border-radius: 8px;
     position: absolute;
     top: 8px;
     right: 8px;
-    background: transparent;
     border: none;
     font-size: 18px;
     cursor: pointer;

@@ -38,6 +38,7 @@
   font-weight: 500;
   cursor: pointer;
 }
+
 .nav-menu a:hover {
   color: #d9437f;
 }
@@ -47,7 +48,7 @@
   /* border: 2px solid white;
   /* border-radius: 8px; */
   padding: 0;
-  /* color: white; */ 
+  /* color: white; */
   cursor: pointer;
   /* font-weight: bold; */
   transition: transform 0.4s ease;
@@ -58,11 +59,24 @@
   background-color: transparent;
 }
 
-.back-button {
+.back-button-header {
   background: none;
   border: none;
   font-size: 24px;
   cursor: pointer;
   margin-right: 10px;
   color: white;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 12px;
+  left: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }

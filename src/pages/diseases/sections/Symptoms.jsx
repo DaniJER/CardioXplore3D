@@ -12,6 +12,7 @@ import "./symptoms.css";
 import DoubleClickLightToggle from "../PointEvent/DoubleClick";
 import RightClickColorToggle from "../PointEvent/RightClick";
 import Staging from "../environment/environment";
+import Texts from "../Elements3D/Texts";
 
 const Symptoms = ({
   title = "Síntomas",
@@ -50,9 +51,15 @@ const Symptoms = ({
   heightEnvironment = 60,
   radiusEnvironment = 100,
   scaleEnvironment = 60,
+  // Texto3D
+  texts,
+  textsPosition = [0, 0, 0],
+  textsRotation = [0, 0, 0],
+  textsScale = [1, 1, 1],
 }) => {
   const modelRef = useRef();
   const [isRotating, setIsRotating] = useState(true);
+  const [showInfoModal, setShowInfoModal] = useState(false);
 
   const { lightType, handleDoubleClick } = DoubleClickLightToggle();
   const { lightColor, handleRightClick } = RightClickColorToggle();
@@ -96,7 +103,10 @@ const Symptoms = ({
           <div className="model-controls">
             {onAnimation && <PauseAnimation modelRef={modelRef} />}
             {onTurn && <SpaceTurn onToggle={setIsRotating} />}
-            <InfoButton />
+            <InfoButton
+              showModal={showInfoModal}
+              setShowModal={setShowInfoModal}
+            />
           </div>
 
           <Canvas
@@ -104,8 +114,14 @@ const Symptoms = ({
             onContextMenu={handleRightClick}
             shadows>
 
-            {/* <Texts texts={title} />
-            <Buttons3D text={"Botón 3D"} /> */}
+            <Texts
+              texts={texts}
+              position={textsPosition}
+              rotation={textsRotation}
+              scale={textsScale}
+              visible={!showInfoModal}
+            />
+            {/* <Buttons3D text={"Botón 3D"} /> */}
 
             {/* Plano invisible para sombra */}
             <mesh

@@ -32,6 +32,11 @@ const PageEC = () => {
         heightEnvironment={60}
         radiusEnvironment={100}
         scaleEnvironment={60}
+        // Texto3D
+        texts="Comunicación Interventricular"
+        textsPosition={[0, 2.6, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[1.5, 1.5, 1.5]}
       />
       <Symptoms
         title="Causas, diagnóstico y Síntomas"
@@ -74,6 +79,11 @@ const PageEC = () => {
         heightEnvironment={60}
         radiusEnvironment={100}
         scaleEnvironment={60}
+        // Texto3D
+        texts="Síntomas"
+        textsPosition={[0, 3, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
       />
 
     </div>

@@ -28,6 +28,11 @@ const PageEAC = () => {
         heightEnvironment={60}
         radiusEnvironment={100}
         scaleEnvironment={60}
+        // Texto3D
+        texts="Enfermedad Arterial Coronaria"
+        textsPosition={[0, 2.6, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[1.5, 1.5, 1.5]}
       />
       <Symptoms
         title="Síntomas"
@@ -78,6 +83,10 @@ const PageEAC = () => {
         heightEnvironment={14}
         radiusEnvironment={50}
         scaleEnvironment={50}
+        texts="Síntomas"
+        textsPosition={[0, 3.76, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[1.8, 1.8, 1.8]}
       />
       <Treatments
         title="Tratamiento"
@@ -119,6 +128,10 @@ const PageEAC = () => {
         heightEnvironment={60}
         radiusEnvironment={100}
         scaleEnvironment={60}
+        texts="Tratamiento"
+        textsPosition={[0, 2.9, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -166,6 +179,10 @@ const PageEAC = () => {
         heightEnvironment={14}
         radiusEnvironment={50}
         scaleEnvironment={50}
+        texts="Prevención y cuidados"
+        textsPosition={[0, 3, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
       />
     </div>
   );

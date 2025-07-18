@@ -48,6 +48,11 @@ const PageHA = () => {
         heightEnvironment={60}
         radiusEnvironment={100}
         scaleEnvironment={60}
+        //Texto3D
+        texts="Hipertensión Arterial"
+        textsPosition={[0, 2.8, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[1.5 , 1.5, 1.5]}
       />
       <Symptoms
         title="Síntomas"
@@ -108,6 +113,11 @@ const PageHA = () => {
         heightEnvironment={14}
         radiusEnvironment={50}
         scaleEnvironment={50}
+        //Texto3D
+        texts="Síntomas"
+        textsPosition={[0, 3.5 , 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
       />
       <Treatments
         title="Tratamiento"
@@ -172,6 +182,11 @@ const PageHA = () => {
         heightEnvironment={800}
         radiusEnvironment={1000}
         scaleEnvironment={400}
+        //Texto3D
+        texts="Tratamiento"
+        textsPosition={[0, 2.8, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
       />
       <Prevention
         title="Prevención y cuidados"
@@ -201,8 +216,8 @@ const PageHA = () => {
         ]}
         //Modelo 3D
         Model3D={ModelPrevention}
-        scale={0.027}
-        position={[0, -2.6, 0]}
+        scale={0.0245}
+        position={[0, -2.66, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
         //Plano
@@ -232,6 +247,11 @@ const PageHA = () => {
         heightEnvironment={14}
         radiusEnvironment={50}
         scaleEnvironment={50}
+        //Texto3D
+        texts="Prevención"
+        textsPosition={[0, 3.3, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
       />
     </div>
   );
