@@ -1,0 +1,45 @@
+/* Contenedor general para los controles */
+.model-controls {
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+    bottom: 10px;
+}
+
+.model-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #333;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.model-title h3 {
+    font-size: 15px;
+    color: #d9437f;
+}
+
+.model-button {
+    background-color: #ffffffcc;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.model-button:hover {
+    background-color: #e6e6e6;
+}
+
+/* Iconos opcionales en botones */
+.model-button span {
+    font-size: 18px;
+}

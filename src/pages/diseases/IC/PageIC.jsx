@@ -15,16 +15,28 @@ const PageIC = () => {
         description="es una condición en la que el corazón no puede bombear sangre de manera eficiente para satisfacer las necesidades del cuerpo. Esto puede ocurrir cuando el músculo cardíaco se debilita o se vuelve demasiado rígido, afectando su capacidad para llenarse o expulsar sangre adecuadamente.:"
         lastDescription="Puede afectar al lado izquierdo, derecho o ambos lados del corazón. También se desarrolla de forma crónica (progresiva con el tiempo) o de manera aguda (repentina). En la forma crónica, el deterioro de la función cardíaca ocurre gradualmente, lo que permite que el cuerpo se adapte parcialmente a los cambios, mientras que en la forma aguda, el fallo cardíaco se presenta de manera súbita, generalmente como consecuencia de un evento grave como un infarto o una alteración estructural repentina."
         items={[
-          "Dificultad para respirar ",
-          "Fatiga constante",
-          "Hinchazón en piernas y tobillos",
-          "latidos irregulares y rapidos",
+          {
+            title: "Dificultad para respirar",
+            description: "Sensación de ahogo al hacer esfuerzo o al estar acostado"
+          },
+          {
+            title: "Fatiga constante",
+            description: "Cansancio extremo incluso con actividades leves"
+          },
+          {
+            title: "Hinchazón en piernas y tobillos",
+            description: "Acumulación de líquidos por mala circulación"
+          },
+          {
+            title: "Latidos irregulares y rápidos",
+            description: "Palpitaciones o sensación de que el corazón se acelera o salta"
+          }
         ]}
         //Modelo 3D
         Model3D={Consequence}
         scale={3.5}
         position={[0, -0.5, 0]}
-        rotation={[0, 0, 0]}
+        rotation={[0, 1.55, 0]}
         rotationSpeed={0}
         //Plano
         mostrarPlano={false}
@@ -32,19 +44,32 @@ const PageIC = () => {
         //Luces Directas
         ambientIntensity={1.5}
         enableDirectionalLight={true}
-        directionalIntensity={2}
+        directionalIntensity={10}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
         enableSpotLight={false}
-        spotIntensity={1}
+        spotIntensity={10}
         spotPosition={[10, 15, 10]}
         //Luces Punto
         enablePointLight={false}
-        pointIntensity={0.5}
+        pointIntensity={10}
         pointPosition={[0, 5, 0]}
         //Eventos
         onTurn={false}
         onAnimation={true}
+        //Entorno
+        enableGym={true}
+        enableHospital={false}
+        heightEnvironment={14}
+        radiusEnvironment={50}
+        scaleEnvironment={50}
+        //Texto3D
+        texts="Insuficiencia Cardíaca"
+        textsPosition={[0, 3, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
+        // Texto2D
+        miniText="Ambiente de cancha gimnasia"
       />
       <Treatments
         title="Tratamiento"
@@ -78,47 +103,75 @@ const PageIC = () => {
         ]}
         //Modelo 3D
         Model3D={Pills}
-        scale={0.3}
+        scale={0.25}
         position={[0, 0, 0]}
-        rotation={[0.53, 0, 0]}
+        rotation={[0.8, 0, 0]}
         rotationSpeed={0.01}
         //Plano
         mostrarPlano={false}
         planoPosicion={[0, -2, 0]}
-        planoRotacion={[-Math.PI/2, 0, 0]}
+        planoRotacion={[-Math.PI / 2, 0, 0]}
         //Luces Direct
         ambientIntensity={1.5}
         enableDirectionalLight={true}
-        directionalIntensity={2}
+        directionalIntensity={10}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
         enableSpotLight={false}
-        spotIntensity={1}
+        spotIntensity={10}
         spotPosition={[10, 15, 10]}
         //Luces Punto
         enablePointLight={false}
-        pointIntensity={0.5}
+        pointIntensity={10}
         pointPosition={[0, 5, 0]}
         //Eventos
         onTurn={true}
         onAnimation={false}
+        //Entorno
+        enableGym={false}
+        enableHospital={true}
+        heightEnvironment={800}
+        radiusEnvironment={1000}
+        scaleEnvironment={400}
+        //Texto3D
+        texts="Tratamiento"
+        textsPosition={[0, 2.8, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
+        // Texto2D
+        miniText="Ambiente de quirofano"
       />
       <Prevention
         title="Prevención y cuidados"
         description="La prevención de la insuficiencia cardíaca se basa en controlar los factores de riesgo antes de que la enfermedad se desarrolle. Mantener la presión arterial dentro de los límites normales, llevar una dieta baja en sodio, grasas saturadas y colesterol, y realizar ejercicio físico regular son fundamentales para mantener la salud del corazón. Además, es crucial evitar el consumo excesivo de alcohol y tabaco, que dañan tanto el corazón como los vasos sanguíneos. El control de enfermedades crónicas como la diabetes, la obesidad y el colesterol alto también juega un papel clave en la prevención. Adoptar estos hábitos no solo mejora la salud cardiovascular, sino que reduce significativamente el riesgo de insuficiencia cardíaca.:"
         lastDescription="Recuerda que incorporar pequeños cambios en tu rutina diaria puede tener un gran impacto en tu salud cardiovascular. La prevención no solo mejora tu calidad de vida, sino que también te protege de complicaciones futuras. ¡Tu corazón te lo agradecerá!"
         items={[
-          "Control de presión arterial",
-          "Dieta saludabble",
-          "Ejercicio regular",
-          "Monitoreo constante",
-          "Evitar alcohol y tabaco",
+          {
+            title: "Control de presión arterial",
+            description: "Mantén tu presión en niveles saludables con chequeos regulares y siguiendo las indicaciones médicas."
+          },
+          {
+            title: "Dieta saludable",
+            description: "Opta por alimentos bajos en sodio, grasas saturadas y colesterol para cuidar tu corazón."
+          },
+          {
+            title: "Ejercicio regular",
+            description: "Realiza actividad física moderada al menos 30 minutos al día, la mayoría de los días de la semana."
+          },
+          {
+            title: "Monitoreo constante",
+            description: "Controla tus niveles de glucosa, colesterol y peso para detectar riesgos a tiempo."
+          },
+          {
+            title: "Evitar alcohol y tabaco",
+            description: "Reducir o eliminar su consumo protege el corazón y mejora tu salud general."
+          }
         ]}
         //Modelo 3D
         Model3D={Exercice}
         scale={3}
         position={[0, -3, 0]}
-        rotation={[0, 0, 0]}
+        rotation={[0.1, 0, 0]}
         rotationSpeed={0}
         //Plano
         mostrarPlano={false}
@@ -126,19 +179,32 @@ const PageIC = () => {
         //Luces Direct
         ambientIntensity={1.5}
         enableDirectionalLight={true}
-        directionalIntensity={2}
+        directionalIntensity={10}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
         enableSpotLight={false}
-        spotIntensity={1}
+        spotIntensity={10}
         spotPosition={[10, 15, 10]}
         //Luces Punto
         enablePointLight={false}
-        pointIntensity={0.5}
+        pointIntensity={10}
         pointPosition={[0, 5, 0]}
         //Eventos
         onTurn={false}
         onAnimation={true}
+        //Entorno
+        enableGym={true}
+        enableHospital={false}
+        heightEnvironment={14}
+        radiusEnvironment={50}
+        scaleEnvironment={50}
+        //Texto3D
+        texts="Prevención"
+        textsPosition={[0, 3.15, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
+        // Texto2D
+        miniText="Ambiente de cancha gimnasia"
       />
     </div>
   );

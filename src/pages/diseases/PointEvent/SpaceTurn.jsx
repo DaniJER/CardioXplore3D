@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import PauseGiro from "../../../assets/pausa-giro.svg";
+import ReanudarGiro from "../../../assets/giro.svg";
 
 const SpaceTurn = ({ onToggle }) => {
   const [isActive, setIsActive] = useState(true);
@@ -23,7 +25,10 @@ const SpaceTurn = ({ onToggle }) => {
 
   return (
     <button className="model-button" onClick={toggleRotation}>
-      {isActive ? "🌀 Girando" : "⏹️ Pausado"}
+      {isActive ?
+        <img src={PauseGiro} className="icon-controls" />
+        :
+        <img src={ReanudarGiro} className="icon-controls" />}
     </button>
   );
 };

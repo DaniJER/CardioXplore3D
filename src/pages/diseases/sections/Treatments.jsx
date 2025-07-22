@@ -6,7 +6,14 @@ import SceneLights from "../Lights/SceneLights";
 import PauseAnimation from "../PointEvent/PauseAnimation";
 import SpaceTurn from "../PointEvent/SpaceTurn";
 import { useRef, useState } from "react";
+import InfoButton from "../PointEvent/InfoButton";
+import "../Elements3D/buttons.css";
 import "./treatments.css";
+import DoubleClickLightToggle from "../PointEvent/DoubleClick";
+import RightClickColorToggle from "../PointEvent/RightClick";
+import Staging from "../environment/environment";
+import Texts from "../Elements3D/Texts";
+import EnvironmentSky from "../environment/environmentSky";
 
 const Treatments = ({
   title = "Tratamiento",
@@ -27,9 +34,9 @@ const Treatments = ({
   ambientIntensity = 1.5,
   directionalIntensity = 2,
   directionalPosition = [5, 5, 10],
-  spotIntensity = 1,
+  spotIntensity = 2,
   spotPosition = [10, 15, 10],
-  pointIntensity = 0.5,
+  pointIntensity = 2,
   pointPosition = [0, 5, 0],
   enableDirectionalLight = true,
   enablePointLight,
@@ -37,9 +44,26 @@ const Treatments = ({
   // Eventos
   onTurn = true,
   onAnimation = false,
+  // Entorno
+  enableGym,
+  enableHospital,
+  heightEnvironment = 60,
+  radiusEnvironment = 100,
+  scaleEnvironment = 60,
+  // Texto3D
+  texts,
+  textsPosition = [0, 0, 0],
+  textsRotation = [0, 0, 0],
+  textsScale = [1, 1, 1],
+  // Texto2D
+  miniText
 }) => {
   const modelRef = useRef();
   const [isRotating, setIsRotating] = useState(true);
+  const [showInfoModal, setShowInfoModal] = useState(false);
+
+  const { lightType, handleDoubleClick } = DoubleClickLightToggle();
+  const { lightColor, handleRightClick } = RightClickColorToggle();
 
   return (
     <section className="treatments-container" id="treatments">
@@ -56,13 +80,39 @@ const Treatments = ({
       <div className="content-section-treatments">
         {/* Modelo 3D */}
         <div className="model-container-treatments">
+
+          <div className="model-title">
+            <h3>{miniText}</h3>
+          </div>
+
           {/* Botones de control */}
           <div className="model-controls">
+
             {onAnimation && <PauseAnimation modelRef={modelRef} />}
             {onTurn && <SpaceTurn onToggle={setIsRotating} />}
+            <InfoButton
+              showModal={showInfoModal}
+              setShowModal={setShowInfoModal}
+            />
           </div>
           {/* Canvas de Three.js */}
-          <Canvas shadows>
+          <Canvas
+            onDoubleClick={handleDoubleClick}
+            onContextMenu={handleRightClick}
+            shadows>
+
+            <Texts
+              texts={texts}
+              position={textsPosition}
+              rotation={textsRotation}
+              scale={textsScale}
+              visible={!showInfoModal}
+            />
+            {/* <Buttons3D text={"Botón 3D"} /> */}
+
+            {/* Environment de partículas */}
+            <EnvironmentSky count={180} radius={40} />
+
             {/* Plano invisible que recibe la sombra */}
             <mesh
               receiveShadow
@@ -93,6 +143,17 @@ const Treatments = ({
               enableDirectionalLight={enableDirectionalLight}
               enablePointLight={enablePointLight}
               enableSpotLight={enableSpotLight}
+              lightColor={lightColor}
+              lightType={lightType}
+            />
+
+            {/* Entorno */}
+            <Staging
+              enableGym={enableGym}
+              enableHospital={enableHospital}
+              height={heightEnvironment}
+              radius={radiusEnvironment}
+              scale={scaleEnvironment}
             />
 
             {/* Modelo 3D animado */}

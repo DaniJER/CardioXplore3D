@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./diseases.css";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 
 const datos = [
   {
@@ -32,6 +32,7 @@ const datos = [
 
 const Diseases = () => {
   const [index, setIndex] = useState(0);
+  const navigate = useNavigate();
 
   //Logica para el coverflow
   const next = () => {
@@ -41,6 +42,10 @@ const Diseases = () => {
   const back = () => {
     setIndex((prev) => (prev - 1 + datos.length) % datos.length);
   };
+
+  const entry = () => {
+    navigate(`/enfermedades/${datos[index].id}`);
+  }
 
   return (
     <div className="coverflow-contenedor">
@@ -60,6 +65,7 @@ const Diseases = () => {
             // Se asigna una clase diferente a cada carta dependiendo de su posición: left, active o right
             if (i === index) {
               clase += " active";
+              buttonAction = entry;
             } else if (i === (index - 1 + datos.length) % datos.length) {
               clase += " left";
               buttonAction = back;

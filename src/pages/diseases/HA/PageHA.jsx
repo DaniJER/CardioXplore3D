@@ -29,30 +29,58 @@ const PageHA = () => {
         //Luces Directas
         ambientIntensity={1.5}
         enableDirectionalLight={true}
-        directionalIntensity={2}
+        directionalIntensity={10}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
         enableSpotLight={false}
-        spotIntensity={1}
+        spotIntensity={10}
         spotPosition={[10, 15, 10]}
         //Luces Punto
         enablePointLight={false}
-        pointIntensity={0.5}
+        pointIntensity={10}
         pointPosition={[0, 5, 0]}
         //Eventos
         onTurn={true}
         onAnimation={false}
+        //Entorno
+        enableGym={false}
+        enableHospital={true}
+        heightEnvironment={60}
+        radiusEnvironment={100}
+        scaleEnvironment={60}
+        //Texto3D
+        texts="Hipertensión Arterial"
+        textsPosition={[0, 2.8, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[1.5 , 1.5, 1.5]}
+        //MiniTexto2D
+        miniText="Ambiente de quirofano"
       />
       <Symptoms
         title="Síntomas"
         description="La hipertensión arterial, conocida como el 'asesino silencioso', es una condición que puede permanecer oculta durante años sin manifestar síntomas claros. A pesar de esta aparente ausencia de señales, el daño a los órganos vitales como el corazón, los riñones y el cerebro puede ser progresivo y severo. Detectarla a tiempo es fundamental para prevenir complicaciones graves. Aunque la mayoría de las personas no sienten molestias específicas, en algunos casos se pueden presentar síntomas como:"
         lastDescription="Es importante destacar que la aparición de estos síntomas suele indicar que la presión arterial ya ha alcanzado niveles peligrosamente altos. Sin embargo, estos signos no son exclusivos de la hipertensión y pueden deberse a otras condiciones médicas. Por ello, es fundamental realizar chequeos médicos periódicos, incluso en ausencia de síntomas, para garantizar un diagnóstico temprano y un tratamiento adecuado."
         items={[
-          "Dolores de cabeza",
-          "Mareos",
-          "Fatiga",
-          "Visión borrosa",
-          "Dificultad para respirar",
+          {
+            title: "Dolores de cabeza",
+            description: "Especialmente al despertar, relacionados con presión elevada.",
+          },
+          {
+            title: "Mareos",
+            description: "Sensación de inestabilidad o desvanecimiento.",
+          },
+          {
+            title: "Fatiga",
+            description: "Cansancio persistente, incluso sin esfuerzo físico intenso.",
+          },
+          {
+            title: "Visión borrosa",
+            description: "Dificultad para enfocar o ver con claridad.",
+          },
+          {
+            title: "Dificultad para respirar",
+            description: "Sensación de ahogo, sobre todo al realizar esfuerzo o al estar acostado.",
+          },
         ]}
         //Modelo 3D
         Model3D={ModelSymptom}
@@ -68,19 +96,32 @@ const PageHA = () => {
         //Luces Directas
         ambientIntensity={1.5}
         enableDirectionalLight={true}
-        directionalIntensity={2}
+        directionalIntensity={10}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
         enableSpotLight={false}
-        spotIntensity={1}
+        spotIntensity={10}
         spotPosition={[10, 15, 10]}
         //Luces Punto
         enablePointLight={false}
-        pointIntensity={0.5}
+        pointIntensity={10}
         pointPosition={[0, 5, 0]}
         //Eventos
         onTurn={false}
         onAnimation={true}
+        //Entorno
+        enableGym={true}
+        enableHospital={false}
+        heightEnvironment={14}
+        radiusEnvironment={50}
+        scaleEnvironment={50}
+        //Texto3D
+        texts="Síntomas"
+        textsPosition={[0, 2.8 , 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
+        //MiniTexto2D
+        miniText="Ambiente de cancha gimnasia"
       />
       <Treatments
         title="Tratamiento"
@@ -126,35 +167,63 @@ const PageHA = () => {
         //Luces Directas
         ambientIntensity={1.5}
         enableDirectionalLight={true}
-        directionalIntensity={2}
+        directionalIntensity={10}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
         enableSpotLight={false}
-        spotIntensity={1}
+        spotIntensity={10}
         spotPosition={[10, 15, 10]}
         //Luces Punto
         enablePointLight={false}
-        pointIntensity={0.5}
+        pointIntensity={10}
         pointPosition={[0, 5, 0]}
         //Eventos
         onTurn={true}
         onAnimation={false}
+        //Entorno
+        enableGym={false}
+        enableHospital={true}
+        heightEnvironment={800}
+        radiusEnvironment={1000}
+        scaleEnvironment={400}
+        //Texto3D
+        texts="Tratamiento"
+        textsPosition={[0, 3, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
+        //MiniTexto2D
+        miniText="Ambiente de quirofano"
       />
       <Prevention
         title="Prevención y cuidados"
         description="Prevenir la hipertensión arterial es posible mediante la adopción de hábitos de vida saludables y el monitoreo regular de la presión arterial. Una detección temprana y una intervención adecuada pueden marcar una gran diferencia en la salud a largo plazo. A continuación, te compartimos algunas recomendaciones esenciales:"
         lastDescription="Recuerda que incorporar pequeños cambios en tu rutina diaria puede tener un gran impacto en tu salud cardiovascular. La prevención no solo mejora tu calidad de vida, sino que también te protege de complicaciones futuras. ¡Tu corazón te lo agradecerá!"
         items={[
-          "Mantener un peso saludable",
-          "Seguir una dieta equilibrada",
-          "Realizar actividad física regularmente",
-          "Limitar el consumo de alcohol y tabaco",
-          "Controlar el estrés",
+          {
+            title: "Mantener un peso saludable",
+            description: "Ayuda a reducir la presión arterial y el riesgo de enfermedades cardíacas."
+          },
+          {
+            title: "Seguir una dieta equilibrada",
+            description: "Incluye frutas, verduras, granos integrales y menos sal en tus comidas."
+          },
+          {
+            title: "Realizar actividad física regularmente",
+            description: "Caminar, nadar o montar bici ayuda a mantener el corazón fuerte."
+          },
+          {
+            title: "Limitar el consumo de alcohol y tabaco",
+            description: "Evita dañar los vasos sanguíneos y aumentar la presión arterial."
+          },
+          {
+            title: "Controlar el estrés",
+            description: "Practica técnicas de relajación como respiración profunda o meditación."
+          }
         ]}
         //Modelo 3D
         Model3D={ModelPrevention}
-        scale={0.027}
-        position={[0, -2.6, 0]}
+        scale={0.0245}
+        position={[0, -2.66, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
         //Plano
@@ -165,19 +234,32 @@ const PageHA = () => {
         //Luces Directas
         ambientIntensity={1.5}
         enableDirectionalLight={true}
-        directionalIntensity={2}
+        directionalIntensity={10}
         directionalPosition={[5, 5, 10]}
         //Luces Spot
         enableSpotLight={false}
-        spotIntensity={1}
+        spotIntensity={10}
         spotPosition={[10, 15, 10]}
         //Luces Punto
         enablePointLight={false}
-        pointIntensity={0.5}
+        pointIntensity={10}
         pointPosition={[0, 5, 0]}
         //Eventos
         onTurn={true}
         onAnimation={true}
+        //Entorno
+        enableGym={true}
+        enableHospital={false}
+        heightEnvironment={14}
+        radiusEnvironment={50}
+        scaleEnvironment={50}
+        //Texto3D
+        texts="Prevención"
+        textsPosition={[0, 2.5, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[2, 2, 2]}
+        //MiniTexto2D
+        miniText="Ambiente de cancha gimnasia"
       />
     </div>
   );

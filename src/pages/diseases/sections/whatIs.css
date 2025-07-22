@@ -1,13 +1,29 @@
 .whatIs-container {
     display: flex;
-    align-items: flex-start;
     justify-content: space-around;
+    flex-direction: column;
+}
+
+.whatIs {
+    display: flex;
+}
+
+
+.doubleclick {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .model-container-whatIs {
     position: relative;
     width: 55%;
     height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .text-container {
@@ -16,6 +32,7 @@
 }
 
 .main-title {
+    margin-top: 0;
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
@@ -24,10 +41,10 @@
 .subtitle {
     font-size: 1.75rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
 }
 
 .description-whatIs {
+    margin-left: 2rem;
     margin-bottom: 1.5rem;
 }
 

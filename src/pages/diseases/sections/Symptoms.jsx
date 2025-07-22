@@ -6,7 +6,14 @@ import SceneLights from "../Lights/SceneLights";
 import PauseAnimation from "../PointEvent/PauseAnimation";
 import SpaceTurn from "../PointEvent/SpaceTurn";
 import { useRef, useState } from "react";
+import InfoButton from "../PointEvent/InfoButton";
+import "../Elements3D/buttons.css";
 import "./symptoms.css";
+import DoubleClickLightToggle from "../PointEvent/DoubleClick";
+import RightClickColorToggle from "../PointEvent/RightClick";
+import Staging from "../environment/environment";
+import Texts from "../Elements3D/Texts";
+import EnvironmentSky from "../environment/environmentSky";
 
 const Symptoms = ({
   title = "Síntomas",
@@ -28,9 +35,9 @@ const Symptoms = ({
   ambientIntensity = 1.5,
   directionalIntensity = 2,
   directionalPosition = [5, 5, 10],
-  spotIntensity = 1,
+  spotIntensity = 2,
   spotPosition = [10, 15, 10],
-  pointIntensity = 0.5,
+  pointIntensity = 2,
   pointPosition = [0, 5, 0],
   enableDirectionalLight = true,
   enablePointLight,
@@ -39,9 +46,26 @@ const Symptoms = ({
   // Eventos
   onTurn = true,
   onAnimation = false,
+  // Entorno
+  enableGym,
+  enableHospital,
+  heightEnvironment = 60,
+  radiusEnvironment = 100,
+  scaleEnvironment = 60,
+  // Texto3D
+  texts,
+  textsPosition = [0, 0, 0],
+  textsRotation = [0, 0, 0],
+  textsScale = [1, 1, 1],
+  // Texto2D
+  miniText
 }) => {
   const modelRef = useRef();
   const [isRotating, setIsRotating] = useState(true);
+  const [showInfoModal, setShowInfoModal] = useState(false);
+
+  const { lightType, handleDoubleClick } = DoubleClickLightToggle();
+  const { lightColor, handleRightClick } = RightClickColorToggle();
 
   return (
     <section className="symptoms-container" id="symptoms">
@@ -59,19 +83,57 @@ const Symptoms = ({
         {/* Lista de síntomas */}
         <ul className="symptoms-list">
           {items.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index}>
+              {typeof item === 'string' ? (
+                // Si es string, renderizar como texto normal
+                item
+              ) : (
+                // Si es objeto, renderizar título en negrilla y descripción
+                <>
+                  <strong>{item.title}</strong>
+                  {item.description && (
+                    <>: {item.description}</>
+                  )}
+                </>
+              )}
+            </li>
           ))}
         </ul>
 
         {/* Modelo 3D */}
         <div className="model-container-symptoms">
+
+          <div className="model-title">
+            <h3>{miniText}</h3>
+          </div>
+
           {/* Botónes de control */}
           <div className="model-controls">
             {onAnimation && <PauseAnimation modelRef={modelRef} />}
             {onTurn && <SpaceTurn onToggle={setIsRotating} />}
+            <InfoButton
+              showModal={showInfoModal}
+              setShowModal={setShowInfoModal}
+            />
           </div>
 
-          <Canvas shadows>
+          <Canvas
+            onDoubleClick={handleDoubleClick}
+            onContextMenu={handleRightClick}
+            shadows>
+
+            <Texts
+              texts={texts}
+              position={textsPosition}
+              rotation={textsRotation}
+              scale={textsScale}
+              visible={!showInfoModal}
+            />
+            {/* <Buttons3D text={"Botón 3D"} /> */}
+
+            {/* Environment de partículas */}
+            <EnvironmentSky count={180} radius={40} />
+
             {/* Plano invisible para sombra */}
             <mesh
               receiveShadow
@@ -103,6 +165,17 @@ const Symptoms = ({
               enablePointLight={enablePointLight}
               enableSpotLight={enableSpotLight}
               enableOrbit={enableOrbit}
+              lightColor={lightColor}
+              lightType={lightType}
+            />
+
+            {/* Entorno */}
+            <Staging
+              enableGym={enableGym}
+              enableHospital={enableHospital}
+              height={heightEnvironment}
+              radius={radiusEnvironment}
+              scale={scaleEnvironment}
             />
 
             {/* Modelo 3D animado */}

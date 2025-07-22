@@ -55,7 +55,7 @@ const Home = () => {
           />
         </div>
 
-        <div className="intro-block">
+        <div className="intro-block2">
           <img
             src="./img/Corazon.png"
             alt="Corazón con arterias"
