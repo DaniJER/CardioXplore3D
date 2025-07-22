@@ -3,7 +3,7 @@ import { OrbitControls } from "@react-three/drei";
 import Prevencion from "../../../assets/Prevencion.svg";
 import AnimatedModelWrapper from "./AnimatedModelWrapper";
 import SceneLights from "../Lights/SceneLights";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./prevention.css";
 import InfoButton from "../PointEvent/InfoButton";
 import "../Elements3D/buttons.css";
@@ -14,6 +14,7 @@ import SpaceTurn from "../PointEvent/SpaceTurn";
 import Staging from "../environment/environment";
 import Texts from "../Elements3D/Texts";
 import EnvironmentSky from "../environment/environmentSky";
+import Toque from "../../../assets/Toque.svg";
 
 const Prevention = ({
   title = "Prevención y cuidados",
@@ -60,11 +61,23 @@ const Prevention = ({
   miniText
 }) => {
   const modelRef = useRef();
+  const [isActive, setIsActive] = useState(false)
   const [isRotating, setIsRotating] = useState(true);
   const [showInfoModal, setShowInfoModal] = useState(false);
 
   const { lightType, handleDoubleClick } = DoubleClickLightToggle();
   const { lightColor, handleRightClick } = RightClickColorToggle();
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setIsActive(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <section className="prevention-container" id="prevention">
@@ -102,6 +115,14 @@ const Prevention = ({
         {/* Modelo 3D */}
         <div className="model-container-prevention">
 
+          {/* Overlay de interacción */}
+          {!isActive && (
+            <div className="interaction-overlay" onClick={() => setIsActive(true)}>
+              <img src={Toque} className="icon-img" alt="Click para interactuar" />
+              <p>Click para interactuar</p>
+            </div>
+          )}
+
           <div className="model-title">
             <h3>{miniText}</h3>
           </div>
@@ -132,6 +153,13 @@ const Prevention = ({
 
             {/* Environment de partículas */}
             <EnvironmentSky count={180} radius={40} />
+
+            {/* Malla invisible que detecta el primer click */}
+            {!isActive && (
+              <mesh
+                onPointerDown={() => setIsActive(true)}
+              ></mesh>
+            )}
 
             {/* Plano invisible para sombras */}
             <mesh
