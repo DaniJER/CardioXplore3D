@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Text3D } from "@react-three/drei";
 import Prevencion from "../../../assets/Prevencion.svg";
 import AnimatedModelWrapper from "./AnimatedModelWrapper";
 import SceneLights from "../Lights/SceneLights";
@@ -142,13 +142,17 @@ const Prevention = ({
             onContextMenu={handleRightClick}
             shadows>
 
-            <Texts
-              texts={texts}
+            <Text3D
+              font="/fonts/PIXELAND_Regular.json"
               position={textsPosition}
               rotation={textsRotation}
               scale={textsScale}
-              visible={!showInfoModal}
-            />
+              bevelEnabled
+              bevelThickness={0.2}
+            >
+              <meshStandardMaterial color={"rgba(247, 0, 255, 1)"} />
+              {texts}
+            </Text3D>
             {/* <Buttons3D text={"Botón 3D"} position={textsPosition} rotation={textsRotation} scale={textsScale} /> */}
 
             {/* Environment de partículas */}
