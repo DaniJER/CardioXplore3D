@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Text3D } from "@react-three/drei";
 import Sintomas from "../../../assets/Sintomas.svg";
 import Tratamiento from "../../../assets/Tratamiento.svg";
 import Prevencion from "../../../assets/Prevencion.svg";
@@ -7,7 +7,7 @@ import AnimatedModelWrapper from "./AnimatedModelWrapper";
 import SceneLights from "../Lights/SceneLights";
 import SpaceTurn from "../PointEvent/SpaceTurn";
 import PauseAnimation from "../PointEvent/PauseAnimation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import InfoButton from "../PointEvent/InfoButton";
 import "../Elements3D/buttons.css";
 import "./whatIs.css";
@@ -16,6 +16,7 @@ import RightClickColorToggle from "../PointEvent/RightClick";
 import Staging from "../environment/environment";
 import Texts from "../Elements3D/Texts";
 import EnvironmentSky from "../environment/environmentSky";
+import Toque from "../../../assets/Toque.svg";
 
 const WhatIs = ({
   title,
@@ -61,11 +62,23 @@ const WhatIs = ({
   miniText
 }) => {
   const modelRef = useRef();
+  const [isActive, setIsActive] = useState(false)
   const [isRotating, setIsRotating] = useState(true);
   const [showInfoModal, setShowInfoModal] = useState(false);
 
   const { lightType, handleDoubleClick } = DoubleClickLightToggle();
   const { lightColor, handleRightClick } = RightClickColorToggle();
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setIsActive(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   // Función para hacer scroll suave a la sección deseada
   const scrollToSection = (id) => {
@@ -86,6 +99,14 @@ const WhatIs = ({
         {/* Sección del Modelo 3D */}
         <div className="model-container-whatIs">
 
+          {/* Overlay de interacción */}
+          {!isActive && (
+            <div className="interaction-overlay" onClick={() => setIsActive(true)}>
+              <img src={Toque} className="icon-img" alt="Click para interactuar" />
+              <p>Click para interactuar</p>
+            </div>
+          )}
+
           <div className="model-title">
             <h3>{miniText}</h3>
           </div>
@@ -105,17 +126,28 @@ const WhatIs = ({
             onContextMenu={handleRightClick}
             shadows>
 
-            <Texts
-              texts={texts}
+            <Text3D
+              font="/fonts/PIXELAND_Regular.json"
               position={textsPosition}
               rotation={textsRotation}
               scale={textsScale}
-              visible={!showInfoModal}
-            />
+              bevelEnabled
+              bevelThickness={0.2}
+            >
+              <meshStandardMaterial color={"rgba(247, 0, 255, 1)"} />
+              {texts}
+            </Text3D>
             {/* <Buttons3D text={"Botón 3D"} /> */}
 
             {/* Environment de partículas */}
             <EnvironmentSky count={180} radius={40} />
+
+            {/* Malla invisible que detecta el primer click */}
+            {!isActive && (
+              <mesh
+                onPointerDown={() => setIsActive(true)}
+              ></mesh>
+            )}
 
             {/* Plano invisible que recibe la sombra */}
             <mesh receiveShadow rotation={planoRotacion} position={planoPosicion}>

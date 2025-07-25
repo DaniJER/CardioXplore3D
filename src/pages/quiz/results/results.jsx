@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import questions from "../questions/data/questionsData";
 import "./results.css";
 
 const Results = () => {
@@ -52,18 +53,23 @@ const Results = () => {
         <thead>
           <tr>
             <th>#</th>
+            <th>Pregunta</th>
             <th>Respuesta seleccionada</th>
             <th>¿Correcta?</th>
           </tr>
         </thead>
         <tbody>
-          {answers.map((ans, index) => (
-            <tr key={index}>
-              <td>{ans.questionId}</td>
-              <td>{ans.selected}</td>
-              <td>{ans.correct ? "✅" : "❌"}</td>
-            </tr>
-          ))}
+          {answers.map((ans, index) => {
+            const question = questions.find(q => q.id === ans.questionId);
+            return (
+              <tr key={index}>
+                <td>{ans.questionId}</td>
+                <td>{question ? question.text : "Pregunta no encontrada"}</td>
+                <td>{ans.selected}</td>
+                <td>{ans.correct ? "✅" : "❌"}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
 

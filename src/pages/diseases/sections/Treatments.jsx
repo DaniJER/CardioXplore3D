@@ -1,11 +1,11 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Text3D } from "@react-three/drei";
 import Tratamiento from "../../../assets/Tratamiento.svg";
 import AnimatedModelWrapper from "./AnimatedModelWrapper";
 import SceneLights from "../Lights/SceneLights";
 import PauseAnimation from "../PointEvent/PauseAnimation";
 import SpaceTurn from "../PointEvent/SpaceTurn";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import InfoButton from "../PointEvent/InfoButton";
 import "../Elements3D/buttons.css";
 import "./treatments.css";
@@ -14,6 +14,7 @@ import RightClickColorToggle from "../PointEvent/RightClick";
 import Staging from "../environment/environment";
 import Texts from "../Elements3D/Texts";
 import EnvironmentSky from "../environment/environmentSky";
+import Toque from "../../../assets/Toque.svg";
 
 const Treatments = ({
   title = "Tratamiento",
@@ -59,11 +60,23 @@ const Treatments = ({
   miniText
 }) => {
   const modelRef = useRef();
+  const [isActive, setIsActive] = useState(false)
   const [isRotating, setIsRotating] = useState(true);
   const [showInfoModal, setShowInfoModal] = useState(false);
 
   const { lightType, handleDoubleClick } = DoubleClickLightToggle();
   const { lightColor, handleRightClick } = RightClickColorToggle();
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setIsActive(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <section className="treatments-container" id="treatments">
@@ -80,6 +93,14 @@ const Treatments = ({
       <div className="content-section-treatments">
         {/* Modelo 3D */}
         <div className="model-container-treatments">
+
+          {/* Overlay de interacción */}
+          {!isActive && (
+            <div className="interaction-overlay" onClick={() => setIsActive(true)}>
+              <img src={Toque} className="icon-img" alt="Click para interactuar" />
+              <p>Click para interactuar</p>
+            </div>
+          )}
 
           <div className="model-title">
             <h3>{miniText}</h3>
@@ -101,17 +122,28 @@ const Treatments = ({
             onContextMenu={handleRightClick}
             shadows>
 
-            <Texts
-              texts={texts}
+            <Text3D
+              font="/fonts/PIXELAND_Regular.json"
               position={textsPosition}
               rotation={textsRotation}
               scale={textsScale}
-              visible={!showInfoModal}
-            />
+              bevelEnabled
+              bevelThickness={0.2}
+            >
+              <meshStandardMaterial color={"rgba(247, 0, 255, 1)"} />
+              {texts}
+            </Text3D>
             {/* <Buttons3D text={"Botón 3D"} /> */}
 
             {/* Environment de partículas */}
             <EnvironmentSky count={180} radius={40} />
+
+            {/* Malla invisible que detecta el primer click */}
+            {!isActive && (
+              <mesh
+                onPointerDown={() => setIsActive(true)}
+              ></mesh>
+            )}
 
             {/* Plano invisible que recibe la sombra */}
             <mesh
