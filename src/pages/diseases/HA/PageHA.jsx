@@ -17,8 +17,8 @@ const PageHA = () => {
         description="La hipertensión arterial (HTA) es una enfermedad crónica caracterizada por un aumento persistente de la presión arterial en las arterias. Es conocida como la 'enfermedad silenciosa' porque a menudo no presenta síntomas evidentes, pero puede tener graves consecuencias para la salud si no se controla adecuadamente."
         //Modelo 3D
         Model3D={Heart}
-        scale={5.45}
-        position={[0, 0, 0]}
+        scale={4.4}
+        position={[0, -0.5, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
         //Plano
@@ -49,10 +49,10 @@ const PageHA = () => {
         radiusEnvironment={100}
         scaleEnvironment={60}
         //Texto3D
-        texts="Hipertensión Arterial"
-        textsPosition={[0, 2.8, 0]}
+        texts={`Hipertension\n    Arterial`}
+        textsPosition={[-2.1, 3, 0]}
         textsRotation={[0, 0, 0]}
-        textsScale={[1.5 , 1.5, 1.5]}
+        textsScale={[0.5 , 0.5, 0.5]}
         //MiniTexto2D
         miniText="Ambiente de quirofano"
       />
@@ -84,8 +84,8 @@ const PageHA = () => {
         ]}
         //Modelo 3D
         Model3D={ModelSymptom}
-        scale={0.028}
-        position={[0, -2.8, 0]}
+        scale={0.024}
+        position={[0, -2.5, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0}
         //Plano
@@ -116,10 +116,10 @@ const PageHA = () => {
         radiusEnvironment={50}
         scaleEnvironment={50}
         //Texto3D
-        texts="Síntomas"
-        textsPosition={[0, 2.8 , 0]}
+        texts="Sintomas"
+        textsPosition={[-2, 2.8 , 0]}
         textsRotation={[0, 0, 0]}
-        textsScale={[2, 2, 2]}
+        textsScale={[0.6, 0.6, 0.6 ]}
         //MiniTexto2D
         miniText="Ambiente de cancha gimnasia"
       />
@@ -188,9 +188,9 @@ const PageHA = () => {
         scaleEnvironment={400}
         //Texto3D
         texts="Tratamiento"
-        textsPosition={[0, 3, 0]}
+        textsPosition={[-2.46, 2.75, 0]}
         textsRotation={[0, 0, 0]}
-        textsScale={[2, 2, 2]}
+        textsScale={[0.6, 0.6, 0.6]}
         //MiniTexto2D
         miniText="Ambiente de quirofano"
       />
@@ -222,7 +222,7 @@ const PageHA = () => {
         ]}
         //Modelo 3D
         Model3D={ModelPrevention}
-        scale={0.0245}
+        scale={0.0235}
         position={[0, -2.66, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
@@ -254,10 +254,10 @@ const PageHA = () => {
         radiusEnvironment={50}
         scaleEnvironment={50}
         //Texto3D
-        texts="Prevención"
-        textsPosition={[0, 2.5, 0]}
+        texts="Prevencion"
+        textsPosition={[-2.2, 2.7, 0]}
         textsRotation={[0, 0, 0]}
-        textsScale={[2, 2, 2]}
+        textsScale={[0.6, 0.6, 0.6]}
         //MiniTexto2D
         miniText="Ambiente de cancha gimnasia"
       />
