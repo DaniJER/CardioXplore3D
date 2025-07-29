@@ -3,8 +3,10 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv"; //para usar variables en .env
 import userRoutes from "./routes/userRoutes.js";
+import quizRoutes from "./routes/quizRoutes.js";
 
 dotenv.config();
+// console.log("🔍 MONGODB_URI =", process.env.MONGODB_URI);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -14,11 +16,12 @@ const PORT = process.env.PORT || 5000;
 app.use(cors()); //permite conexion con el frontend
 app.use(express.json()); //permite leer JSON en el body
 app.use("/api/users", userRoutes);
-console.log("Intentando conectar a:", process.env.MONGO_URI);
+app.use("/api/quiz", quizRoutes);
+console.log("Intentando conectar a:", process.env.MONGODB_URI);
 
 //Conexion a MongoDB
 mongoose
-  .connect(process.env.MONGO_URI, {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
