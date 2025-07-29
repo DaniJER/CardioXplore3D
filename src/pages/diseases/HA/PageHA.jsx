@@ -52,9 +52,11 @@ const PageHA = () => {
         texts={`Hipertension\n    Arterial`}
         textsPosition={[-2.1, 3, 0]}
         textsRotation={[0, 0, 0]}
-        textsScale={[0.5 , 0.5, 0.5]}
+        textsScale={[0.5, 0.5, 0.5]}
         //MiniTexto2D
         miniText="Ambiente de quirofano"
+        //Audio
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
       <Symptoms
         title="Síntomas"
@@ -117,11 +119,13 @@ const PageHA = () => {
         scaleEnvironment={50}
         //Texto3D
         texts="Sintomas"
-        textsPosition={[-2, 2.8 , 0]}
+        textsPosition={[-2, 2.8, 0]}
         textsRotation={[0, 0, 0]}
-        textsScale={[0.6, 0.6, 0.6 ]}
+        textsScale={[0.6, 0.6, 0.6]}
         //MiniTexto2D
         miniText="Ambiente de cancha gimnasia"
+        //Audio
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
       <Treatments
         title="Tratamiento"
@@ -193,6 +197,8 @@ const PageHA = () => {
         textsScale={[0.6, 0.6, 0.6]}
         //MiniTexto2D
         miniText="Ambiente de quirofano"
+        //Audio
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
       <Prevention
         title="Prevención y cuidados"
@@ -260,6 +266,8 @@ const PageHA = () => {
         textsScale={[0.6, 0.6, 0.6]}
         //MiniTexto2D
         miniText="Ambiente de cancha gimnasia"
+        //Audio
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
     </div>
   );
