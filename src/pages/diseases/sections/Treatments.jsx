@@ -57,7 +57,9 @@ const Treatments = ({
   textsRotation = [0, 0, 0],
   textsScale = [1, 1, 1],
   // Texto2D
-  miniText
+  miniText,
+  // Audio
+  AudioModelo
 }) => {
   const modelRef = useRef();
   const [isActive, setIsActive] = useState(false)
@@ -199,6 +201,7 @@ const Treatments = ({
                 scale={scale}
                 position={position}
                 rotation={rotation}
+                Audio={AudioModelo}
               />
             </AnimatedModelWrapper>
           </Canvas>
