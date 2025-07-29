@@ -3,7 +3,7 @@ import "./App.css";
 import Home from "./pages/home/Home";
 import Quiz from "./pages/quiz/Quiz";
 import Question1 from "./pages/quiz/questions/question1";
-import Results from "./pages/quiz/results/results";
+import Results from "./pages/quiz/results/Results";
 import Diseases from "./pages/diseases/Diseases";
 import Profile from "./pages/profile/Profile";
 import Login from "./pages/login/Login";
