@@ -35,6 +35,7 @@ const PageEAC = () => {
         textsScale={[1.5, 1.5, 1.5]}
         // Texto2D
         miniText="Ambiente de quirofano"
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
       <Symptoms
         title="Síntomas"
@@ -91,6 +92,7 @@ const PageEAC = () => {
         textsScale={[1.8, 1.8, 1.8]}
         // Texto2D
         miniText="Ambiente de cancha gimnasia"
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
       <Treatments
         title="Tratamiento"
@@ -138,6 +140,7 @@ const PageEAC = () => {
         textsScale={[2, 2, 2]}
         // Texto2D
         miniText="Ambiente de quirofano"
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
       <Prevention
         title="Prevención y cuidados"
@@ -191,6 +194,7 @@ const PageEAC = () => {
         textsScale={[2, 2, 2]}
         // Texto2D
         miniText="Ambiente de cancha gimnasia"
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
     </div>
   );
