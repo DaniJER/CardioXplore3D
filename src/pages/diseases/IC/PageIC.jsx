@@ -70,6 +70,8 @@ const PageIC = () => {
         textsScale={[2, 2, 2]}
         // Texto2D
         miniText="Ambiente de cancha gimnasia"
+        // Audio
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
       <Treatments
         title="Tratamiento"
@@ -140,6 +142,8 @@ const PageIC = () => {
         textsScale={[2, 2, 2]}
         // Texto2D
         miniText="Ambiente de quirofano"
+        // Audio
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
       <Prevention
         title="Prevención y cuidados"
@@ -205,6 +209,8 @@ const PageIC = () => {
         textsScale={[2, 2, 2]}
         // Texto2D
         miniText="Ambiente de cancha gimnasia"
+        // Audio
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
     </div>
   );
