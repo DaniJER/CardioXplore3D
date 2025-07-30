@@ -61,10 +61,10 @@ const WhatIs = ({
   // Texto2D
   miniText,
   // Audio
-  AudioModelo
+  AudioModelo,
 }) => {
   const modelRef = useRef();
-  const [isActive, setIsActive] = useState(false)
+  const [isActive, setIsActive] = useState(false);
   const [isRotating, setIsRotating] = useState(true);
   const [showInfoModal, setShowInfoModal] = useState(false);
 
@@ -100,11 +100,17 @@ const WhatIs = ({
       <div className="whatIs">
         {/* Sección del Modelo 3D */}
         <div className="model-container-whatIs">
-
           {/* Overlay de interacción */}
           {!isActive && (
-            <div className="interaction-overlay" onClick={() => setIsActive(true)}>
-              <img src={Toque} className="icon-img" alt="Click para interactuar" />
+            <div
+              className="interaction-overlay"
+              onClick={() => setIsActive(true)}
+            >
+              <img
+                src={Toque}
+                className="icon-img"
+                alt="Click para interactuar"
+              />
               <p>Click para interactuar</p>
             </div>
           )}
@@ -126,8 +132,8 @@ const WhatIs = ({
           <Canvas
             onDoubleClick={handleDoubleClick}
             onContextMenu={handleRightClick}
-            shadows>
-
+            shadows
+          >
             <Text3D
               font="/fonts/PIXELAND_Regular.json"
               position={textsPosition}
@@ -145,14 +151,14 @@ const WhatIs = ({
             <EnvironmentSky count={180} radius={40} />
 
             {/* Malla invisible que detecta el primer click */}
-            {!isActive && (
-              <mesh
-                onPointerDown={() => setIsActive(true)}
-              ></mesh>
-            )}
+            {!isActive && <mesh onPointerDown={() => setIsActive(true)}></mesh>}
 
             {/* Plano invisible que recibe la sombra */}
-            <mesh receiveShadow rotation={planoRotacion} position={planoPosicion}>
+            <mesh
+              receiveShadow
+              rotation={planoRotacion}
+              position={planoPosicion}
+            >
               <planeGeometry args={planoEscala} />
               <shadowMaterial transparent opacity={0.2} />
             </mesh>
@@ -234,7 +240,11 @@ const WhatIs = ({
               className="icon-button"
               onClick={() => scrollToSection("prevention")}
             >
-              <img src={Prevencion} alt="Icono Prevencion" className="icon-img" />
+              <img
+                src={Prevencion}
+                alt="Icono Prevencion"
+                className="icon-img"
+              />
             </button>
           </div>
         </div>
