@@ -25,5 +25,3 @@ dist-ssr
 *.sw?
 
 firebaseServiceAccount.json
-firebaseAdmin.js
-authFirebase.js
