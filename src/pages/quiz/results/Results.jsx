@@ -64,7 +64,7 @@ const Results = () => {
   ) => {
     try {
       const response = await fetch(
-        "https://cardio-xplore3-d.vercel.app/api/quiz/resultados",
+        "https://cardio-xplore3-d.vercel.app/api/quiz/submit",
         {
           method: "POST",
           headers: {
