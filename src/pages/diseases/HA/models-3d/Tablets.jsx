@@ -9,6 +9,11 @@ export function Tablets(props) {
   const handleClick = () => {
     audioRef.current?.play();
     audioRef.current.volume = (10);
+
+    //Detener despues de 7 segundos
+    setTimeout(() => {
+      audioRef.current?.stop();
+    }, 7000);
   };
 
   return (
