@@ -4,9 +4,9 @@ import Symptoms from "../sections/Symptoms";
 import Treatments from "../sections/Treatments";
 import WhatIs from "../sections/WhatIs";
 import { Artery } from "./models-3d/Artery";
-import { ChestPain } from "../EAC/models-3d/ChestPain";
-import { Angioplasty } from "../EAC/models-3d/Angioplasty";
-import { Training } from "../EAC/models-3d/Training";
+import { ChestPain } from "./models-3d/ChestPain";
+import { Angioplasty } from "./models-3d/Angioplasty";
+import { Training } from "./models-3d/Training";
 import "./pageEAC.css";
 
 const PageEAC = () => {
