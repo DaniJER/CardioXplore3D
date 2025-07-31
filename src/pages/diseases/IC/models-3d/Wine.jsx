@@ -3,9 +3,23 @@ import { useGLTF } from '@react-three/drei'
 
 export function Wine(props) {
   const { nodes, materials } = useGLTF('/models-3d/IC/WineRenderr.glb')
+
+  const audioRef = useRef();
+
+  const handleClick = () => {
+    audioRef.current?.play();
+    audioRef.current.volume = (10);
+  };
+
   return (
     <group {...props} dispose={null}>
-      <group position={[-0.068, 0.113, -0.334]} scale={1.08}>
+      <group position={[-0.068, 0.113, -0.334]} scale={1.08} onClick={handleClick}>
+        <PositionalAudio
+          ref={audioRef}
+          url={props.Audio}
+          distance={5}
+          loop={false}
+        />
         <mesh
           castShadow
           receiveShadow

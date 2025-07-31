@@ -1,5 +1,5 @@
-import React, {useRef,useEffect,useImperativeHandle,forwardRef} from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import React, { useRef, useEffect, useImperativeHandle, forwardRef } from 'react'
+import { useGLTF, useAnimations, PositionalAudio } from '@react-three/drei'
 import * as THREE from 'three'
 
 export const WomanFall = forwardRef((props, ref) => {
@@ -7,6 +7,12 @@ export const WomanFall = forwardRef((props, ref) => {
   const { nodes, materials, animations } = useGLTF('/models-3d/EC/womanFall.glb')
   const { actions } = useAnimations(animations, group)
   const firstAction = useRef(null)
+  const audioRef = useRef();
+
+  const handleClick = () => {
+    audioRef.current?.play();
+    audioRef.current.volume = (10);
+  };
 
   useEffect(() => {
     if (actions && Object.keys(actions).length > 0) {
@@ -39,7 +45,13 @@ export const WomanFall = forwardRef((props, ref) => {
   }))
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} onClick={handleClick}>
+      <PositionalAudio
+        ref={audioRef}
+        url={props.Audio}
+        distance={5}
+        loop={false}
+      />
       <group name="Scene">
         <group name="Armature" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <skinnedMesh
