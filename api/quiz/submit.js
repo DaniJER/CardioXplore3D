@@ -1,21 +1,26 @@
-// src/pages/api/quiz/submit.js
-
-import dbConnect from "../../../dbConnect";
-import QuizResponse from "../../../models/quizResponse";
-import authFirebase from "../../../middlewares/authFirebase";
-import cors from "../../../lib/cors";
+import dbConnect from "../../src/dbConnect";
+import QuizResponse from "../../src/models/quizResponse";
+import authFirebase from "../../src/middlewares/authFirebase";
+import cors from "../../src/lib/cors";
 
 export default async function handler(req, res) {
-  await cors(req, res);
+  // Solo permitimos POST
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Método no permitido" });
   }
 
+  // Aplicar CORS (si estás usando este middleware)
+  await cors(req, res);
+
   try {
+    // Conectar a la base de datos
     await dbConnect();
+
+    // Autenticación con Firebase
     const firebaseUser = await authFirebase(req);
     const userId = firebaseUser.uid;
 
+    // Crear una nueva respuesta del quiz
     const newResponse = new QuizResponse({
       userId,
       answers: req.body.answers,
@@ -24,9 +29,13 @@ export default async function handler(req, res) {
       score: req.body.score,
     });
 
+    // Guardar en MongoDB
     const saved = await newResponse.save();
+
+    // Enviar respuesta
     res.status(201).json(saved);
   } catch (err) {
+    console.error("❌ Error en /api/quiz/submit:", err);
     res.status(401).json({ error: err.message || "No autorizado" });
   }
 }
