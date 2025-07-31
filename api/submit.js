@@ -1,7 +1,7 @@
-import dbConnect from "../../../dbConnect.js";
-import QuizResponse from "../../../models/quizResponse.js";
-import authFirebase from "../../../middlewares/authFirebase.js";
-import cors from "../../../lib/cors";
+import dbConnect from "./lib/dbConnect.js";
+import quizResponse from "./lib/models/quizResponse.js";
+import authFirebase from "./lib/authFirebase.js";
+import cors from "./lib/cors.js";
 
 export default async function handler(req, res) {
   // Solo permitimos POST
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     const userId = firebaseUser.uid;
 
     // Crear una nueva respuesta del quiz
-    const newResponse = new QuizResponse({
+    const newResponse = new quizResponse({
       userId,
       answers: req.body.answers,
       correctCount: req.body.correctCount,
