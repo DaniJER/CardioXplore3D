@@ -1,5 +1,5 @@
 import Cors from "cors";
-import initMiddleware from "./init-middlewares";
+import initMiddleware from "../../src/lib/init-middlewares";
 
 const cors = initMiddleware(
   Cors({
