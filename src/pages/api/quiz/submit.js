@@ -1,6 +1,6 @@
-import dbConnect from "../../../dbConnect";
-import QuizResponse from "../../../models/quizResponse";
-import authFirebase from "../../../middlewares/authFirebase";
+import dbConnect from "../../../dbConnect.js";
+import QuizResponse from "../../../models/quizResponse.js";
+import authFirebase from "../../../middlewares/authFirebase.js";
 import cors from "../../../lib/cors";
 
 export default async function handler(req, res) {
