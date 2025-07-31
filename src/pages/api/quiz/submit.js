@@ -1,7 +1,7 @@
-import dbConnect from "../../src/dbConnect";
-import QuizResponse from "../../src/models/quizResponse";
-import authFirebase from "../../src/middlewares/authFirebase";
-import cors from "../../src/lib/cors";
+import dbConnect from "../../../dbConnect";
+import QuizResponse from "../../../models/quizResponse";
+import authFirebase from "../../../middlewares/authFirebase";
+import cors from "../../../lib/cors";
 
 export default async function handler(req, res) {
   // Solo permitimos POST
