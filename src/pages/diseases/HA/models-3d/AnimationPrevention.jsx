@@ -11,6 +11,11 @@ export const ModelPrevention = forwardRef((props, ref, Audio) => {
   const handleClick = () => {
     audioRef.current?.play();
     audioRef.current.volume = (10);
+
+    //Detener despues de 6 segundos
+    setTimeout(() => {
+      audioRef.current?.stop();
+    }, 6000);
   };
 
   // Configuración inicial de la animación

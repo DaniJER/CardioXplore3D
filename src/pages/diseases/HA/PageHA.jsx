@@ -56,7 +56,7 @@ const PageHA = () => {
         //MiniTexto2D
         miniText="Ambiente de quirofano"
         //Audio
-        AudioModelo="/sounds/HA/HurtPrueba.mp3"
+        AudioModelo="/sounds/HA/HeartSound.mp3"
       />
       <Symptoms
         title="Síntomas"
@@ -198,7 +198,7 @@ const PageHA = () => {
         //MiniTexto2D
         miniText="Ambiente de quirofano"
         //Audio
-        AudioModelo="/sounds/HA/HurtPrueba.mp3"
+        AudioModelo="/sounds/HA/Pill.mp3"
       />
       <Prevention
         title="Prevención y cuidados"
@@ -267,7 +267,7 @@ const PageHA = () => {
         //MiniTexto2D
         miniText="Ambiente de cancha gimnasia"
         //Audio
-        AudioModelo="/sounds/HA/HurtPrueba.mp3"
+        AudioModelo="/sounds/HA/Running.mp3"
       />
     </div>
   );

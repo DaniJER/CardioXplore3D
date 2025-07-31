@@ -13,7 +13,7 @@ export function ModeloQuiz(props) {
     if (!actions.Entry || !actions.Saludar || !actions.Idle) return;
 
     // Cambiar a "Entry" para animaciones
-    setCurrentAction("Idle"); 
+    setCurrentAction("Entry"); 
   }, [actions]);
 
   useEffect(() => {
@@ -32,7 +32,13 @@ export function ModeloQuiz(props) {
     } else if (currentAction === "Saludar") {
       actions.Saludar.reset().setLoop(THREE.LoopOnce, 1).play();
       actions.Saludar.clampWhenFinished = true;
-      const onSaludarFinished = () => setCurrentAction("Idle");
+      const onSaludarFinished = () => {
+        setCurrentAction("Idle");
+        // Notificar que las animaciones iniciales han terminado
+        if (props.onAnimationsComplete) {
+          props.onAnimationsComplete();
+        }
+      };
       actions.Saludar.getMixer().addEventListener('finished', onSaludarFinished);
       cleanup = () => {
         actions.Saludar.getMixer().removeEventListener('finished', onSaludarFinished);
@@ -435,7 +441,7 @@ export function ModeloQuiz(props) {
             position={[23, 27.6, -1]}
             rotation={[0, 0, 0.1]}
             scale={[15, 40, 15]}
-            onClick={(e) => handleHitboxClick(e, 'Pantorilla')}
+            onClick={(e) => handleHitboxClick(e, 'Pantorrilla')}
           >
             <boxGeometry />
             {/* <meshBasicMaterial color="rgba(9, 255, 0, 1)" /> */}
@@ -448,7 +454,7 @@ export function ModeloQuiz(props) {
             position={[-23, 27.6, -1]}
             rotation={[0, 0, -0.1]}
             scale={[15, 40, 15]}
-            onClick={(e) => handleHitboxClick(e, 'Pantorilla')}
+            onClick={(e) => handleHitboxClick(e, 'Pantorrilla')}
           >
             <boxGeometry />
             {/* <meshBasicMaterial color="rgba(9, 255, 0, 1)" /> */}
