@@ -1,7 +1,6 @@
 import Cors from "cors";
-import initMiddleware from "./init-middleware";
+import initMiddleware from "./init-middlewares";
 
-// Solo permitir el método POST y el origen del frontend
 const cors = initMiddleware(
   Cors({
     methods: ["POST"],
