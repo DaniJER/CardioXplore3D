@@ -63,23 +63,26 @@ const Results = () => {
     idToken
   ) => {
     try {
-      const response = await fetch("http://localhost:5000/api/quiz/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${idToken}`,
-        },
-        body: JSON.stringify({
-          answers: storedAnswers.map((ans) => ({
-            questionId: ans.questionId,
-            selectedOption: ans.selected,
-            correct: ans.correct,
-          })),
-          correctCount: correct,
-          maxStreak: streak,
-          score: finalScore,
-        }),
-      });
+      const response = await fetch(
+        "https://quiz-backend-daniel.vercel.app/api/quiz/submit", // <-- CAMBIA ESTA URL por la de Vercel
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${idToken}`,
+          },
+          body: JSON.stringify({
+            answers: storedAnswers.map((ans) => ({
+              questionId: ans.questionId,
+              selectedOption: ans.selected,
+              correct: ans.correct,
+            })),
+            correctCount: correct,
+            maxStreak: streak,
+            score: finalScore,
+          }),
+        }
+      );
 
       if (response.ok) {
         console.log("✅ Resultados enviados a MongoDB");
