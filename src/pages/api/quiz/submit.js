@@ -6,6 +6,7 @@ import cors from "../../../lib/cors";
 
 export default async function handler(req, res) {
   await cors(req, res);
+  console.log("✅ Middleware CORS ejecutado");
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Método no permitido" });
   }
