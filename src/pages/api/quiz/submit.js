@@ -1,7 +1,7 @@
-// pages/api/quiz/submit.js
-import dbConnect from "../../utils/dbConnet";
-import QuizResponse from "../../api/quiz/submit";
-import authFirebase from "../../middlewares/authFirebase";
+// /pages/api/quiz/submit.js
+import dbConnect from "../../../dbConnet";
+import QuizResponse from "../../../models/quizResponse";
+import authFirebase from "../../../middlewares/authFirebase";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   try {
     await dbConnect();
 
-    const firebaseUser = await authFirebase(req); // ← Aquí verificas el token
+    const firebaseUser = await authFirebase(req);
     const userId = firebaseUser.uid;
 
     const newResponse = new QuizResponse({
