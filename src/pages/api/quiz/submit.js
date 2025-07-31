@@ -2,8 +2,10 @@
 import dbConnect from "../../../dbConnet";
 import QuizResponse from "../../../models/quizResponse";
 import authFirebase from "../../../middlewares/authFirebase";
+import cors from "../../../lib/cors";
 
 export default async function handler(req, res) {
+  await cors(req, res);
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Método no permitido" });
   }
