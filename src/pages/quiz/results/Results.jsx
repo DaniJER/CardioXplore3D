@@ -64,7 +64,7 @@ const Results = () => {
   ) => {
     try {
       const response = await fetch(
-        "https://quiz-backend-daniel.vercel.app/api/quiz/submit", // <-- CAMBIA ESTA URL por la de Vercel
+        "https://cardio-xplore3-d.vercel.app", // <-- CAMBIA ESTA URL por la de Vercel
         {
           method: "POST",
           headers: {
