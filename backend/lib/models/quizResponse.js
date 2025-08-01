@@ -16,10 +16,8 @@ const quizResponseSchema = new mongoose.Schema({
 });
 
 // ✅ Nombre explícito de la colección
-const quizResponse = mongoose.model(
-  "QuizResponse",
-  quizResponseSchema,
-  "quizResponses"
-);
+const quizResponse =
+  mongoose.models.quizResponse ||
+  mongoose.model("quizResponse", quizResponseSchema, "quizResponses");
 
 export default quizResponse;
