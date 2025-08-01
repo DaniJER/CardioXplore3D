@@ -63,6 +63,13 @@ const Results = () => {
     idToken
   ) => {
     try {
+      console.log("🧾 Payload enviado:", {
+        answers: storedAnswers,
+        correctCount: correct,
+        maxStreak: streak,
+        score: finalScore,
+      });
+      console.log("🔐 Token:", idToken.slice(0, 20), "..."); // muestra solo el inicio
       const response = await fetch(
         "https://cardio-xplore3-d.vercel.app/api/quiz/submit",
         {
