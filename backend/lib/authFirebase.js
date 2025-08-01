@@ -1,15 +1,19 @@
+// backend/lib/authFirebase.js (o donde lo tengas)
 import admin from "firebase-admin";
 
+// 🔐 Asegúrate de que los saltos de línea se interpretan correctamente
 const rawKey = process.env.FIREBASE_SERVICE_ACCOUNT_KEY || "{}";
 const serviceAccount = JSON.parse(rawKey.replace(/\\n/g, "\n"));
 
+// 🛡️ Inicializar Firebase Admin una sola vez
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
   });
 }
 
-export const verifyFirebaseToken = async (req, res) => {
+// ✅ Middleware de verificación
+const verifyFirebaseToken = async (req, res) => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
@@ -28,3 +32,5 @@ export const verifyFirebaseToken = async (req, res) => {
     return false;
   }
 };
+
+export default verifyFirebaseToken;
