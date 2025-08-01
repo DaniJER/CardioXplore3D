@@ -16,9 +16,9 @@ const PageEC = () => {
       <WhatIs
         title="Comunicación interventricular"
         subtitle="Defecto del tabique ventricular"
-        description="La comunicación interventricular (CIV) es un tipo de cardiopatía congénita, es decir, una malformación del corazón presente desde el nacimiento. Consiste en la existencia de un orificio anormal en el tabique interventricular, la pared muscular que separa los dos ventrículos (cavidades inferiores del corazón).
+        description="La comunicación interventricular (CIV) es un tipo de cardiopatía congénita, es decir, una malformación del corazón presente desde el nacimiento. Consiste en la existencia de un orificio anormal en el tabique interventricular, la pared muscular que separa los dos ventrículos (cavidades inferiores del corazón).\n
           
-          Este orificio permite que la sangre rica en oxígeno que debería salir hacia el cuerpo desde el ventrículo izquierdo se mezcle con sangre pobre en oxígeno del ventrículo derecho. Como resultado, una parte de la sangre vuelve a circular hacia los pulmones innecesariamente, lo que sobrecarga tanto al corazón como al sistema pulmonar."
+        Este orificio permite que la sangre rica en oxígeno que debería salir hacia el cuerpo desde el ventrículo izquierdo se mezcle con sangre pobre en oxígeno del ventrículo derecho. Como resultado, una parte de la sangre vuelve a circular hacia los pulmones innecesariamente, lo que sobrecarga tanto al corazón como al sistema pulmonar."
         Model3D={Heart}
         scale={4.44}
         position={[0, 0, 0]}
@@ -28,19 +28,21 @@ const PageEC = () => {
         planoPosicion={[0, -2.8, 0]}
         planoRotacion={[-Math.PI / 2, 0, 0]}
         planoEscala={[30, 30]}
+           //Entorno
         enableGym={false}
         enableHospital={true}
         heightEnvironment={60}
         radiusEnvironment={100}
         scaleEnvironment={60}
         // Texto3D
-        texts="Comunicación Interventricular"
-        textsPosition={[0, 2.6, 0]}
+        texts={`    Comunicacion\n Interventricular`}
+        textsPosition={[-3.8, 3.2, 0]}
         textsRotation={[0, 0, 0]}
-        textsScale={[1.5, 1.5, 1.5]}
+        textsScale={[0.7, 0.7, 0.7]}
+        textColor="#4400ffff"
         // Texto2D
         miniText="Ambiente de quirofano"
-        AudioModelo="/sounds/HA/HurtPrueba.mp3"
+        AudioModelo="/sounds/EC/HeartSound.mp3"
       />
       <Symptoms
         title="Síntomas"
@@ -88,9 +90,9 @@ const PageEC = () => {
         textsPosition={[0, 3, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
-        onTurn={true}
+        onTurn={false}
         onAnimation={true}
-        AudioModelo="/sounds/HA/HurtPrueba.mp3"
+        AudioModelo="/sounds/EC/KickHard.mp3"
       />
       <Treatments
         title="Tratamiento Quirúrgico de la Comunicación Interventricular (CIV)"
@@ -128,7 +130,7 @@ const PageEC = () => {
         textsScale={[2, 2, 2]}
         // Texto2D
         miniText="Ambiente de quirofano"
-        AudioModelo="/sounds/HA/HurtPrueba.mp3"
+        AudioModelo="/sounds/EC/Ambulance.mp3"
       />
       {/* <Prevention
         title="Prevención y cuidados"
