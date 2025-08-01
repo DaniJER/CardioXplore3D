@@ -1,6 +1,6 @@
 import dbConnect from "../../backend/lib/dbConnect.js";
 import quizResponse from "../../backend/lib/models/quizResponse.js";
-import verifyFirebaseToken from "../../backend/lib/authFirebase.js";
+import { verifyFirebaseToken } from "../../backend/lib/authFirebase.js";
 import cors from "../../backend/lib/cors.js";
 
 export default async function handler(req, res) {
