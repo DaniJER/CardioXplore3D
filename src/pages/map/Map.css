@@ -1,0 +1,127 @@
+.app-map {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.09);
+}
+
+.map-title {
+    text-align: center;
+    color: #c06c96;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.map-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.map-section {
+    background: #f9f3f7;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(192, 108, 150, 0.07);
+    padding: 1.5rem 1.2rem;
+    min-width: 220px;
+    max-width: 260px;
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.map-section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #c06c96;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.map-main-link {
+    background: linear-gradient(90deg, #c06c96 60%, #f9f3f7 100%);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(192, 108, 150, 0.09);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.map-main-link:hover {
+    background: linear-gradient(90deg, #a04e7a 60%, #f9f3f7 100%);
+}
+
+.map-link,
+.map-sublink {
+    background: #c06c96;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 1px 4px rgba(192, 108, 150, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.map-link:hover,
+.map-sublink:hover {
+    background: #a04e7a;
+    transform: translateY(-2px) scale(1.03);
+}
+
+.map-subsection {
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.map-icon {
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+.map-relations {
+    margin-top: 2.5rem;
+    font-style: italic;
+    color: #888;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .map-grid {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: center;
+    }
+
+    .map-section {
+        min-width: 90vw;
+        max-width: 98vw;
+    }
+}

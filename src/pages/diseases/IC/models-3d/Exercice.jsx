@@ -11,6 +11,10 @@ export const Exercice = forwardRef((props, ref) => {
   const handleClick = () => {
     audioRef.current?.play();
     audioRef.current.volume = (10);
+    //Detener despues de 6 segundos
+    setTimeout(() => {
+      audioRef.current?.stop();
+    }, 9000);
   };
 
 

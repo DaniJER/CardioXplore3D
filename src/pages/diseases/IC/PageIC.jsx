@@ -5,11 +5,52 @@ import Treatments from "../sections/Treatments";
 import { Consequence } from "./models-3d/Consequence";
 import { Pills } from "./models-3d/Pills";
 import { Exercice } from "./models-3d/Exercice";
+import { ModelCorazon } from "./models-3d/corazon";
 import "./pageIC.css";
+import WhatIs from "../sections/WhatIs";
 
 const PageIC = () => {
   return (
     <div className="page-container">
+      {/* Modelo 3D del Corazón al inicio */}
+      <WhatIs
+        title="¿Que es la insuficiencia cardiaca?"
+        description="La insuficiencia cardíaca, también llamada insuficiencia cardíaca congestiva, ocurre cuando el corazón no puede bombear suficiente sangre para satisfacer las necesidades del cuerpo. Esto puede deberse a que el corazón está demasiado débil o rígido para funcionar correctamente. Aunque el nombre puede sonar alarmante, no significa que el corazón haya dejado de funcionar, sino que necesita ayuda para funcionar de manera más eficiente. "
+        lastDescription=""
+        items={[]}
+        Model3D={ModelCorazon}
+        scale={0.05}
+        position={[0, -2, 0]}
+        rotation={[0, 0, 0]}
+        rotationSpeed={0}
+        mostrarPlano={false}
+        planoPosicion={[0, -0.45, 0]}
+        ambientIntensity={1.5}
+        enableDirectionalLight={true}
+        directionalIntensity={10}
+        directionalPosition={[5, 5, 10]}
+        enableSpotLight={false}
+        spotIntensity={10}
+        spotPosition={[10, 15, 10]}
+        enablePointLight={false}
+        pointIntensity={10}
+        pointPosition={[0, 5, 0]}
+        onTurn={false}
+        onAnimation={true}
+        enableGym={false}
+        enableHospital={true}
+        heightEnvironment={30}
+        radiusEnvironment={50}
+        scaleEnvironment={50}
+        texts="Insuficiencia cardiaca"
+        textsPosition={[-3, 1.5, 0]}
+        textsRotation={[0, 0, 0]}
+        textsScale={[0.5, 0.5, 0.5]}
+        miniText="Modelo anatómico"
+        AudioModelo="/sounds/IC/soundheart.mp3"
+      />
+
+      {/* El resto de tus secciones sigue igual */}
       <Symptoms
         title="Síntomas"
         description="es una condición en la que el corazón no puede bombear sangre de manera eficiente para satisfacer las necesidades del cuerpo. Esto puede ocurrir cuando el músculo cardíaco se debilita o se vuelve demasiado rígido, afectando su capacidad para llenarse o expulsar sangre adecuadamente.:"
@@ -32,46 +73,36 @@ const PageIC = () => {
             description: "Palpitaciones o sensación de que el corazón se acelera o salta"
           }
         ]}
-        //Modelo 3D
         Model3D={Consequence}
         scale={3.5}
         position={[0, -0.5, 0]}
         rotation={[0, 1.55, 0]}
         rotationSpeed={0}
-        //Plano
         mostrarPlano={false}
         planoPosicion={[0, -0.45, 0]}
-        //Luces Directas
         ambientIntensity={1.5}
         enableDirectionalLight={true}
         directionalIntensity={10}
         directionalPosition={[5, 5, 10]}
-        //Luces Spot
         enableSpotLight={false}
         spotIntensity={10}
         spotPosition={[10, 15, 10]}
-        //Luces Punto
         enablePointLight={false}
         pointIntensity={10}
         pointPosition={[0, 5, 0]}
-        //Eventos
         onTurn={false}
         onAnimation={true}
-        //Entorno
         enableGym={true}
         enableHospital={false}
         heightEnvironment={14}
         radiusEnvironment={50}
         scaleEnvironment={50}
-        //Texto3D
         texts="Insuficiencia Cardíaca"
-        textsPosition={[0, 3, 0]}
+        textsPosition={[-3, 2.5, 0]}
         textsRotation={[0, 0, 0]}
-        textsScale={[2, 2, 2]}
-        // Texto2D
+        textsScale={[0.5, 0.5, 0.5]}
         miniText="Ambiente de cancha gimnasia"
-        // Audio
-        AudioModelo="/sounds/HA/HurtPrueba.mp3"
+        AudioModelo="/sounds/IC/ahogandose.mp3"
       />
       <Treatments
         title="Tratamiento"
@@ -103,47 +134,37 @@ const PageIC = () => {
               "Incorporación de suplementos como potasio o magnesio bajo la supervisión de un médico, para garantizar el equilibrio adecuado de electrolitos.",
           },
         ]}
-        //Modelo 3D
         Model3D={Pills}
-        scale={0.25}
+        scale={0.2}
         position={[0, 0, 0]}
         rotation={[0.8, 0, 0]}
         rotationSpeed={0.01}
-        //Plano
         mostrarPlano={false}
         planoPosicion={[0, -2, 0]}
         planoRotacion={[-Math.PI / 2, 0, 0]}
-        //Luces Direct
         ambientIntensity={1.5}
         enableDirectionalLight={true}
         directionalIntensity={10}
         directionalPosition={[5, 5, 10]}
-        //Luces Spot
         enableSpotLight={false}
         spotIntensity={10}
         spotPosition={[10, 15, 10]}
-        //Luces Punto
         enablePointLight={false}
         pointIntensity={10}
         pointPosition={[0, 5, 0]}
-        //Eventos
         onTurn={true}
         onAnimation={false}
-        //Entorno
         enableGym={false}
         enableHospital={true}
         heightEnvironment={800}
         radiusEnvironment={1000}
         scaleEnvironment={400}
-        //Texto3D
         texts="Tratamiento"
-        textsPosition={[0, 2.8, 0]}
+        textsPosition={[-5.5, 2, 0]}
         textsRotation={[0, 0, 0]}
-        textsScale={[2, 2, 2]}
-        // Texto2D
+        textsScale={[1.3, 1.3, 1.3]}
         miniText="Ambiente de quirofano"
-        // Audio
-        AudioModelo="/sounds/HA/HurtPrueba.mp3"
+        AudioModelo="/sounds/IC/pastillas.mp3"
       />
       <Prevention
         title="Prevención y cuidados"
@@ -171,46 +192,36 @@ const PageIC = () => {
             description: "Reducir o eliminar su consumo protege el corazón y mejora tu salud general."
           }
         ]}
-        //Modelo 3D
         Model3D={Exercice}
-        scale={3}
+        scale={2.8}
         position={[0, -3, 0]}
         rotation={[0.1, 0, 0]}
         rotationSpeed={0}
-        //Plano
         mostrarPlano={false}
         planoPosicion={[0, -2.99, 0]}
-        //Luces Direct
         ambientIntensity={1.5}
         enableDirectionalLight={true}
         directionalIntensity={10}
         directionalPosition={[5, 5, 10]}
-        //Luces Spot
         enableSpotLight={false}
         spotIntensity={10}
         spotPosition={[10, 15, 10]}
-        //Luces Punto
         enablePointLight={false}
         pointIntensity={10}
         pointPosition={[0, 5, 0]}
-        //Eventos
         onTurn={false}
         onAnimation={true}
-        //Entorno
         enableGym={true}
         enableHospital={false}
         heightEnvironment={14}
         radiusEnvironment={50}
         scaleEnvironment={50}
-        //Texto3D
-        texts="Prevención"
-        textsPosition={[0, 3.15, 0]}
+        texts="Prevencion"
+        textsPosition={[-4, 2, 0]}
         textsRotation={[0, 0, 0]}
-        textsScale={[2, 2, 2]}
-        // Texto2D
+        textsScale={[1, 1, 1]}
         miniText="Ambiente de cancha gimnasia"
-        // Audio
-        AudioModelo="/sounds/HA/HurtPrueba.mp3"
+        AudioModelo="/sounds/IC/gimnasio.mp3"
       />
     </div>
   );

@@ -1,14 +1,36 @@
-.page-container{
+.intro-ic-flex {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    padding: 2rem;
+    gap: 3rem;
+    margin: 2rem 0 3rem 0;
+    width: 100%;
+    max-width: 1800px;
 }
 
-.icon-img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+.intro-ic-text {
+    flex: 1;
+    max-width: 55%;
+}
+
+.intro-ic-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.intro-ic-text p {
+    font-size: 1.25rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.intro-ic-model {
+    width: 700px;
+    height: 400px;
+    max-width: 100%;
+    min-width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
