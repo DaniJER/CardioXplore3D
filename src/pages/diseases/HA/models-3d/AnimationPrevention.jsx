@@ -1,11 +1,22 @@
 import React, { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
-import { useGLTF, useAnimations } from '@react-three/drei';
+import { useGLTF, useAnimations, PositionalAudio } from '@react-three/drei';
 
-export const ModelPrevention = forwardRef((props, ref) => {
+export const ModelPrevention = forwardRef((props, ref, Audio) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF('/models-3d/HA/model-animation-run.glb');
   const { actions } = useAnimations(animations, group);
   const firstAction = useRef(null);
+  const audioRef = useRef();
+
+  const handleClick = () => {
+    audioRef.current?.play();
+    audioRef.current.volume = (10);
+
+    //Detener despues de 6 segundos
+    setTimeout(() => {
+      audioRef.current?.stop();
+    }, 6000);
+  };
 
   // Configuración inicial de la animación
   useEffect(() => {
@@ -29,7 +40,13 @@ export const ModelPrevention = forwardRef((props, ref) => {
   }));
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} onClick={handleClick}>
+      <PositionalAudio
+        ref={audioRef}
+        url={props.Audio}
+        distance={5}
+        loop={false}
+      />
       <group name="Scene">
         <group name="Armature">
           <skinnedMesh

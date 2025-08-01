@@ -4,9 +4,9 @@ import Symptoms from "../sections/Symptoms";
 import Treatments from "../sections/Treatments";
 import WhatIs from "../sections/WhatIs";
 import { Artery } from "./models-3d/Artery";
-import { ChestPain } from "../EAC/models-3d/ChestPain";
-import { Angioplasty } from "../EAC/models-3d/Angioplasty";
-import { Training } from "../EAC/models-3d/Training";
+import { ChestPain } from "./models-3d/ChestPain";
+import { Angioplasty } from "./models-3d/Angioplasty";
+import { Training } from "./models-3d/Training";
 import "./pageEAC.css";
 
 const PageEAC = () => {
@@ -30,9 +30,12 @@ const PageEAC = () => {
         scaleEnvironment={60}
         // Texto3D
         texts="Enfermedad Arterial Coronaria"
-        textsPosition={[0, 2.6, 0]}
+        textsPosition={[-7.5, 4.5, -3.9]}
         textsRotation={[0, 0, 0]}
-        textsScale={[1.5, 1.5, 1.5]}
+        textsScale={[0.7, 0.6, 0.6]}
+        // Texto2D
+        miniText="Ambiente de quirofano"
+        AudioModelo="/sounds/EAC/heart.mp3"
       />
       <Symptoms
         title="Síntomas"
@@ -44,35 +47,40 @@ const PageEAC = () => {
         items={[
           {
             title: "Dolor en el pecho",
-            description: "Sensación de presión o peso en el centro o lado izquierdo del pecho."
+            description:
+              "Sensación de presión o peso en el centro o lado izquierdo del pecho.",
           },
           {
             title: "Dolor en otras zonas",
-            description: "Puede extenderse a brazos, espalda, cuello, mandíbula o dientes."
+            description:
+              "Puede extenderse a brazos, espalda, cuello, mandíbula o dientes.",
           },
           {
             title: "Sudor frío",
-            description: "Sudoración repentina sin causa aparente, usualmente con malestar."
+            description:
+              "Sudoración repentina sin causa aparente, usualmente con malestar.",
           },
           {
             title: "Fatiga",
-            description: "Cansancio extremo incluso sin gran esfuerzo físico."
+            description: "Cansancio extremo incluso sin gran esfuerzo físico.",
           },
           {
             title: "Malestar estomacal",
-            description: "Ardor o acidez que puede confundirse con indigestión."
+            description:
+              "Ardor o acidez que puede confundirse con indigestión.",
           },
           {
             title: "Mareos o aturdimiento",
-            description: "Sensación de inestabilidad o desmayo repentino."
+            description: "Sensación de inestabilidad o desmayo repentino.",
           },
           {
             title: "Falta de aire",
-            description: "Dificultad para respirar al hacer esfuerzo o en reposo."
-          }
+            description:
+              "Dificultad para respirar al hacer esfuerzo o en reposo.",
+          },
         ]}
         Model3D={ChestPain}
-        scale={2.8}
+        scale={2.4}
         position={[0, -0.05, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
@@ -84,9 +92,12 @@ const PageEAC = () => {
         radiusEnvironment={50}
         scaleEnvironment={50}
         texts="Síntomas"
-        textsPosition={[0, 3.76, 0]}
+        textsPosition={[-5.7, 6, -6.6]}
         textsRotation={[0, 0, 0]}
         textsScale={[1.8, 1.8, 1.8]}
+        // Texto2D
+        miniText="Ambiente de cancha gimnasia"
+        AudioModelo="/sounds/EAC/chest-pain.mp3"
       />
       <Treatments
         title="Tratamiento"
@@ -129,9 +140,12 @@ const PageEAC = () => {
         radiusEnvironment={100}
         scaleEnvironment={60}
         texts="Tratamiento"
-        textsPosition={[0, 2.9, 0]}
+        textsPosition={[-7.9, 5.5, -6.6]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
+        // Texto2D
+        miniText="Ambiente de quirofano"
+        AudioModelo="/sounds/EAC/artery.mp3"
       />
       <Prevention
         title="Prevención y cuidados"
@@ -140,35 +154,42 @@ const PageEAC = () => {
         items={[
           {
             title: "Evitar alcohol y tabaco",
-            description: "Reducen el riesgo de daño al corazón y los vasos sanguíneos."
+            description:
+              "Reducen el riesgo de daño al corazón y los vasos sanguíneos.",
           },
           {
             title: "Ejercicio regular",
-            description: "Ayuda a fortalecer el corazón y mejorar la circulación."
+            description:
+              "Ayuda a fortalecer el corazón y mejorar la circulación.",
           },
           {
             title: "Comer saludable",
-            description: "Prefiere alimentos bajos en grasa, sal y azúcares procesados."
+            description:
+              "Prefiere alimentos bajos en grasa, sal y azúcares procesados.",
           },
           {
             title: "Peso adecuado",
-            description: "Mantener un peso saludable reduce la carga sobre el corazón."
+            description:
+              "Mantener un peso saludable reduce la carga sobre el corazón.",
           },
           {
             title: "Reducir el estrés",
-            description: "El estrés crónico afecta la salud cardíaca y general."
+            description:
+              "El estrés crónico afecta la salud cardíaca y general.",
           },
           {
             title: "Practicar meditación",
-            description: "Ayuda a relajar la mente y estabilizar la presión arterial."
+            description:
+              "Ayuda a relajar la mente y estabilizar la presión arterial.",
           },
           {
             title: "Cambiar malos hábitos",
-            description: "Adopta rutinas que beneficien tu salud física y emocional."
-          }
+            description:
+              "Adopta rutinas que beneficien tu salud física y emocional.",
+          },
         ]}
         Model3D={Training}
-        scale={2.8}
+        scale={2.6}
         position={[0, -0.01, 0]}
         rotation={[0, 0, 0]}
         rotationSpeed={0.01}
@@ -180,9 +201,12 @@ const PageEAC = () => {
         radiusEnvironment={50}
         scaleEnvironment={50}
         texts="Prevención y cuidados"
-        textsPosition={[0, 3, 0]}
+        textsPosition={[-7.5, 6.5, -6.5]}
         textsRotation={[0, 0, 0]}
-        textsScale={[2, 2, 2]}
+        textsScale={[1, 1, 1]}
+        // Texto2D
+        miniText="Ambiente de cancha gimnasia"
+        AudioModelo="/sounds/EAC/gym.mp3"
       />
     </div>
   );

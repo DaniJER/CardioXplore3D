@@ -68,6 +68,10 @@ const PageIC = () => {
         textsPosition={[0, 3, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
+        // Texto2D
+        miniText="Ambiente de cancha gimnasia"
+        // Audio
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
       <Treatments
         title="Tratamiento"
@@ -136,6 +140,10 @@ const PageIC = () => {
         textsPosition={[0, 2.8, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
+        // Texto2D
+        miniText="Ambiente de quirofano"
+        // Audio
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
       <Prevention
         title="Prevención y cuidados"
@@ -199,6 +207,10 @@ const PageIC = () => {
         textsPosition={[0, 3.15, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
+        // Texto2D
+        miniText="Ambiente de cancha gimnasia"
+        // Audio
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
     </div>
   );

@@ -5,7 +5,18 @@
   font-family: Arial, sans-serif;
 }
 
+.quiz-3d-canvas {
+  position: relative;
+  width: 55%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 .exit-button {
+  position: relative;
+  width: 150px;
   float: right;
   background-color: #333;
   color: white;
@@ -51,7 +62,7 @@
 
 .quiz-option.selected {
   border-color: var(--primary-color);
-  background: var(--secondary-color);  
+  background: var(--secondary-color);
 }
 
 .quiz-footer {
@@ -71,9 +82,84 @@
   cursor: pointer;
 }
 
+.quiz-clear-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-color);
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  margin: 0 10px;
+  opacity: 1;
+}
+
+.quiz-clear-button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.quiz-clear-button:not(:disabled):hover {
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
 .quiz-back-button:disabled,
 .quiz-next-button:disabled,
 .quiz-finish-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+.quiz-flex-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+  align-items: flex-start;
+}
+
+.quiz-3d-column {
+  flex: 1 1 50%;
+  min-width: 350px;
+}
+
+.quiz-right-column {
+  flex: 1 1 50%;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.selected-object-box {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #f8f8f8;
+  margin-bottom: 1.5rem;
+}
+
+.selected-object-name {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #333;
+  word-break: break-all;
+}
+
+.arrow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(2, 60px);
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.quiz-3d-canvas {
+  position: relative;
 }

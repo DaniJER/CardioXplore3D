@@ -38,9 +38,12 @@ const PageEC = () => {
         textsPosition={[0, 2.6, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[1.5, 1.5, 1.5]}
+        // Texto2D
+        miniText="Ambiente de quirofano"
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
       <Symptoms
-      title="Síntomas"
+        title="Síntomas"
         description="La CIV puede presentarse de forma aislada o como parte de otras malformaciones cardíacas más complejas. Suele detectarse mediante ecocardiografía (ultrasonido del corazón), especialmente si el médico escucha un soplo cardíaco en el examen físico. Este tambien puede Surgir por situaciones aunque raras en adultos despues de sufrir de un Infarto agudo de miocardio (complicación en adultos mayores), Traumatismos cardíacos(Impactos fuertes que comprometan la integridad del organo) e Infecciones como endocarditis."
         lastDescription={"Los síntomas pueden variar según el tamaño del defecto y la cantidad de sangre que fluye a través de él. En algunos casos, los bebés pueden no presentar síntomas evidentes, mientras que en otros pueden experimentar dificultad para respirar, fatiga, retraso en el crecimiento y otros problemas relacionados con la circulación sanguínea."}
         items={[
@@ -87,8 +90,9 @@ const PageEC = () => {
         textsScale={[2, 2, 2]}
         onTurn={true}
         onAnimation={true}
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
-       <Treatments
+      <Treatments
         title="Tratamiento Quirúrgico de la Comunicación Interventricular (CIV)"
         description="La cirugía es necesaria cuando el defecto es grande, produce síntomas graves o hay riesgo de daño pulmonar e insuficiencia cardíaca. El objetivo principal es cerrar la abertura en el tabique interventricular para restaurar el flujo sanguíneo normal. La CIV puede presentarse de forma aislada o como parte de otras malformaciones cardíacas más complejas. Suele detectarse mediante ecocardiografía (ultrasonido del corazón), especialmente si el médico escucha un soplo cardíaco en el examen físico."
         lastDescription={""}
@@ -122,6 +126,9 @@ const PageEC = () => {
         textsPosition={[0, 3, 0]}
         textsRotation={[0, 0, 0]}
         textsScale={[2, 2, 2]}
+        // Texto2D
+        miniText="Ambiente de quirofano"
+        AudioModelo="/sounds/HA/HurtPrueba.mp3"
       />
       {/* <Prevention
         title="Prevención y cuidados"

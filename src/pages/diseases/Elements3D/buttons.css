@@ -7,6 +7,20 @@
     bottom: 10px;
 }
 
+.model-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #333;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.model-title h3 {
+    font-size: 15px;
+    color: #d9437f;
+}
+
 .model-button {
     background-color: #ffffffcc;
     border: 1px solid #ccc;

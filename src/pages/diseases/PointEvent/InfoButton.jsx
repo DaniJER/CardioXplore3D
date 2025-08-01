@@ -27,8 +27,9 @@ const InfoButton = ({ showModal, setShowModal }) => {
                     <div className="modal-content-info" onClick={(e) => e.stopPropagation()}>
                         <h2>Información de los modelos</h2>
                         <ul>
-                            <li>Con la letra "P" puedes pausar o reanudar la animación del modelo 3D.</li>
+                            <li>Con la tecla "ESC" puedes dejar de interactuar</li>
                             <li>Con la tecla "Espacio" puedes girar o detener el modelo 3D.</li>
+                            <li>Con la letra "P" puedes pausar o reanudar la animación del modelo 3D.</li>
                             <li>Con doble clic puedes cambiar el estilo de luz.</li>
                             <li>Con clic derecho puedes cambiar el color de la luz.</li>
                         </ul>

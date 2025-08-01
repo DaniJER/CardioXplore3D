@@ -1,11 +1,17 @@
 import React, { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
-import { useGLTF, useAnimations } from '@react-three/drei';
+import { useGLTF, useAnimations, PositionalAudio } from '@react-three/drei';
 
 export const Consequence = forwardRef((props, ref) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF('/models-3d/IC/ArmorConsequence.glb');
   const { actions } = useAnimations(animations, group);
   const firstAction = useRef(null);
+  const audioRef = useRef();
+
+  const handleClick = () => {
+    audioRef.current?.play();
+    audioRef.current.volume = (10);
+  };
 
   // Configuración inicial de la animación
   useEffect(() => {
@@ -29,7 +35,13 @@ export const Consequence = forwardRef((props, ref) => {
   }));
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} onClick={handleClick}>
+      <PositionalAudio
+        ref={audioRef}
+        url={props.Audio}
+        distance={5}
+        loop={false}
+      />
       <group name="Scene">
         <group name="Armature" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <skinnedMesh
