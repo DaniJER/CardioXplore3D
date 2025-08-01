@@ -1,6 +1,6 @@
 import dbConnect from "../../backend/lib/dbConnect.js";
 import quizResponse from "../../backend/lib/models/quizResponse.js";
-import authFirebase from "../../backend/lib/authFirebase.js";
+import { authFirebase } from "../../backend/lib/authFirebase.js";
 import cors from "../../backend/lib/cors.js";
 
 export default async function handler(req, res) {
@@ -9,7 +9,6 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Método no permitido" });
   }
 
-  // Aplicar CORS (si estás usando este middleware)
   await cors(req, res);
 
   try {
