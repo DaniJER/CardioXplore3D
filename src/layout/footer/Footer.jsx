@@ -30,6 +30,7 @@ function FooterPage() {
             <li><button className="footer-link" onClick={() => navigate('/contacto')}>Contacto</button></li>
             <li><button className="footer-link" onClick={() => navigate('/ayuda')}>Ayuda</button></li>
             <li><button className="footer-link" onClick={() => navigate('/terminos')}>Términos</button></li>
+
           </ul>
         </div>
 
@@ -44,6 +45,9 @@ function FooterPage() {
             </li>
             <li>
               <a className="footer-link" href="https://github.com/DaniJER/CardioXplore3D" target="_blank" rel="noopener noreferrer">Facebook</a>
+            </li>
+            <li>
+              <button className="footer-link" onClick={() => navigate('/map')}>mapa de la aplicacion</button>
             </li>
           </ul>
         </div>
