@@ -1,6 +1,6 @@
 import dbConnect from "../../backend/lib/dbConnect.js";
 import quizResponse from "../../backend/lib/models/quizResponse.js";
-import { authFirebase } from "../../backend/lib/authFirebase.js";
+import verifyFirebaseToken from "../../backend/lib/authFirebase.js";
 import cors from "../../backend/lib/cors.js";
 
 export default async function handler(req, res) {
@@ -16,8 +16,11 @@ export default async function handler(req, res) {
     await dbConnect();
 
     // Autenticación con Firebase
-    const firebaseUser = await authFirebase(req);
-    const userId = firebaseUser.uid;
+    const isVerified = await verifyFirebaseToken(req, res);
+    if (!isVerified || !req.user) {
+      return res.status(401).json({ error: "No autorizado" });
+    }
+    const userId = req.user.uid;
 
     // Crear una nueva respuesta del quiz
     const newResponse = new quizResponse({
