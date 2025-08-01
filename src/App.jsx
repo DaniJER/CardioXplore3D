@@ -20,6 +20,8 @@ import PageIC from "./pages/diseases/IC/PageIC";
 import Contact from "./pages/contact/Contact";
 import Help from "./pages/help/Help";
 import Terms from "./pages/terms/Terms";
+import Map from "./pages/map/Map";
+
 
 function App() {
   return (
@@ -35,6 +37,7 @@ function App() {
           <Route path="/nosotros" element={<AboutUs />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="/ayuda" element={<Help />} />
+          <Route path="/map" element={<Map />} />
           <Route path="/terminos" element={<Terms />} />
           <Route path="/enfermedades/1" element={<PageHA />} />
           <Route path="/enfermedades/2" element={<PageEC />} />
