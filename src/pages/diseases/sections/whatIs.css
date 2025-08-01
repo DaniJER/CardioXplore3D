@@ -109,6 +109,6 @@ p {
     color: white;
 }
 
-.icon-img {
+.icon-img-overlay {
     filter: invert(1) brightness(2);
 }
