@@ -86,11 +86,11 @@ const PageEC = () => {
         radiusEnvironment={100}
         scaleEnvironment={60}
         // Texto3D
-        texts="Síntomas"
-        textsPosition={[0, 3, 0]}
+        texts="Sintomas"
+        textsPosition={[-3,2, 0]}
         textsRotation={[0, 0, 0]}
-        textsScale={[2, 2, 2]}
-        onTurn={false}
+        textsScale={[1, 1, 1]}
+        onTurn={true}
         onAnimation={true}
         AudioModelo="/sounds/EC/KickHard.mp3"
       />
@@ -125,9 +125,9 @@ const PageEC = () => {
         scaleEnvironment={60}
         // Texto3D
         texts="Tratamiento"
-        textsPosition={[0, 3, 0]}
+        textsPosition={[-4.5, 2, 0]}
         textsRotation={[0, 0, 0]}
-        textsScale={[2, 2, 2]}
+        textsScale={[1, 1, 1]}
         // Texto2D
         miniText="Ambiente de quirofano"
         AudioModelo="/sounds/EC/Ambulance.mp3"
