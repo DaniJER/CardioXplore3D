@@ -108,7 +108,7 @@ const WhatIs = ({
             >
               <img
                 src={Toque}
-                className="icon-img"
+                className="icon-img-overlay"
                 alt="Click para interactuar"
               />
               <p>Click para interactuar</p>
