@@ -2,6 +2,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp,
+} from "firebase/firestore";
+import { app } from "../../../firebase.js"; // importa tu instancia de Firebase aquí
 import questions from "../questions/data/questionsData";
 import "./results.css";
 
@@ -39,13 +46,12 @@ const Results = () => {
 
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        const idToken = await user.getIdToken();
-        enviarResultados(
+        await guardarResultadosFirestore(
+          user.uid,
           storedAnswers,
           correct,
           highestStreak,
-          finalScore,
-          idToken
+          finalScore
         );
       } else {
         console.warn("⚠️ Usuario no autenticado");
@@ -55,50 +61,30 @@ const Results = () => {
     return () => unsubscribe();
   }, []);
 
-  const enviarResultados = async (
+  const guardarResultadosFirestore = async (
+    uid,
     storedAnswers,
     correct,
     streak,
-    finalScore,
-    idToken
+    finalScore
   ) => {
     try {
-      console.log("🧾 Payload enviado:", {
-        answers: storedAnswers,
+      const db = getFirestore(app);
+      const docRef = await addDoc(collection(db, "quizResults"), {
+        uid,
+        answers: storedAnswers.map((ans) => ({
+          questionId: ans.questionId,
+          selectedOption: ans.selected,
+          correct: ans.correct,
+        })),
         correctCount: correct,
         maxStreak: streak,
         score: finalScore,
+        createdAt: serverTimestamp(),
       });
-      console.log("🔐 Token:", idToken.slice(0, 20), "..."); // muestra solo el inicio
-      const response = await fetch(
-        "https://cardio-xplore3-d.vercel.app/api/quiz/submit",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${idToken}`,
-          },
-          body: JSON.stringify({
-            answers: storedAnswers.map((ans) => ({
-              questionId: ans.questionId,
-              selectedOption: ans.selected,
-              correct: ans.correct,
-            })),
-            correctCount: correct,
-            maxStreak: streak,
-            score: finalScore,
-          }),
-        }
-      );
-
-      if (response.ok) {
-        console.log("✅ Resultados enviados a MongoDB");
-      } else {
-        const errorData = await response.json();
-        console.error("❌ Error al enviar resultados:", errorData);
-      }
+      console.log("✅ Resultado guardado con ID:", docRef.id);
     } catch (error) {
-      console.error("❌ Error de conexión o código:", error.message || error);
+      console.error("❌ Error al guardar en Firestore:", error);
     }
   };
 
