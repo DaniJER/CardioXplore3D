@@ -176,8 +176,8 @@ CardioXplore3D/
 - LinkedIn: [Juan Fernando Duque](https://linkedin.com/in/juanfdj73)
 
 **Daniel Enriquez**
-- GitHub: [@DaniJER] (https://www.linkedin.com/in/daniel-enriquez-700396206)
-- LinkedIn: [Daniel Enriquez](https://github.com/DaniJER)
+- GitHub: [@DaniJER] (https://github.com/DaniJER)
+- LinkedIn: [Daniel Enriquez](https://www.linkedin.com/in/daniel-enriquez-700396206)
 
 **Marvin Valencia**
 - GitHub: [@MarvinV22](https://github.com/marvincampo311)
