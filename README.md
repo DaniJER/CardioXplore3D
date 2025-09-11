@@ -11,7 +11,7 @@ App ![CardioXplore3D](public/view/preview.png)
 
 Enfermedades ![CardioXplore3D Diseases](public/view/viewDiseases.png)
 
-Qiz ![CardioXplore3D Quiz](public/view/viewQuiz.png)
+Quiz ![CardioXplore3D Quiz](public/view/viewQuiz.png)
 
 
 ## 📋 Descripción del Proyecto
