@@ -8,6 +8,11 @@ export function Heart(props) {
   const handleClick = () => {
     audioRef.current?.play();
     audioRef.current.volume = (10);
+
+    // Detener despues de 5 segundos
+    setTimeout(() => {
+      audioRef.current?.stop();
+    }, 5000);
   };
 
   return (
